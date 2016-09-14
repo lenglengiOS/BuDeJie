@@ -7,6 +7,7 @@
 //
 
 #import "LHLTabBar.h"
+#import "UIView+frame.h"
 
 
 @interface LHLTabBar ()
@@ -46,9 +47,9 @@
     // 子控件个数
     NSInteger count = self.items.count + 1;
     // 子控件宽度
-    CGFloat btnW = self.frame.size.width / count;
+    CGFloat btnW = self.lhl_width / count;
     // 子控件高度
-    CGFloat btnH = self.frame.size.height;
+    CGFloat btnH = self.lhl_height;
     // 子控件x值
     CGFloat btnX = 0;
     
@@ -65,7 +66,7 @@
     }
     
     // 设置发布按钮的位置
-    self.plusButton.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
+    self.plusButton.center = CGPointMake(self.lhl_width * 0.5, self.lhl_height * 0.5);
     
 }
 

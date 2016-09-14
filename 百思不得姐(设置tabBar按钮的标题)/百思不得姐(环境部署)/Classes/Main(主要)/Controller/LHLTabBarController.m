@@ -58,7 +58,6 @@
     LHLTabBar *tabBar = [[LHLTabBar alloc] init];
     [self setValue:tabBar forKeyPath:@"tabBar"];
     
-
     
 }
 
