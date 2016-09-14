@@ -12,6 +12,7 @@
 #import "LHLMeTableViewController.h"
 #import "LHLNewViewController.h"
 #import "LHLPublishViewController.h"
+#import "LHLTabBar.h"
 
 #import "UIImage+image.h"
 
@@ -47,8 +48,19 @@
     // 设置所有子控制器的标题
     [self setUpAllTitleButton];
     
+    // 创建tabBar
+    [self setUpTabBar];
+    
 }
 
+- (void)setUpTabBar{
+    
+    LHLTabBar *tabBar = [[LHLTabBar alloc] init];
+    [self setValue:tabBar forKeyPath:@"tabBar"];
+    
+    NSLog(@"%@", self.tabBar);
+    
+}
 
 #pragma mark - 创建所有子控制器
 - (void)setUpAllChildViewController{
@@ -88,6 +100,7 @@
     nav.tabBarItem.title = @"精华";
     nav.tabBarItem.image = [UIImage imageNamed:@"tabBar_essence_icon"];
     nav.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"tabBar_essence_click_icon"];
+
     // 新帖
     UINavigationController *nav1 = self.childViewControllers[1];
     nav1.tabBarItem.title = @"新帖";

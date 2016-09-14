@@ -20,6 +20,7 @@
 		84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236591D87BDB3005BBCE9 /* LHLPublishViewController.m */; };
 		84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236601D87CDE4005BBCE9 /* LHLTabBarController.m */; };
 		84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236641D87D352005BBCE9 /* UIImage+image.m */; };
+		84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF54E1D893AD300A71005 /* LHLTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		84D236601D87CDE4005BBCE9 /* LHLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTabBarController.m; sourceTree = "<group>"; };
 		84D236631D87D352005BBCE9 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+image.h"; sourceTree = "<group>"; };
 		84D236641D87D352005BBCE9 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
+		84FAF54D1D893AD300A71005 /* LHLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTabBar.h; sourceTree = "<group>"; };
+		84FAF54E1D893AD300A71005 /* LHLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +347,8 @@
 		84D2365E1D87CC98005BBCE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84FAF54D1D893AD300A71005 /* LHLTabBar.h */,
+				84FAF54E1D893AD300A71005 /* LHLTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
+				84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */,
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
