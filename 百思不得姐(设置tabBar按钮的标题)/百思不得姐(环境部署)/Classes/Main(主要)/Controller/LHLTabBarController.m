@@ -56,6 +56,7 @@
 
 - (void)setUpTabBar{
     
+    // 利用KVC对系统的tabBar赋值
     LHLTabBar *tabBar = [[LHLTabBar alloc] init];
     [self setValue:tabBar forKeyPath:@"tabBar"];
     

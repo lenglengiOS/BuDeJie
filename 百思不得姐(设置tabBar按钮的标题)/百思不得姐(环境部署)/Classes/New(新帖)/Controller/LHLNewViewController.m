@@ -18,12 +18,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor purpleColor];
+    [self setUpNavBar];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark 设置导航栏按钮
+- (void)setUpNavBar{
+    
+    // 左边按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"MainTagSubIcon"] highImage:[UIImage imageNamed:@"MainTagSubIconClick"] target:self action:@selector(tagClick)];
+    
+    // 中间图片
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    
 }
+
+- (void)tagClick{
+    
+}
+
 
 /*
 #pragma mark - Navigation

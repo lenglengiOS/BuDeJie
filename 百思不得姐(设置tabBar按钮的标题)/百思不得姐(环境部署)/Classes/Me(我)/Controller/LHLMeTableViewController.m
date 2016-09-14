@@ -17,17 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.view.backgroundColor = [UIColor orangeColor];
+    [self setUpNavBar];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark 设置导航栏按钮
+- (void)setUpNavBar{
+    
+    // 设置按钮
+    UIBarButtonItem *settingItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(setting)];
+    
+    // 夜间模式
+    UIBarButtonItem *nightItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-moon-icon"] selImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(night:)];
+    
+    self.navigationItem.rightBarButtonItems = @[settingItem, nightItem];
+    
+    
+    // 中间文字
+    self.navigationItem.title = @"我的关注";
+    
+}
+
+- (void)setting{
+    LHLFunc
+}
+- (void)night:(UIButton *)button{
+    LHLFunc
+    button.selected = !button.selected;
 }
 
 #pragma mark - Table view data source

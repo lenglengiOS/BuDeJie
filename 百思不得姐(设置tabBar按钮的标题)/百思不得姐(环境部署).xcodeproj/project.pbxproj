@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
 		84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2361A1D879B72005BBCE9 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
+		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
+		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
 		84D236091D879B71005BBCE9 /* 百思不得姐(环境部署).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐(环境部署).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D236161D879B72005BBCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D236181D879B72005BBCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,10 +285,10 @@
 			isa = PBXGroup;
 			children = (
 				84D236621D87D349005BBCE9 /* Category */,
+				849474FE1D89914A00937559 /* BuDeJie.pch */,
 				84D236431D87BBA9005BBCE9 /* AppDelegate.h */,
 				84D236441D87BBA9005BBCE9 /* AppDelegate.m */,
 				84D236451D87BBA9005BBCE9 /* main.m */,
-				849474FE1D89914A00937559 /* BuDeJie.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -365,6 +368,8 @@
 				84D236641D87D352005BBCE9 /* UIImage+image.m */,
 				84FAF5531D894BAC00A71005 /* UIView+frame.h */,
 				84FAF5541D894BAC00A71005 /* UIView+frame.m */,
+				849474FF1D899ED400937559 /* UIBarButtonItem+item.h */,
+				849475001D899ED400937559 /* UIBarButtonItem+item.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */,
+				849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */,
 				84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */,
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,

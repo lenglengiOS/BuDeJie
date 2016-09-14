@@ -8,6 +8,8 @@
 
 
 #import "UIView+frame.h"
+#import "UIBarButtonItem+item.h"
+#define LHLFunc NSLog(@"%s", __func__);
 
 #ifdef DEBUG
 

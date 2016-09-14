@@ -8,6 +8,7 @@
 
 #import "LHLEssenceViewController.h"
 
+
 @interface LHLEssenceViewController ()
 
 @end
@@ -19,12 +20,34 @@
 
     self.view.backgroundColor = [UIColor redColor];
     
+    [self setUpNavBar];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark 设置导航栏按钮
+- (void)setUpNavBar{
+    
+    // 左边按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"nav_item_game_icon"] highImage:[UIImage imageNamed:@"nav_item_game_click_icon"] target:self action:@selector(game)];
+    
+    
+    // 右边按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationButtonRandom"] highImage:[UIImage imageNamed:@"navigationButtonRandomClick"] target:nil action:nil];
+    
+    
+    // 中间图片
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    
 }
+
+
+- (void)game{
+
+    LHLFunc
+}
+
+
 
 /*
 #pragma mark - Navigation
