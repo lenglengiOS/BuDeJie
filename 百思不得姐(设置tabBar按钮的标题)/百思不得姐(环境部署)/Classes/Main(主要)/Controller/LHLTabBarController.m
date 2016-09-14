@@ -23,7 +23,7 @@
 
 + (void)load{
     
-    // 设置UITabBarItem按钮的颜色
+    // 设置UITabBarItem按钮的颜色: appearanceWhenContainedIn
     UITabBarItem *item = [UITabBarItem appearanceWhenContainedIn:self, nil];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSForegroundColorAttributeName] = [UIColor blackColor];
@@ -96,14 +96,17 @@
     
     // 发布
     LHLPublishViewController *publishVC = self.childViewControllers[2];
-    publishVC.tabBarItem.image = [UIImage imageNamed:@"tabBar_publish_icon"];
+    publishVC.tabBarItem.image = [UIImage imageOriginalWithName:@"tabBar_publish_icon"];
     publishVC.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"tabBar_publish_click_icon"];
+    // 设置图片的位置
+    publishVC.tabBarItem.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
     
     // 关注
     UINavigationController *nav3 = self.childViewControllers[3];
     nav3.tabBarItem.title = @"关注";
     nav3.tabBarItem.image = [UIImage imageNamed:@"tabBar_friendTrends_icon"];
     nav3.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"tabBar_friendTrends_click_icon"];
+    
     
     // 我
     UINavigationController *nav4 = self.childViewControllers[4];

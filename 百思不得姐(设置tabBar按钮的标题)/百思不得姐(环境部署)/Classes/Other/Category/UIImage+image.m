@@ -10,8 +10,8 @@
 
 @implementation UIImage (image)
 
+// 不要系统自动渲染
 + (UIImage *)imageOriginalWithName:(NSString *)imageName{
-    
     
     UIImage *image = [UIImage imageNamed:imageName];
     return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
