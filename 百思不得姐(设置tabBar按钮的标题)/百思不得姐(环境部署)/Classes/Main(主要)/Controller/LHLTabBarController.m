@@ -51,6 +51,7 @@
     // 自定义tabBar
     [self setUpTabBar];
     
+    
 }
 
 - (void)setUpTabBar{

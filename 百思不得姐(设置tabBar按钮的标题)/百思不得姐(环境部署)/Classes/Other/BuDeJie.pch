@@ -1,0 +1,20 @@
+//
+//  BuDeJie.pch
+//  百思不得姐(环境部署)
+//
+//  Created by admin on 16/9/14.
+//  Copyright © 2016年 admin. All rights reserved.
+//
+
+
+#import "UIView+frame.h"
+
+#ifdef DEBUG
+
+#define LHLLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define LHLLog(...)
+
+#endif
