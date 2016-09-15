@@ -11,6 +11,16 @@
 #import "UIBarButtonItem+item.h"
 #define LHLFunc NSLog(@"%s", __func__);
 
+/****************屏幕适配*****************/
+#define LHLScreenH [UIScreen mainScreen].bounds.size.height
+#define LHLScreenW [UIScreen mainScreen].bounds.size.width
+#define iphone6p (LHLScreenH == 736)
+#define iphone6 (LHLScreenH == 667)
+#define iphone5 (LHLScreenH == 568)
+#define iphone4 (LHLScreenH == 480)
+/****************屏幕适配*****************/
+
+
 #ifdef DEBUG
 
 #define LHLLog(...) NSLog(__VA_ARGS__)

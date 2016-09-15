@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		846E062D1D8A29AE00321D94 /* LHLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */; };
-		846E06341D8A2CB700321D94 /* LHLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E06331D8A2CB700321D94 /* LHLSettingViewController.m */; };
+		846E063F1D8A614D00321D94 /* LHLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E063C1D8A614D00321D94 /* LHLSettingViewController.m */; };
+		846E06431D8A618000321D94 /* LHLAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E06411D8A618000321D94 /* LHLAdViewController.m */; };
+		846E06441D8A618000321D94 /* LHLAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E06421D8A618000321D94 /* LHLAdViewController.xib */; };
+		846E064D1D8A641300321D94 /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E06461D8A641300321D94 /* LaunchImage-568h@2x.png */; };
+		846E064E1D8A641300321D94 /* LaunchImage-700-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E06471D8A641300321D94 /* LaunchImage-700-568h@2x.png */; };
+		846E064F1D8A641300321D94 /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E06481D8A641300321D94 /* LaunchImage-700@2x.png */; };
+		846E06501D8A641300321D94 /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E06491D8A641300321D94 /* LaunchImage-800-667h@2x.png */; };
+		846E06511D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */; };
+		846E06521D8A641300321D94 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064B1D8A641300321D94 /* LaunchImage.png */; };
+		846E06531D8A641300321D94 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064C1D8A641300321D94 /* LaunchImage@2x.png */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
@@ -40,8 +49,18 @@
 /* Begin PBXFileReference section */
 		846E062B1D8A29AE00321D94 /* LHLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLNavigationViewController.h; sourceTree = "<group>"; };
 		846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLNavigationViewController.m; sourceTree = "<group>"; };
-		846E06321D8A2CB700321D94 /* LHLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSettingViewController.h; sourceTree = "<group>"; };
-		846E06331D8A2CB700321D94 /* LHLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSettingViewController.m; sourceTree = "<group>"; };
+		846E063B1D8A614D00321D94 /* LHLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSettingViewController.h; sourceTree = "<group>"; };
+		846E063C1D8A614D00321D94 /* LHLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSettingViewController.m; sourceTree = "<group>"; };
+		846E06401D8A618000321D94 /* LHLAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLAdViewController.h; sourceTree = "<group>"; };
+		846E06411D8A618000321D94 /* LHLAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLAdViewController.m; sourceTree = "<group>"; };
+		846E06421D8A618000321D94 /* LHLAdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLAdViewController.xib; sourceTree = "<group>"; };
+		846E06461D8A641300321D94 /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
+		846E06471D8A641300321D94 /* LaunchImage-700-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700-568h@2x.png"; sourceTree = "<group>"; };
+		846E06481D8A641300321D94 /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
+		846E06491D8A641300321D94 /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
+		846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		846E064B1D8A641300321D94 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		846E064C1D8A641300321D94 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
@@ -94,37 +113,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		846E062E1D8A2CA300321D94 /* Setting */ = {
+		846E06351D8A613100321D94 /* AD(广告) */ = {
 			isa = PBXGroup;
 			children = (
-				846E062F1D8A2CA300321D94 /* Controller */,
-				846E06301D8A2CA300321D94 /* Model */,
-				846E06311D8A2CA300321D94 /* View */,
+				846E06361D8A613100321D94 /* Controller */,
+				846E06371D8A613100321D94 /* Model */,
+				846E06381D8A613100321D94 /* View */,
 			);
-			path = Setting;
+			path = "AD(广告)";
 			sourceTree = "<group>";
 		};
-		846E062F1D8A2CA300321D94 /* Controller */ = {
+		846E06361D8A613100321D94 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				846E06321D8A2CB700321D94 /* LHLSettingViewController.h */,
-				846E06331D8A2CB700321D94 /* LHLSettingViewController.m */,
+				846E06401D8A618000321D94 /* LHLAdViewController.h */,
+				846E06411D8A618000321D94 /* LHLAdViewController.m */,
+				846E06421D8A618000321D94 /* LHLAdViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		846E06301D8A2CA300321D94 /* Model */ = {
+		846E06371D8A613100321D94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		846E06311D8A2CA300321D94 /* View */ = {
+		846E06381D8A613100321D94 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		846E06391D8A614D00321D94 /* Setting(设置) */ = {
+			isa = PBXGroup;
+			children = (
+				846E063A1D8A614D00321D94 /* Controller */,
+				846E063D1D8A614D00321D94 /* Model */,
+				846E063E1D8A614D00321D94 /* View */,
+			);
+			path = "Setting(设置)";
+			sourceTree = "<group>";
+		};
+		846E063A1D8A614D00321D94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				846E063B1D8A614D00321D94 /* LHLSettingViewController.h */,
+				846E063C1D8A614D00321D94 /* LHLSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		846E063D1D8A614D00321D94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		846E063E1D8A614D00321D94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		846E06451D8A641300321D94 /* 启动图片 */ = {
+			isa = PBXGroup;
+			children = (
+				846E06461D8A641300321D94 /* LaunchImage-568h@2x.png */,
+				846E06471D8A641300321D94 /* LaunchImage-700-568h@2x.png */,
+				846E06481D8A641300321D94 /* LaunchImage-700@2x.png */,
+				846E06491D8A641300321D94 /* LaunchImage-800-667h@2x.png */,
+				846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */,
+				846E064B1D8A641300321D94 /* LaunchImage.png */,
+				846E064C1D8A641300321D94 /* LaunchImage@2x.png */,
+			);
+			path = "启动图片";
 			sourceTree = "<group>";
 		};
 		84D236001D879B71005BBCE9 = {
@@ -161,6 +228,7 @@
 		84D2360C1D879B71005BBCE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				846E06451D8A641300321D94 /* 启动图片 */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,7 +245,8 @@
 		84D236311D87BBA9005BBCE9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				846E062E1D8A2CA300321D94 /* Setting */,
+				846E06351D8A613100321D94 /* AD(广告) */,
+				846E06391D8A614D00321D94 /* Setting(设置) */,
 				84D2365B1D87CC98005BBCE9 /* Main(主要) */,
 				84D236321D87BBA9005BBCE9 /* Essence(精华) */,
 				84D236361D87BBA9005BBCE9 /* FriendTrend(关注) */,
@@ -499,8 +568,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846E06441D8A618000321D94 /* LHLAdViewController.xib in Resources */,
+				846E06511D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */,
+				846E06531D8A641300321D94 /* LaunchImage@2x.png in Resources */,
+				846E064E1D8A641300321D94 /* LaunchImage-700-568h@2x.png in Resources */,
+				846E06501D8A641300321D94 /* LaunchImage-800-667h@2x.png in Resources */,
+				846E064D1D8A641300321D94 /* LaunchImage-568h@2x.png in Resources */,
+				846E06521D8A641300321D94 /* LaunchImage.png in Resources */,
 				84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */,
+				846E064F1D8A641300321D94 /* LaunchImage-700@2x.png in Resources */,
 				84D236171D879B72005BBCE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,7 +604,8 @@
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
 				84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */,
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
-				846E06341D8A2CB700321D94 /* LHLSettingViewController.m in Sources */,
+				846E06431D8A618000321D94 /* LHLAdViewController.m in Sources */,
+				846E063F1D8A614D00321D94 /* LHLSettingViewController.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
