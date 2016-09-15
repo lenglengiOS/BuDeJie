@@ -1,58 +1,32 @@
 //
-//  LHLMeTableViewController.m
+//  LHLSettingViewController.m
 //  百思不得姐(环境部署)
 //
-//  Created by admin on 16/9/13.
+//  Created by admin on 16/9/15.
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
-#import "LHLMeTableViewController.h"
 #import "LHLSettingViewController.h"
 
-@interface LHLMeTableViewController ()
+@interface LHLSettingViewController ()
 
 @end
 
-@implementation LHLMeTableViewController
+@implementation LHLSettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor orangeColor];
-    [self setUpNavBar];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark 设置导航栏按钮
-- (void)setUpNavBar{
-    
-    // 设置按钮
-    UIBarButtonItem *settingItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-setting-icon"] highImage:[UIImage imageNamed:@"mine-setting-icon-click"] target:self action:@selector(setting)];
-    
-    // 夜间模式
-    UIBarButtonItem *nightItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"mine-moon-icon"] selImage:[UIImage imageNamed:@"mine-moon-icon-click"] target:self action:@selector(night:)];
-    
-    self.navigationItem.rightBarButtonItems = @[settingItem, nightItem];
-    
-    
-    // 中间文字
-    self.navigationItem.title = @"我的";
-    
-        
-}
-
-- (void)setting{
-    
-    LHLSettingViewController *settingVC = [[LHLSettingViewController alloc] init];
-    [self.navigationController pushViewController:settingVC animated:YES];
-    // push 后隐藏BottomBar
-    settingVC.hidesBottomBarWhenPushed = YES;
-    
-    
-}
-- (void)night:(UIButton *)button{
-    LHLFunc
-    button.selected = !button.selected;
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

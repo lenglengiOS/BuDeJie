@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		846E062D1D8A29AE00321D94 /* LHLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */; };
+		846E06341D8A2CB700321D94 /* LHLSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E06331D8A2CB700321D94 /* LHLSettingViewController.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		846E062B1D8A29AE00321D94 /* LHLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLNavigationViewController.h; sourceTree = "<group>"; };
 		846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLNavigationViewController.m; sourceTree = "<group>"; };
+		846E06321D8A2CB700321D94 /* LHLSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSettingViewController.h; sourceTree = "<group>"; };
+		846E06331D8A2CB700321D94 /* LHLSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSettingViewController.m; sourceTree = "<group>"; };
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
@@ -91,6 +94,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846E062E1D8A2CA300321D94 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				846E062F1D8A2CA300321D94 /* Controller */,
+				846E06301D8A2CA300321D94 /* Model */,
+				846E06311D8A2CA300321D94 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		846E062F1D8A2CA300321D94 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				846E06321D8A2CB700321D94 /* LHLSettingViewController.h */,
+				846E06331D8A2CB700321D94 /* LHLSettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		846E06301D8A2CA300321D94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		846E06311D8A2CA300321D94 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		84D236001D879B71005BBCE9 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +177,7 @@
 		84D236311D87BBA9005BBCE9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				846E062E1D8A2CA300321D94 /* Setting */,
 				84D2365B1D87CC98005BBCE9 /* Main(主要) */,
 				84D236321D87BBA9005BBCE9 /* Essence(精华) */,
 				84D236361D87BBA9005BBCE9 /* FriendTrend(关注) */,
@@ -490,6 +527,7 @@
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
 				84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */,
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
+				846E06341D8A2CB700321D94 /* LHLSettingViewController.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
