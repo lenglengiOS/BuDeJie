@@ -10,12 +10,16 @@
 #import <MJExtension/MJExtension.h>
 #import <AFNetworking/AFNetworking.h>
 #import "LHLSubTagItem.h"
+#import "LHLSubTagCell.h"
+
+static NSString * const ID = @"cell";
 
 @interface LHLSubTagController ()
 
 @property (nonatomic, strong) NSArray *subTags;
 
 @end
+
 
 @implementation LHLSubTagController
 
@@ -46,6 +50,10 @@
     }];
     
     
+    // 注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"LHLSubTagCell" bundle:nil] forCellReuseIdentifier:ID];
+
+    
 }
 
 #pragma mark - Table view data source
@@ -55,20 +63,20 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
+    // 自定义cell
+    LHLSubTagCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     // 取出模型
     LHLSubTagItem *item = self.subTags[indexPath.row];
-    cell.textLabel.text = item.theme_name;
-    
+    cell.item = item;
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 80;
+}
 
 /*
 // Override to support conditional editing of the table view.

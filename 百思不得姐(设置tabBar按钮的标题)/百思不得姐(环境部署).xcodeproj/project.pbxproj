@@ -36,6 +36,8 @@
 		84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236641D87D352005BBCE9 /* UIImage+image.m */; };
 		84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F803C41D8ACC650017CCC7 /* LHLSubTagController.m */; };
 		84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F803C71D8ACF370017CCC7 /* LHLSubTagItem.m */; };
+		84F803CF1D8AD6FD0017CCC7 /* LHLSubTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F803CD1D8AD6FD0017CCC7 /* LHLSubTagCell.m */; };
+		84F803D01D8AD6FD0017CCC7 /* LHLSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F803CE1D8AD6FD0017CCC7 /* LHLSubTagCell.xib */; };
 		84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF54E1D893AD300A71005 /* LHLTabBar.m */; };
 		84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF5541D894BAC00A71005 /* UIView+frame.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,9 @@
 		84F803C41D8ACC650017CCC7 /* LHLSubTagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSubTagController.m; sourceTree = "<group>"; };
 		84F803C61D8ACF370017CCC7 /* LHLSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSubTagItem.h; sourceTree = "<group>"; };
 		84F803C71D8ACF370017CCC7 /* LHLSubTagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSubTagItem.m; sourceTree = "<group>"; };
+		84F803CC1D8AD6FD0017CCC7 /* LHLSubTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSubTagCell.h; sourceTree = "<group>"; };
+		84F803CD1D8AD6FD0017CCC7 /* LHLSubTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSubTagCell.m; sourceTree = "<group>"; };
+		84F803CE1D8AD6FD0017CCC7 /* LHLSubTagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLSubTagCell.xib; sourceTree = "<group>"; };
 		84FAF54D1D893AD300A71005 /* LHLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTabBar.h; sourceTree = "<group>"; };
 		84FAF54E1D893AD300A71005 /* LHLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTabBar.m; sourceTree = "<group>"; };
 		84FAF5531D894BAC00A71005 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
@@ -417,6 +422,9 @@
 		84D236411D87BBA9005BBCE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84F803CC1D8AD6FD0017CCC7 /* LHLSubTagCell.h */,
+				84F803CD1D8AD6FD0017CCC7 /* LHLSubTagCell.m */,
+				84F803CE1D8AD6FD0017CCC7 /* LHLSubTagCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -618,6 +626,7 @@
 				846E06501D8A641300321D94 /* LaunchImage-800-667h@2x.png in Resources */,
 				846E064D1D8A641300321D94 /* LaunchImage-568h@2x.png in Resources */,
 				846E06521D8A641300321D94 /* LaunchImage.png in Resources */,
+				84F803D01D8AD6FD0017CCC7 /* LHLSubTagCell.xib in Resources */,
 				84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */,
 				846E064F1D8A641300321D94 /* LaunchImage-700@2x.png in Resources */,
 				84D236171D879B72005BBCE9 /* Main.storyboard in Resources */,
@@ -700,6 +709,7 @@
 				846E063F1D8A614D00321D94 /* LHLSettingViewController.m in Sources */,
 				8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
+				84F803CF1D8AD6FD0017CCC7 /* LHLSubTagCell.m in Sources */,
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
 				84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */,

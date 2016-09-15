@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LHLSubTagCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vg6-7q-0uE">
+                        <rect key="frame" x="14" y="10" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Vec-hm-lTn"/>
+                            <constraint firstAttribute="width" constant="60" id="Xoi-Ks-xkx"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3W-IS-gbE">
+                        <rect key="frame" x="84" y="10" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lp-9x-weS">
+                        <rect key="frame" x="260" y="27" width="50" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="rt5-fM-5JV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal" title="+ 关注" backgroundImage="tagButtonBG">
+                            <color key="titleColor" red="1" green="0.2177635604" blue="0.17968454280000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="highlighted" backgroundImage="tagButtonBGClick"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4Z-So-U49">
+                        <rect key="frame" x="84" y="49" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="3lp-9x-weS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="I8c-LF-EZ3"/>
+                    <constraint firstItem="W3W-IS-gbE" firstAttribute="top" secondItem="Vg6-7q-0uE" secondAttribute="top" id="Nwy-XG-CBG"/>
+                    <constraint firstItem="Vg6-7q-0uE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Pp3-yp-XIp"/>
+                    <constraint firstAttribute="trailing" secondItem="3lp-9x-weS" secondAttribute="trailing" constant="10" id="T6h-gp-lQR"/>
+                    <constraint firstItem="W3W-IS-gbE" firstAttribute="leading" secondItem="Vg6-7q-0uE" secondAttribute="trailing" constant="10" id="cc1-hy-ZUm"/>
+                    <constraint firstItem="Vg6-7q-0uE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="gX6-G8-U3c"/>
+                    <constraint firstItem="a4Z-So-U49" firstAttribute="leading" secondItem="Vg6-7q-0uE" secondAttribute="trailing" constant="10" id="pSi-c6-fST"/>
+                    <constraint firstItem="a4Z-So-U49" firstAttribute="bottom" secondItem="Vg6-7q-0uE" secondAttribute="bottom" id="xaF-h8-yr4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconImageView" destination="Vg6-7q-0uE" id="P1C-q4-a0p"/>
+                <outlet property="nameLabel" destination="W3W-IS-gbE" id="KQc-A3-gfw"/>
+                <outlet property="numLabel" destination="a4Z-So-U49" id="zK5-6l-7Es"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tagButtonBG" width="80" height="31"/>
+        <image name="tagButtonBGClick" width="80" height="31"/>
+    </resources>
+</document>
