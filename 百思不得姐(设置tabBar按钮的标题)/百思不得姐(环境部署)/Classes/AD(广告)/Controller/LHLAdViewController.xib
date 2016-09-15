@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHLAdViewController">
             <connections>
                 <outlet property="adView" destination="dBD-Vo-ymU" id="iSu-ck-HQ3"/>
+                <outlet property="jumpBtn" destination="JDo-9L-D3q" id="qTk-3V-J12"/>
                 <outlet property="launchImageView" destination="f9t-nt-ngH" id="AMi-u5-cX2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,13 +25,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-9L-D3q">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-9L-D3q">
                     <rect key="frame" x="292" y="20" width="73" height="30"/>
                     <color key="backgroundColor" red="0.1043030105" green="0.05863568743" blue="0.085736721089999995" alpha="0.4518506205673759" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title=" 关闭（3）">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="jumpBtnClick:" destination="-1" eventType="touchUpInside" id="X2x-G0-vj0"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
