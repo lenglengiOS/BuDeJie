@@ -16,17 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    // 返回按钮
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationButtonReturn"] highImage:[UIImage imageNamed:@"navigationButtonReturnClick"] target:self action:@selector(back) title:@"返回"];
-    
-    
+    // 设置标题
+    self.title = @"设置";
     
 }
 
-//- (void)back{
-//    [self.navigationController popViewControllerAnimated:YES];
-//}
+
 
 
 

@@ -35,6 +35,7 @@
     self.navigationItem.rightBarButtonItems = @[settingItem, nightItem];
     
     
+    
     // 中间文字
     self.navigationItem.title = @"我的";
     
@@ -45,8 +46,7 @@
     
     LHLSettingViewController *settingVC = [[LHLSettingViewController alloc] init];
     [self.navigationController pushViewController:settingVC animated:YES];
-    // push 后隐藏BottomBar
-    settingVC.hidesBottomBarWhenPushed = YES;
+    
     
     
 }

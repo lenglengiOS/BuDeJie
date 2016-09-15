@@ -8,7 +8,7 @@
 
 #import "LHLNavigationViewController.h"
 
-@interface LHLNavigationViewController ()
+@interface LHLNavigationViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -36,10 +36,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
+    
+    
+    self.interactivePopGestureRecognizer.delegate = self;
     
 }
+
+
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    
+    
+    // 非根控制器
+    return self.childViewControllers.count > 1;
+    
+}
+
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
@@ -47,6 +60,9 @@
     if (self.childViewControllers.count > 0) { // 非根控制器
         
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationButtonReturn"] highImage:[UIImage imageNamed:@"navigationButtonReturnClick"] target:self action:@selector(back) title:@"返回"];
+        
+        // push 后隐藏BottomBar
+        viewController.hidesBottomBarWhenPushed = YES;
     }
     
     [super pushViewController:viewController animated:animated];
@@ -55,6 +71,7 @@
 }
 
 - (void)back{
+    
     [self popViewControllerAnimated:YES];
 }
 
