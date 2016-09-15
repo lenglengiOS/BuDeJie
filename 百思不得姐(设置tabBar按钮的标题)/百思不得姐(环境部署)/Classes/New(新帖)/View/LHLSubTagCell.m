@@ -32,13 +32,34 @@
     
     _item = item;
     _nameLabel.text = item.theme_name;
-    _numLabel.text = item.sub_number;
+    
+//    NSString *numStr = item.sub_number;
+    
+    NSInteger num = item.sub_number.integerValue;
+    if (num > 10000) {
+
+        CGFloat numF = num / 10000.0;
+        _numLabel.text = [NSString stringWithFormat:@"%.1f万人订阅", numF];
+        _numLabel.text = [_numLabel.text stringByReplacingOccurrencesOfString:@"0." withString:@""];
+        
+    }else{
+        _numLabel.text = [NSString stringWithFormat:@"%ld人订阅", (long)num];
+    }
+ 
+    
+    
     [_iconImageView sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     
 }
 
+
+// 从xib加载一次酒会调用
 - (void)awakeFromNib {
-    // Initialization code
+
+    // 圆角头像
+    _iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width * 0.5;
+    _iconImageView.layer.masksToBounds = YES;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -52,6 +52,8 @@ static NSString * const ID = @"cell";
     
     // 注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"LHLSubTagCell" bundle:nil] forCellReuseIdentifier:ID];
+    
+    self.title = @"推荐标签";
 
     
 }

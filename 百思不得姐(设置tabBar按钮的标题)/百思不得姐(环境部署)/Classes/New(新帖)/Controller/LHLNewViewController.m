@@ -34,7 +34,6 @@
 }
 
 - (void)tagClick{
-    LHLFunc
     
     LHLSubTagController *subTagVc = [[LHLSubTagController alloc] init];
     [self.navigationController pushViewController:subTagVc animated:YES];
