@@ -7,6 +7,8 @@
 //
 
 #import "LHLAdViewController.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 @interface LHLAdViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *launchImageView;
