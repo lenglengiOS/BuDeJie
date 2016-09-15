@@ -19,6 +19,7 @@
 		846E06511D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */; };
 		846E06521D8A641300321D94 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064B1D8A641300321D94 /* LaunchImage.png */; };
 		846E06531D8A641300321D94 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064C1D8A641300321D94 /* LaunchImage@2x.png */; };
+		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
@@ -64,6 +65,8 @@
 		846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		846E064B1D8A641300321D94 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		846E064C1D8A641300321D94 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		8492A8931D8AB19400C73DF3 /* LHLAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLAdItem.h; sourceTree = "<group>"; };
+		8492A8941D8AB19400C73DF3 /* LHLAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLAdItem.m; sourceTree = "<group>"; };
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 		846E06371D8A613100321D94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8492A8931D8AB19400C73DF3 /* LHLAdItem.h */,
+				8492A8941D8AB19400C73DF3 /* LHLAdItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
 				846E06431D8A618000321D94 /* LHLAdViewController.m in Sources */,
 				846E063F1D8A614D00321D94 /* LHLSettingViewController.m in Sources */,
+				8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
