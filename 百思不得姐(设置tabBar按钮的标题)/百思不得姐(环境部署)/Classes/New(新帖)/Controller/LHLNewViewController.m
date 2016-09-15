@@ -7,6 +7,7 @@
 //
 
 #import "LHLNewViewController.h"
+#import "LHLSubTagController.h"
 
 @interface LHLNewViewController ()
 
@@ -33,6 +34,11 @@
 }
 
 - (void)tagClick{
+    LHLFunc
+    
+    LHLSubTagController *subTagVc = [[LHLSubTagController alloc] init];
+    [self.navigationController pushViewController:subTagVc animated:YES];
+    
     
 }
 

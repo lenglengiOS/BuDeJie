@@ -34,6 +34,8 @@
 		84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236591D87BDB3005BBCE9 /* LHLPublishViewController.m */; };
 		84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236601D87CDE4005BBCE9 /* LHLTabBarController.m */; };
 		84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D236641D87D352005BBCE9 /* UIImage+image.m */; };
+		84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F803C41D8ACC650017CCC7 /* LHLSubTagController.m */; };
+		84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F803C71D8ACF370017CCC7 /* LHLSubTagItem.m */; };
 		84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF54E1D893AD300A71005 /* LHLTabBar.m */; };
 		84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF5541D894BAC00A71005 /* UIView+frame.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,10 @@
 		84D236601D87CDE4005BBCE9 /* LHLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTabBarController.m; sourceTree = "<group>"; };
 		84D236631D87D352005BBCE9 /* UIImage+image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+image.h"; sourceTree = "<group>"; };
 		84D236641D87D352005BBCE9 /* UIImage+image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+image.m"; sourceTree = "<group>"; };
+		84F803C31D8ACC650017CCC7 /* LHLSubTagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSubTagController.h; sourceTree = "<group>"; };
+		84F803C41D8ACC650017CCC7 /* LHLSubTagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSubTagController.m; sourceTree = "<group>"; };
+		84F803C61D8ACF370017CCC7 /* LHLSubTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSubTagItem.h; sourceTree = "<group>"; };
+		84F803C71D8ACF370017CCC7 /* LHLSubTagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSubTagItem.m; sourceTree = "<group>"; };
 		84FAF54D1D893AD300A71005 /* LHLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTabBar.h; sourceTree = "<group>"; };
 		84FAF54E1D893AD300A71005 /* LHLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTabBar.m; sourceTree = "<group>"; };
 		84FAF5531D894BAC00A71005 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
@@ -393,6 +399,8 @@
 			children = (
 				84D236551D87BDA2005BBCE9 /* LHLNewViewController.h */,
 				84D236561D87BDA2005BBCE9 /* LHLNewViewController.m */,
+				84F803C31D8ACC650017CCC7 /* LHLSubTagController.h */,
+				84F803C41D8ACC650017CCC7 /* LHLSubTagController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -400,6 +408,8 @@
 		84D236401D87BBA9005BBCE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84F803C61D8ACF370017CCC7 /* LHLSubTagItem.h */,
+				84F803C71D8ACF370017CCC7 /* LHLSubTagItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -678,6 +688,8 @@
 			files = (
 				84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */,
 				849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */,
+				84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */,
+				84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */,
 				84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */,
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
