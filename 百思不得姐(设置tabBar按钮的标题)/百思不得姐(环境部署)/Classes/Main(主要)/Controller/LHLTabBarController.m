@@ -13,6 +13,7 @@
 #import "LHLNewViewController.h"
 #import "LHLPublishViewController.h"
 #import "LHLTabBar.h"
+#import "LHLNavigationViewController.h"
 
 #import "UIImage+image.h"
 
@@ -30,7 +31,7 @@
     attrs[NSForegroundColorAttributeName] = [UIColor blackColor];
     [item setTitleTextAttributes:attrs forState:UIControlStateSelected];
     
-    // 设置字体的尺寸(只有正常状态下设置才有效果)
+    // 设置字体的尺寸(只有正常状态下UIControlStateNormal设置才有效果)
     NSMutableDictionary *attrsNor = [NSMutableDictionary dictionary];
     attrsNor[NSFontAttributeName] = [UIFont systemFontOfSize:13];
     [item setTitleTextAttributes:attrsNor forState:UIControlStateNormal];
@@ -67,13 +68,13 @@
 - (void)setUpAllChildViewController{
     // 1.精华
     LHLEssenceViewController *essenceVC = [[LHLEssenceViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:essenceVC];
+    LHLNavigationViewController *nav = [[LHLNavigationViewController alloc] initWithRootViewController:essenceVC];
     [self addChildViewController:nav];
     
     
     // 2.新帖
     LHLNewViewController *newVC = [[LHLNewViewController alloc] init];
-    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:newVC];
+    LHLNavigationViewController *nav1 = [[LHLNavigationViewController alloc] initWithRootViewController:newVC];
     [self addChildViewController:nav1];
     
 //    // 3.发布
@@ -83,12 +84,12 @@
     
     // 4.关注
     LHLFriendTrendViewController *friendVC = [[LHLFriendTrendViewController alloc] init];
-    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:friendVC];
+    LHLNavigationViewController *nav3 = [[LHLNavigationViewController alloc] initWithRootViewController:friendVC];
     [self addChildViewController:nav3];
     
     // 5.我
     LHLMeTableViewController *meVC = [[LHLMeTableViewController alloc] init];
-    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:meVC];
+    LHLNavigationViewController *nav4 = [[LHLNavigationViewController alloc] initWithRootViewController:meVC];
     [self addChildViewController:nav4];
 }
 
@@ -107,13 +108,6 @@
     nav1.tabBarItem.title = @"新帖";
     nav1.tabBarItem.image = [UIImage imageNamed:@"tabBar_new_icon"];
     nav1.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"tabBar_new_click_icon"];
-    
-    // 发布
-//    LHLPublishViewController *publishVC = self.childViewControllers[2];
-//    publishVC.tabBarItem.image = [UIImage imageOriginalWithName:@"tabBar_publish_icon"];
-//    publishVC.tabBarItem.selectedImage = [UIImage imageOriginalWithName:@"tabBar_publish_click_icon"];
-//    // 设置图片的位置
-//    publishVC.tabBarItem.imageInsets = UIEdgeInsetsMake(7, 0, -7, 0);
     
     // 关注
     UINavigationController *nav3 = self.childViewControllers[2];

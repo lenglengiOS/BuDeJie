@@ -35,8 +35,9 @@
     
     
     // 中间文字
-    self.navigationItem.title = @"我的关注";
+    self.navigationItem.title = @"我的";
     
+        
 }
 
 - (void)setting{

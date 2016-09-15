@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		846E062D1D8A29AE00321D94 /* LHLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		846E062B1D8A29AE00321D94 /* LHLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLNavigationViewController.h; sourceTree = "<group>"; };
+		846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLNavigationViewController.m; sourceTree = "<group>"; };
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 			children = (
 				84D2365F1D87CDE4005BBCE9 /* LHLTabBarController.h */,
 				84D236601D87CDE4005BBCE9 /* LHLTabBarController.m */,
+				846E062B1D8A29AE00321D94 /* LHLNavigationViewController.h */,
+				846E062C1D8A29AE00321D94 /* LHLNavigationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
 				84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */,
+				846E062D1D8A29AE00321D94 /* LHLNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
