@@ -36,9 +36,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+
+    
 }
 
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    
+    if (self.childViewControllers.count > 0) { // 非根控制器
+        
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"navigationButtonReturn"] highImage:[UIImage imageNamed:@"navigationButtonReturnClick"] target:self action:@selector(back) title:@"返回"];
+    }
+    
+    [super pushViewController:viewController animated:animated];
+    
+    
+}
+
+- (void)back{
+    [self popViewControllerAnimated:YES];
+}
 
 
 @end

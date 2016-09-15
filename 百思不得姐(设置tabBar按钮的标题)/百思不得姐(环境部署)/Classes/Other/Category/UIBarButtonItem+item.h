@@ -13,4 +13,6 @@
 + (UIBarButtonItem *)itemWithImage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action;
 + (UIBarButtonItem *)itemWithImage:(UIImage *)image selImage:(UIImage *)highImage target:(id)target action:(SEL)action;
 
++ (UIBarButtonItem *)itemWithImage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action title:(NSString *)title;
+
 @end

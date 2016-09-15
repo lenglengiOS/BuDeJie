@@ -42,4 +42,27 @@
     
 }
 
+// 设置返回按钮
++ (UIBarButtonItem *)itemWithImage:(UIImage *)image highImage:(UIImage *)highImage target:(id)target action:(SEL)action title:(NSString *)title{
+    
+    UIButton *backButton = [[UIButton alloc] init];
+    [backButton setImage:image forState:UIControlStateNormal];
+    [backButton setImage:highImage forState:UIControlStateHighlighted];
+    [backButton setTitle:title forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [backButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+    
+    [backButton sizeToFit];
+    [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+}
+
+
+
+
+
 @end
