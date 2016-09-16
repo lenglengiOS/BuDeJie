@@ -11,17 +11,31 @@
 #import <AFNetworking/AFNetworking.h>
 #import "LHLSubTagItem.h"
 #import "LHLSubTagCell.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+
 
 static NSString * const ID = @"cell";
 
 @interface LHLSubTagController ()
 
 @property (nonatomic, strong) NSArray *subTags;
+@property (nonatomic, weak)  AFHTTPSessionManager *mgr;
 
 @end
 
 
 @implementation LHLSubTagController
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    // 销毁指示器
+    [SVProgressHUD dismiss];
+    
+    // 取消之前的请求
+    [_mgr.tasks makeObjectsPerformSelector:@selector(cancel)];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,24 +44,29 @@ static NSString * const ID = @"cell";
     
     // 创建请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    
+    _mgr = mgr;
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"tag_recommend";
     parameters[@"action"] = @"sub";
     parameters[@"c"] = @"topic";
     
+    [SVProgressHUD showWithStatus:@"正在努力加载中..."];
+    
     // 发送请求
-    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nonnull responseObject) {
+    [_mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nonnull responseObject) {
         
         self.subTags = [LHLSubTagItem mj_objectArrayWithKeyValuesArray:responseObject];
         
         // 刷新表格
         [self.tableView reloadData];
         
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
         
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
     }];
+
     
     
     // 注册cell
@@ -56,8 +75,12 @@ static NSString * const ID = @"cell";
     self.title = @"推荐标签";
     
     
-    // 处理分割线，清空tableView的内边距，清空cell的约束边缘
-    self.tableView.separatorInset = UIEdgeInsetsZero;
+    // 去除多余的线
+    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    // 1.取消系统自带的分割线  2.设置tabVlew的背景色为分割线的背景色 3.拦截setFrame方法，把cell的高度减1
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor colorWithRed:220 / 256.0 green:220 / 256.0 blue:221 / 256.0 alpha:1];
 
     
 }
@@ -66,6 +89,8 @@ static NSString * const ID = @"cell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.subTags.count;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -21,6 +21,12 @@
 
 @implementation LHLSubTagCell
 
+- (void)setFrame:(CGRect)frame{
+    
+    frame.size.height -= 1;
+    
+    [super setFrame:frame];
+}
 
 - (void)setItem:(LHLSubTagItem *)item{
     
@@ -81,9 +87,7 @@
     // 圆角头像
     _iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width * 0.5;
     _iconImageView.layer.masksToBounds = YES;
-    // 设置分割线
-    self.layoutMargins = UIEdgeInsetsZero;
-    
+     
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
