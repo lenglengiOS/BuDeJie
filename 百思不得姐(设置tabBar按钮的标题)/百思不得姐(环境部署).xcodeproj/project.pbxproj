@@ -22,6 +22,8 @@
 		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */; };
+		84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */; };
+		84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
 		84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2361A1D879B72005BBCE9 /* LaunchScreen.storyboard */; };
@@ -76,6 +78,9 @@
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
 		84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLFriendTrendViewController.xib; sourceTree = "<group>"; };
+		84BE4EB91D8BABE200AB0DDF /* LHLLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterController.h; sourceTree = "<group>"; };
+		84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterController.m; sourceTree = "<group>"; };
+		84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLLoginRegisterController.xib; sourceTree = "<group>"; };
 		84D236091D879B71005BBCE9 /* 百思不得姐(环境部署).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐(环境部署).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D236161D879B72005BBCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D236181D879B72005BBCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -341,6 +346,9 @@
 				84D2364F1D87BD7A005BBCE9 /* LHLFriendTrendViewController.h */,
 				84D236501D87BD7A005BBCE9 /* LHLFriendTrendViewController.m */,
 				84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */,
+				84BE4EB91D8BABE200AB0DDF /* LHLLoginRegisterController.h */,
+				84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */,
+				84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -632,6 +640,7 @@
 				84F803D01D8AD6FD0017CCC7 /* LHLSubTagCell.xib in Resources */,
 				84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */,
 				846E064F1D8A641300321D94 /* LaunchImage-700@2x.png in Resources */,
+				84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */,
 				84D236171D879B72005BBCE9 /* Main.storyboard in Resources */,
 				84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */,
 			);
@@ -700,6 +709,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */,
+				84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */,
 				849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */,
 				84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */,
 				84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */,

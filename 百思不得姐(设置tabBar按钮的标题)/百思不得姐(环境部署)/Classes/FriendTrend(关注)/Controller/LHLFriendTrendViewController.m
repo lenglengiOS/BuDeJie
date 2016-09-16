@@ -7,12 +7,20 @@
 //
 
 #import "LHLFriendTrendViewController.h"
+#import "LHLLoginRegisterController.h"
 
 @interface LHLFriendTrendViewController ()
 
 @end
 
 @implementation LHLFriendTrendViewController
+- (IBAction)loginRegisterClick:(id)sender {
+    
+    LHLLoginRegisterController *loginVc = [[LHLLoginRegisterController alloc] init];
+    
+    [self presentViewController:loginVc animated:YES completion:nil];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

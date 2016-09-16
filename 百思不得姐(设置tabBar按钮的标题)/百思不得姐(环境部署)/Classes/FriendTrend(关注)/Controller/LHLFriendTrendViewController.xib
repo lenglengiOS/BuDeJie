@@ -40,9 +40,12 @@
                     <state key="highlighted" backgroundImage="friendsTrend_login_click">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="loginRegisterClick:" destination="-1" eventType="touchUpInside" id="tgp-8b-zqE"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="7Fh-k4-HvM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GO7-yU-4zl"/>
                 <constraint firstItem="7Fh-k4-HvM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O8u-cV-lEp"/>
