@@ -18,12 +18,12 @@
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_rgister_textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="roo-0K-flE">
                             <rect key="frame" x="0.0" y="0.0" width="266" height="92"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-H2-86W">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-H2-86W" customClass="LHLLoginField">
                             <rect key="frame" x="5" y="46" width="256" height="46"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-Lb-A1H">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaz-Lb-A1H" customClass="LHLLoginField">
                             <rect key="frame" x="5" y="0.0" width="256" height="46"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -86,46 +86,50 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-jA-Z7U">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cV1-jA-Z7U" customClass="LHLLoginField">
                     <rect key="frame" x="54" y="20" width="266" height="92"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_rgister_textfield_bg" translatesAutoresizingMaskIntoConstraints="NO" id="MWw-f6-NLb">
                             <rect key="frame" x="0.0" y="0.0" width="266" height="92"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnA-ED-L0g">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hnA-ED-L0g" customClass="LHLLoginField">
                             <rect key="frame" x="5" y="0.0" width="256" height="46"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="设置密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-gp-JFD" customClass="LHLLoginField">
+                            <rect key="frame" x="5" y="46" width="256" height="46"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="hnA-ED-L0g" secondAttribute="trailing" constant="5" id="BGR-vv-NN7"/>
+                        <constraint firstItem="Cqd-gp-JFD" firstAttribute="height" secondItem="hnA-ED-L0g" secondAttribute="height" id="Bl4-eA-pXk"/>
+                        <constraint firstItem="Cqd-gp-JFD" firstAttribute="width" secondItem="hnA-ED-L0g" secondAttribute="width" id="Cbz-5Q-s7A"/>
                         <constraint firstAttribute="height" constant="92" id="G9I-xf-oMz"/>
                         <constraint firstAttribute="width" constant="266" id="HiE-W6-52b"/>
+                        <constraint firstItem="Cqd-gp-JFD" firstAttribute="top" secondItem="hnA-ED-L0g" secondAttribute="bottom" id="R0V-LJ-QsT"/>
                         <constraint firstItem="MWw-f6-NLb" firstAttribute="top" secondItem="cV1-jA-Z7U" secondAttribute="top" id="Xi0-eW-H4D"/>
                         <constraint firstAttribute="trailing" secondItem="MWw-f6-NLb" secondAttribute="trailing" id="YM8-Gk-72t"/>
                         <constraint firstItem="hnA-ED-L0g" firstAttribute="leading" secondItem="cV1-jA-Z7U" secondAttribute="leading" constant="5" id="cRm-Fb-1Vd"/>
                         <constraint firstItem="MWw-f6-NLb" firstAttribute="leading" secondItem="cV1-jA-Z7U" secondAttribute="leading" id="mlR-9j-4BZ"/>
+                        <constraint firstItem="Cqd-gp-JFD" firstAttribute="leading" secondItem="hnA-ED-L0g" secondAttribute="leading" id="pAk-xm-RND"/>
                         <constraint firstAttribute="bottom" secondItem="MWw-f6-NLb" secondAttribute="bottom" id="uGx-p6-tdE"/>
                         <constraint firstItem="hnA-ED-L0g" firstAttribute="height" secondItem="MWw-f6-NLb" secondAttribute="height" multiplier="0.5" id="vBs-KJ-39U"/>
                         <constraint firstItem="hnA-ED-L0g" firstAttribute="top" secondItem="cV1-jA-Z7U" secondAttribute="top" id="zF6-m4-YsM"/>
                     </constraints>
                 </view>
-                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6A-vg-EgB">
-                    <rect key="frame" x="54" y="127" width="266" height="45"/>
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6A-vg-EgB">
+                    <rect key="frame" x="54" y="132" width="266" height="35"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="F7Z-NT-TNN"/>
                         <constraint firstAttribute="width" constant="266" id="vg2-Pd-tNp"/>
                     </constraints>
                     <state key="normal" title="注册" backgroundImage="loginBtnBg"/>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="设置密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-gp-JFD">
-                    <rect key="frame" x="59" y="66" width="256" height="46"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
