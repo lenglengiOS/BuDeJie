@@ -33,11 +33,40 @@
     _item = item;
     _nameLabel.text = item.theme_name;
     
-//    NSString *numStr = item.sub_number;
-    
-    NSInteger num = item.sub_number.integerValue;
-    if (num > 10000) {
+    // 数字显示
+    [self resolveNum];
+   
+    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:_item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        /*
+        // 开启图形上下文
+        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
+        
+        // 设置路径
+        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
+        
+        // 绘制路径
+        [path addClip];
+        
+        // 绘制图片
+        [image drawAtPoint:CGPointZero];
+        
+        // 生成图片
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        
+        // 关闭上下文
+        UIGraphicsEndImageContext();
+        
+        _iconImageView.image = newImage;
+        */
+        
+    }];
+}
 
+// 数字显示
+- (void)resolveNum{
+    NSInteger num = _item.sub_number.integerValue;
+    if (num > 10000) {
+        
         CGFloat numF = num / 10000.0;
         _numLabel.text = [NSString stringWithFormat:@"%.1f万人订阅", numF];
         _numLabel.text = [_numLabel.text stringByReplacingOccurrencesOfString:@"0." withString:@""];
@@ -45,15 +74,14 @@
     }else{
         _numLabel.text = [NSString stringWithFormat:@"%ld人订阅", (long)num];
     }
- 
     
     
-    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    
     
 }
 
 
-// 从xib加载一次酒会调用
+// 从xib加载一次就会调用
 - (void)awakeFromNib {
 
     // 圆角头像
