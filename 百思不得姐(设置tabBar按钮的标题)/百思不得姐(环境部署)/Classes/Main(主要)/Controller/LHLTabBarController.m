@@ -77,18 +77,15 @@
     LHLNavigationViewController *nav1 = [[LHLNavigationViewController alloc] initWithRootViewController:newVC];
     [self addChildViewController:nav1];
     
-//    // 3.发布
-//    LHLPublishViewController *publishVC = [[LHLPublishViewController alloc] init];
-//    [self addChildViewController:publishVC];
-    
-    
     // 4.关注
     LHLFriendTrendViewController *friendVC = [[LHLFriendTrendViewController alloc] init];
     LHLNavigationViewController *nav3 = [[LHLNavigationViewController alloc] initWithRootViewController:friendVC];
     [self addChildViewController:nav3];
     
     // 5.我
-    LHLMeTableViewController *meVC = [[LHLMeTableViewController alloc] init];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:NSStringFromClass([LHLMeTableViewController class]) bundle:nil];
+    // 加载箭头指向的控制器
+    LHLMeTableViewController *meVC = [storyBoard instantiateInitialViewController];
     LHLNavigationViewController *nav4 = [[LHLNavigationViewController alloc] initWithRootViewController:meVC];
     [self addChildViewController:nav4];
 }

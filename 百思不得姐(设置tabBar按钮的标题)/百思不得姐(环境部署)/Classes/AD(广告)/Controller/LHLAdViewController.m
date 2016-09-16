@@ -78,13 +78,13 @@
 
     static int i = 3;
     
-    if (i == 1) {
+    if (i == 0) {
         
         [self jumpBtnClick:nil];
     }
     i--;
     // 按钮文字倒计时
-    [self.jumpBtn setTitle:[NSString stringWithFormat:@"跳过（%d）", i] forState:UIControlStateNormal];
+    [self.jumpBtn setTitle:[NSString stringWithFormat:@"  跳过（%d）", i] forState:UIControlStateNormal];
     
 }
 - (IBAction)jumpBtnClick:(id)sender {

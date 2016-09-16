@@ -7,6 +7,7 @@
 //
 
 #import "LHLLoginField.h"
+#import "UITextField+placeholder.h"
 
 @implementation LHLLoginField
 
@@ -25,28 +26,18 @@
     // 结束编辑
     [self addTarget:self action:@selector(textEnd) forControlEvents:UIControlEventEditingDidEnd];
     
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
-    
-//    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
+    self.placeholderColor = [UIColor lightGrayColor];
 
-    
 }
 
 // 文本框开始调用
 - (void)textBegin{
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-    
-    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
+    self.placeholderColor = [UIColor whiteColor];
 }
 
 // 文本框结束调用
 - (void)textEnd{
-    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
-    
-    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attrs];
+    self.placeholderColor = [UIColor lightGrayColor];
 }
 
 
