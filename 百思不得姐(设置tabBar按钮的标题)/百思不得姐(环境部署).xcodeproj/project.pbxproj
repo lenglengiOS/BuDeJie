@@ -24,6 +24,8 @@
 		84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */; };
 		84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */; };
 		84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */; };
+		84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBF1D8BB6CD00AB0DDF /* LHLLoginRegisterView.m */; };
+		84BE4EC21D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EC11D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
 		84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2361A1D879B72005BBCE9 /* LaunchScreen.storyboard */; };
@@ -81,6 +83,9 @@
 		84BE4EB91D8BABE200AB0DDF /* LHLLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterController.h; sourceTree = "<group>"; };
 		84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterController.m; sourceTree = "<group>"; };
 		84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLLoginRegisterController.xib; sourceTree = "<group>"; };
+		84BE4EBE1D8BB6CD00AB0DDF /* LHLLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterView.h; sourceTree = "<group>"; };
+		84BE4EBF1D8BB6CD00AB0DDF /* LHLLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterView.m; sourceTree = "<group>"; };
+		84BE4EC11D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLLoginRegisterView.xib; sourceTree = "<group>"; };
 		84D236091D879B71005BBCE9 /* 百思不得姐(环境部署).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐(环境部署).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D236161D879B72005BBCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D236181D879B72005BBCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -363,6 +368,9 @@
 		84D236391D87BBA9005BBCE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84BE4EBE1D8BB6CD00AB0DDF /* LHLLoginRegisterView.h */,
+				84BE4EBF1D8BB6CD00AB0DDF /* LHLLoginRegisterView.m */,
+				84BE4EC11D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -630,6 +638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				846E06441D8A618000321D94 /* LHLAdViewController.xib in Resources */,
+				84BE4EC21D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib in Resources */,
 				846E06511D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */,
 				846E06531D8A641300321D94 /* LaunchImage@2x.png in Resources */,
@@ -716,6 +725,7 @@
 				84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */,
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
+				84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */,
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
 				84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */,
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,

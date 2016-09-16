@@ -3,10 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHLLoginRegisterController">
             <connections>
+                <outlet property="leadConst" destination="Yq2-mB-I7R" id="jK8-mG-8rL"/>
+                <outlet property="loadRegisterView" destination="fKw-du-Ynj" id="N47-pA-CMG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,9 +65,9 @@
                         <constraint firstAttribute="height" constant="200" id="laK-OO-8k8"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKw-du-Ynj">
-                    <rect key="frame" x="0.0" y="95" width="375" height="300"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKw-du-Ynj" userLabel="MiddleView">
+                    <rect key="frame" x="0.0" y="95" width="750" height="300"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="A7u-H0-iZ0"/>
                     </constraints>
@@ -77,16 +80,17 @@
                 <constraint firstItem="GES-OT-ZxZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B2S-rA-J6M"/>
                 <constraint firstAttribute="bottom" secondItem="Rhi-7c-8Km" secondAttribute="bottom" id="Fqw-4u-VLw"/>
                 <constraint firstItem="GES-OT-ZxZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Kap-or-lZr"/>
-                <constraint firstAttribute="trailing" secondItem="fKw-du-Ynj" secondAttribute="trailing" id="RHJ-46-spA"/>
                 <constraint firstItem="QdY-1u-Hq5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vla-pn-pdU"/>
                 <constraint firstAttribute="bottom" secondItem="QdY-1u-Hq5" secondAttribute="bottom" constant="20" id="XUv-59-8Up"/>
                 <constraint firstItem="fKw-du-Ynj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yq2-mB-I7R"/>
                 <constraint firstItem="Rhi-7c-8Km" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="anC-lf-cmD"/>
                 <constraint firstAttribute="trailing" secondItem="GES-OT-ZxZ" secondAttribute="trailing" id="gHD-Hm-3ny"/>
                 <constraint firstAttribute="trailing" secondItem="QdY-1u-Hq5" secondAttribute="trailing" id="n0o-Pa-Tbc"/>
+                <constraint firstItem="fKw-du-Ynj" firstAttribute="width" secondItem="Rhi-7c-8Km" secondAttribute="width" multiplier="2" id="opA-Rj-7U9"/>
                 <constraint firstItem="Rhi-7c-8Km" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yX2-N2-kwH"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="126.5" y="207.5"/>
         </view>
     </objects>
     <resources>

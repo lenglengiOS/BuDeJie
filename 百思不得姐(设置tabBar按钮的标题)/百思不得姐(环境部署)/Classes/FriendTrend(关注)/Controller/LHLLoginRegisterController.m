@@ -7,8 +7,14 @@
 //
 
 #import "LHLLoginRegisterController.h"
+#import "LHLLoginRegisterView.h"
 
 @interface LHLLoginRegisterController ()
+@property (weak, nonatomic) IBOutlet UIView *loadRegisterView;
+/**
+ *  左边的约束
+ */
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadConst;
 
 @end
 
@@ -24,11 +30,37 @@
 - (IBAction)clickRegisterBtn:(UIButton *)sender {
     
     sender.selected = !sender.selected;
+    _leadConst.constant = _leadConst.constant == 0?-_loadRegisterView.frame.size.width * 0.5:0;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // 从xib加载完视图后，需要重新设置一下尺寸，但不是在viewDidLoad中，而是在viewDidLayoutSubviews去布局子控件
+
+    LHLLoginRegisterView *loginVC = [LHLLoginRegisterView loadView];
+    
+    [self.loadRegisterView addSubview:loginVC];
+    
+    LHLLoginRegisterView *registerVc = [LHLLoginRegisterView registerView];
+    
+    [self.loadRegisterView addSubview:registerVc];
+    
+    
+}
+
+// 在这里布局子控件
+- (void)viewDidLayoutSubviews{
+    LHLLoginRegisterView *loginVC = self.loadRegisterView.subviews[0];
+    loginVC.frame = CGRectMake(0, 0, self.loadRegisterView.lhl_width * 0.5, self.loadRegisterView.lhl_height);
+    
+    LHLLoginRegisterView *registerVc = self.loadRegisterView.subviews[1];
+    registerVc.frame = CGRectMake(self.loadRegisterView.lhl_width * 0.5, 0, self.loadRegisterView.lhl_width * 0.5, self.loadRegisterView.lhl_height);
 }
 
 - (void)didReceiveMemoryWarning {
