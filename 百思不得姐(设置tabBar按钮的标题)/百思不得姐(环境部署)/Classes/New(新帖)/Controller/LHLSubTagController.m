@@ -54,6 +54,10 @@ static NSString * const ID = @"cell";
     [self.tableView registerNib:[UINib nibWithNibName:@"LHLSubTagCell" bundle:nil] forCellReuseIdentifier:ID];
     
     self.title = @"推荐标签";
+    
+    
+    // 处理分割线，清空tableView的内边距，清空cell的约束边缘
+    self.tableView.separatorInset = UIEdgeInsetsZero;
 
     
 }
@@ -67,6 +71,8 @@ static NSString * const ID = @"cell";
     
     // 自定义cell
     LHLSubTagCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    
     
     // 取出模型
     LHLSubTagItem *item = self.subTags[indexPath.row];

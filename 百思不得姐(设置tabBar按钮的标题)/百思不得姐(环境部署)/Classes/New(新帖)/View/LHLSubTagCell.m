@@ -21,12 +21,6 @@
 
 @implementation LHLSubTagCell
 
-/*
- @property (nonatomic, strong) NSString *image_list;
- @property (nonatomic, strong) NSString *sub_number;
- @property (nonatomic, strong) NSString *theme_name;
- 
- */
 
 - (void)setItem:(LHLSubTagItem *)item{
     
@@ -87,6 +81,8 @@
     // 圆角头像
     _iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width * 0.5;
     _iconImageView.layer.masksToBounds = YES;
+    // 设置分割线
+    self.layoutMargins = UIEdgeInsetsZero;
     
 }
 
