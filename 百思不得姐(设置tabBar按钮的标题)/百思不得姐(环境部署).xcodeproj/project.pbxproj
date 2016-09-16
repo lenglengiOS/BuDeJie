@@ -26,6 +26,9 @@
 		84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */; };
 		84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBF1D8BB6CD00AB0DDF /* LHLLoginRegisterView.m */; };
 		84BE4EC21D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EC11D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib */; };
+		84BE4EC51D8BD84C00AB0DDF /* LHLFastLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EC41D8BD84C00AB0DDF /* LHLFastLoginView.m */; };
+		84BE4EC71D8BD85900AB0DDF /* LHLFastLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EC61D8BD85900AB0DDF /* LHLFastLoginView.xib */; };
+		84BE4ECA1D8BDFA300AB0DDF /* LHLFastButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EC91D8BDFA300AB0DDF /* LHLFastButton.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
 		84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2361A1D879B72005BBCE9 /* LaunchScreen.storyboard */; };
@@ -86,6 +89,11 @@
 		84BE4EBE1D8BB6CD00AB0DDF /* LHLLoginRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterView.h; sourceTree = "<group>"; };
 		84BE4EBF1D8BB6CD00AB0DDF /* LHLLoginRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterView.m; sourceTree = "<group>"; };
 		84BE4EC11D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLLoginRegisterView.xib; sourceTree = "<group>"; };
+		84BE4EC31D8BD84C00AB0DDF /* LHLFastLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLFastLoginView.h; sourceTree = "<group>"; };
+		84BE4EC41D8BD84C00AB0DDF /* LHLFastLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLFastLoginView.m; sourceTree = "<group>"; };
+		84BE4EC61D8BD85900AB0DDF /* LHLFastLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLFastLoginView.xib; sourceTree = "<group>"; };
+		84BE4EC81D8BDFA300AB0DDF /* LHLFastButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLFastButton.h; sourceTree = "<group>"; };
+		84BE4EC91D8BDFA300AB0DDF /* LHLFastButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLFastButton.m; sourceTree = "<group>"; };
 		84D236091D879B71005BBCE9 /* 百思不得姐(环境部署).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐(环境部署).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D236161D879B72005BBCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D236181D879B72005BBCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -371,6 +379,11 @@
 				84BE4EBE1D8BB6CD00AB0DDF /* LHLLoginRegisterView.h */,
 				84BE4EBF1D8BB6CD00AB0DDF /* LHLLoginRegisterView.m */,
 				84BE4EC11D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib */,
+				84BE4EC31D8BD84C00AB0DDF /* LHLFastLoginView.h */,
+				84BE4EC41D8BD84C00AB0DDF /* LHLFastLoginView.m */,
+				84BE4EC61D8BD85900AB0DDF /* LHLFastLoginView.xib */,
+				84BE4EC81D8BDFA300AB0DDF /* LHLFastButton.h */,
+				84BE4EC91D8BDFA300AB0DDF /* LHLFastButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -644,6 +657,7 @@
 				846E06531D8A641300321D94 /* LaunchImage@2x.png in Resources */,
 				846E064E1D8A641300321D94 /* LaunchImage-700-568h@2x.png in Resources */,
 				846E06501D8A641300321D94 /* LaunchImage-800-667h@2x.png in Resources */,
+				84BE4EC71D8BD85900AB0DDF /* LHLFastLoginView.xib in Resources */,
 				846E064D1D8A641300321D94 /* LaunchImage-568h@2x.png in Resources */,
 				846E06521D8A641300321D94 /* LaunchImage.png in Resources */,
 				84F803D01D8AD6FD0017CCC7 /* LHLSubTagCell.xib in Resources */,
@@ -722,6 +736,7 @@
 				849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */,
 				84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */,
 				84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */,
+				84BE4ECA1D8BDFA300AB0DDF /* LHLFastButton.m in Sources */,
 				84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */,
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
@@ -738,6 +753,7 @@
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
 				84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */,
 				846E062D1D8A29AE00321D94 /* LHLNavigationViewController.m in Sources */,
+				84BE4EC51D8BD84C00AB0DDF /* LHLFastLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

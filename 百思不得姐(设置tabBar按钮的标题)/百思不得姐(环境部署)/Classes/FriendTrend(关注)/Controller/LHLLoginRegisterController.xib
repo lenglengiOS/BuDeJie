@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHLLoginRegisterController">
             <connections>
+                <outlet property="bottomView" destination="QdY-1u-Hq5" id="eje-W4-vj2"/>
                 <outlet property="leadConst" destination="Yq2-mB-I7R" id="jK8-mG-8rL"/>
                 <outlet property="loadRegisterView" destination="fKw-du-Ynj" id="N47-pA-CMG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,10 +60,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-1u-Hq5">
-                    <rect key="frame" x="0.0" y="447" width="375" height="200"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="0.0" y="527" width="375" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="laK-OO-8k8"/>
+                        <constraint firstAttribute="height" constant="120" id="laK-OO-8k8"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKw-du-Ynj" userLabel="MiddleView">

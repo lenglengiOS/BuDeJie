@@ -8,13 +8,19 @@
 
 #import "LHLLoginRegisterController.h"
 #import "LHLLoginRegisterView.h"
+#import "LHLFastLoginView.h"
 
 @interface LHLLoginRegisterController ()
+
+// 中间视图
 @property (weak, nonatomic) IBOutlet UIView *loadRegisterView;
 /**
  *  左边的约束
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadConst;
+
+// 底部视图
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @end
 
@@ -43,6 +49,7 @@
     
     // 从xib加载完视图后，需要重新设置一下尺寸，但不是在viewDidLoad中，而是在viewDidLayoutSubviews去布局子控件
 
+    // 加载中间视图
     LHLLoginRegisterView *loginVC = [LHLLoginRegisterView loadView];
     
     [self.loadRegisterView addSubview:loginVC];
@@ -50,6 +57,10 @@
     LHLLoginRegisterView *registerVc = [LHLLoginRegisterView registerView];
     
     [self.loadRegisterView addSubview:registerVc];
+    
+    // 加载底部视图
+    LHLFastLoginView *fastView = [LHLFastLoginView fastLoginView];
+    [self.bottomView addSubview:fastView];
     
     
 }
@@ -61,6 +72,10 @@
     
     LHLLoginRegisterView *registerVc = self.loadRegisterView.subviews[1];
     registerVc.frame = CGRectMake(self.loadRegisterView.lhl_width * 0.5, 0, self.loadRegisterView.lhl_width * 0.5, self.loadRegisterView.lhl_height);
+    LHLFastLoginView *fastView = self.bottomView.subviews[0];
+    fastView.frame = self.bottomView.bounds;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

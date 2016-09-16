@@ -62,6 +62,27 @@
     self.frame = rect;
 }
 
+- (CGFloat)lhl_centerX{
+    return self.center.x;
+}
+- (void)setLhl_centerX:(CGFloat)lhl_centerX{
+    CGPoint center = self.center;
+    center.x = lhl_centerX;
+    self.center = center;
+    
+}
+- (CGFloat)lhl_centerY{
+    return self.center.y;
+}
+
+- (void)setLhl_centerY:(CGFloat)lhl_centerY{
+    CGPoint center = self.center;
+    center.y = lhl_centerY;
+    self.center = center;
+}
+
+
+
 @end
 
 

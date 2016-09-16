@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LHLFastLoginView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqG-v7-Pnp" customClass="LHLFastButton">
+                    <rect key="frame" x="0.0" y="20" width="125" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="G6I-1f-Dhh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="QQ登录" image="login_QQ_icon"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvk-2S-voA" customClass="LHLFastButton">
+                    <rect key="frame" x="250" y="20" width="125" height="100"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="腾讯微博" image="login_tecent_icon"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快速登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOO-CF-cL0">
+                    <rect key="frame" x="156" y="0.0" width="64" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="d9l-Z7-PPp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_left_line" translatesAutoresizingMaskIntoConstraints="NO" id="tuk-nO-2HV">
+                    <rect key="frame" x="0.0" y="0.0" width="156" height="20"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_register_right_line" translatesAutoresizingMaskIntoConstraints="NO" id="eI5-un-8mf">
+                    <rect key="frame" x="220" y="0.0" width="155" height="20"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0n-xy-rTW" customClass="LHLFastButton">
+                    <rect key="frame" x="125" y="20" width="125" height="100"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="微博登录" image="login_sina_icon"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tuk-nO-2HV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="02u-s5-AgK"/>
+                <constraint firstItem="HOO-CF-cL0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2W2-Ei-wns"/>
+                <constraint firstItem="R0n-xy-rTW" firstAttribute="top" secondItem="tuk-nO-2HV" secondAttribute="bottom" id="2uW-L8-PhX"/>
+                <constraint firstAttribute="bottom" secondItem="R0n-xy-rTW" secondAttribute="bottom" id="7ex-R8-arw"/>
+                <constraint firstItem="tuk-nO-2HV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="84t-fQ-CYt"/>
+                <constraint firstItem="R0n-xy-rTW" firstAttribute="height" secondItem="iqG-v7-Pnp" secondAttribute="height" id="BQx-4f-at9"/>
+                <constraint firstItem="HOO-CF-cL0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JDy-Xa-sfe"/>
+                <constraint firstItem="R0n-xy-rTW" firstAttribute="width" secondItem="iqG-v7-Pnp" secondAttribute="width" id="RSo-iB-FyI"/>
+                <constraint firstAttribute="trailing" secondItem="eI5-un-8mf" secondAttribute="trailing" id="c2y-LP-tZV"/>
+                <constraint firstItem="eI5-un-8mf" firstAttribute="leading" secondItem="HOO-CF-cL0" secondAttribute="trailing" id="eID-vW-jzl"/>
+                <constraint firstItem="Uvk-2S-voA" firstAttribute="height" secondItem="R0n-xy-rTW" secondAttribute="height" id="fYP-dr-4bg"/>
+                <constraint firstItem="Uvk-2S-voA" firstAttribute="width" secondItem="R0n-xy-rTW" secondAttribute="width" id="fdF-Vq-3jG"/>
+                <constraint firstAttribute="bottom" secondItem="Uvk-2S-voA" secondAttribute="bottom" id="fdn-gB-0XE"/>
+                <constraint firstItem="iqG-v7-Pnp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gi8-wC-8h1"/>
+                <constraint firstItem="Uvk-2S-voA" firstAttribute="leading" secondItem="R0n-xy-rTW" secondAttribute="trailing" id="hQ1-EY-3FP"/>
+                <constraint firstItem="Uvk-2S-voA" firstAttribute="top" secondItem="eI5-un-8mf" secondAttribute="bottom" id="kF1-rP-0CB"/>
+                <constraint firstItem="R0n-xy-rTW" firstAttribute="leading" secondItem="iqG-v7-Pnp" secondAttribute="trailing" id="luI-L9-Z3q"/>
+                <constraint firstItem="eI5-un-8mf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="p09-Ah-nrN"/>
+                <constraint firstAttribute="bottom" secondItem="iqG-v7-Pnp" secondAttribute="bottom" id="rO9-xY-yPh"/>
+                <constraint firstItem="HOO-CF-cL0" firstAttribute="leading" secondItem="tuk-nO-2HV" secondAttribute="trailing" id="v8X-tb-O8h"/>
+                <constraint firstAttribute="trailing" secondItem="Uvk-2S-voA" secondAttribute="trailing" id="yQX-UR-9mp"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="279.5" y="148"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="login_QQ_icon" width="70" height="70"/>
+        <image name="login_register_left_line" width="103" height="1"/>
+        <image name="login_register_right_line" width="103" height="1"/>
+        <image name="login_sina_icon" width="70" height="70"/>
+        <image name="login_tecent_icon" width="70" height="70"/>
+    </resources>
+</document>

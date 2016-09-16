@@ -15,5 +15,7 @@
 @property CGFloat lhl_height;
 @property CGFloat lhl_x;
 @property CGFloat lhl_y;
+@property CGFloat lhl_centerX;
+@property CGFloat lhl_centerY;
 
 @end
