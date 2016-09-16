@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class LHLSquarItem;
 @interface LHLSquareCell : UICollectionViewCell
+
+@property (nonatomic, strong) LHLSquarItem *item;
 
 @end

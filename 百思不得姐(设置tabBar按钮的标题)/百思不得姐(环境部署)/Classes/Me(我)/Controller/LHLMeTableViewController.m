@@ -9,9 +9,16 @@
 #import "LHLMeTableViewController.h"
 #import "LHLSettingViewController.h"
 #import "LHLSquareCell.h"
+#import <AFNetworking/AFNetworking.h>
+#import "LHLSquarItem.h"
+#import <MJExtension/MJExtension.h>
+
 static NSString * const ID = @"cell";
 
 @interface LHLMeTableViewController ()<UICollectionViewDataSource>
+
+@property (nonatomic, strong) NSArray *squareItems;
+@property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
 
@@ -23,6 +30,31 @@ static NSString * const ID = @"cell";
     [self setUpNavBar];
     
     [self setUpFootView];
+    
+    [self reloadData];
+    
+}
+
+// 加载数据
+- (void)reloadData{
+    // 请求数据
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"square";
+    parameters[@"c"] = @"topic";
+    
+    
+    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nonnull responseObject) {
+        
+        NSArray *dataArr = responseObject[@"square_list"];
+        self.squareItems = [LHLSquarItem mj_objectArrayWithKeyValuesArray:dataArr];
+        
+        // 刷新数据！！！！！！！！！！！！！！！！！！！！！！！！
+        [self.collectionView reloadData];
+  
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
     
 }
 
@@ -39,6 +71,7 @@ static NSString * const ID = @"cell";
     layout.minimumLineSpacing = margin;
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, 0, 300) collectionViewLayout:layout];
+    _collectionView = collectionView;
     
     collectionView.backgroundColor = self.tableView.backgroundColor;
     
@@ -56,14 +89,18 @@ static NSString * const ID = @"cell";
 #pragma mark - UICollectionView
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     
-    return 20;
+    return self.squareItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     // 从缓存池取
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
+    LHLSquareCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    LHLSquarItem *item = self.squareItems[indexPath.item];
+    
+    LHLLog(@"%p", cell);
+    
+    cell.item = item;
     
     return cell;
     

@@ -7,11 +7,28 @@
 //
 
 #import "LHLSquareCell.h"
+#import "UIImageView+WebCache.h"
+#import "LHLSquarItem.h"
+
+
+@interface LHLSquareCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *nameView;
+
+@end
 
 @implementation LHLSquareCell
 
 - (void)awakeFromNib {
     // Initialization code
+}
+
+- (void)setItem:(LHLSquarItem *)item{
+    
+    _item = item;
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:item.icon]];
+    self.nameView.text = item.name;
+    
 }
 
 @end

@@ -34,6 +34,7 @@
 		84C558A51D8C2778000E0F0B /* LHLMeTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C558A41D8C2778000E0F0B /* LHLMeTableViewController.storyboard */; };
 		84C558A91D8C3292000E0F0B /* LHLSquareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C558A71D8C3292000E0F0B /* LHLSquareCell.m */; };
 		84C558AA1D8C3292000E0F0B /* LHLSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C558A81D8C3292000E0F0B /* LHLSquareCell.xib */; };
+		84C558AD1D8C40DD000E0F0B /* LHLSquarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C558AC1D8C40DD000E0F0B /* LHLSquarItem.m */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
 		84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2361A1D879B72005BBCE9 /* LaunchScreen.storyboard */; };
@@ -107,6 +108,8 @@
 		84C558A61D8C3292000E0F0B /* LHLSquareCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSquareCell.h; sourceTree = "<group>"; };
 		84C558A71D8C3292000E0F0B /* LHLSquareCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSquareCell.m; sourceTree = "<group>"; };
 		84C558A81D8C3292000E0F0B /* LHLSquareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLSquareCell.xib; sourceTree = "<group>"; };
+		84C558AB1D8C40DD000E0F0B /* LHLSquarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSquarItem.h; sourceTree = "<group>"; };
+		84C558AC1D8C40DD000E0F0B /* LHLSquarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSquarItem.m; sourceTree = "<group>"; };
 		84D236091D879B71005BBCE9 /* 百思不得姐(环境部署).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐(环境部署).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D236161D879B72005BBCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D236181D879B72005BBCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -426,6 +429,8 @@
 		84D2363C1D87BBA9005BBCE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84C558AB1D8C40DD000E0F0B /* LHLSquarItem.h */,
+				84C558AC1D8C40DD000E0F0B /* LHLSquarItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -769,6 +774,7 @@
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
 				846E06431D8A618000321D94 /* LHLAdViewController.m in Sources */,
 				846E063F1D8A614D00321D94 /* LHLSettingViewController.m in Sources */,
+				84C558AD1D8C40DD000E0F0B /* LHLSquarItem.m in Sources */,
 				84C558A91D8C3292000E0F0B /* LHLSquareCell.m in Sources */,
 				8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
