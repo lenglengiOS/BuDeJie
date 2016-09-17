@@ -23,6 +23,7 @@
 		847A48DE1D8CF4C4002AE6BA /* LHLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847A48DC1D8CF4C4002AE6BA /* LHLWebViewController.xib */; };
 		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
+		84A8DEE21D8D3D4A005A5F6B /* LHLFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */; };
 		84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */; };
 		84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */; };
 		84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */; };
@@ -93,6 +94,8 @@
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		84A8DEE01D8D3D4A005A5F6B /* LHLFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLFileTool.h; sourceTree = "<group>"; };
+		84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLFileTool.m; sourceTree = "<group>"; };
 		84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLFriendTrendViewController.xib; sourceTree = "<group>"; };
 		84BE4EB91D8BABE200AB0DDF /* LHLLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterController.h; sourceTree = "<group>"; };
 		84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterController.m; sourceTree = "<group>"; };
@@ -265,6 +268,23 @@
 			path = "启动图片";
 			sourceTree = "<group>";
 		};
+		84A8DEDE1D8D3D36005A5F6B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84A8DEDF1D8D3D36005A5F6B /* FileTool */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		84A8DEDF1D8D3D36005A5F6B /* FileTool */ = {
+			isa = PBXGroup;
+			children = (
+				84A8DEE01D8D3D4A005A5F6B /* LHLFileTool.h */,
+				84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */,
+			);
+			path = FileTool;
+			sourceTree = "<group>";
+		};
 		84D236001D879B71005BBCE9 = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +338,7 @@
 		84D236311D87BBA9005BBCE9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				84A8DEDE1D8D3D36005A5F6B /* Tool */,
 				846E06351D8A613100321D94 /* AD(广告) */,
 				846E06391D8A614D00321D94 /* Setting(设置) */,
 				84D2365B1D87CC98005BBCE9 /* Main(主要) */,
@@ -780,6 +801,7 @@
 				84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */,
 				847A48DD1D8CF4C4002AE6BA /* LHLWebViewController.m in Sources */,
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
+				84A8DEE21D8D3D4A005A5F6B /* LHLFileTool.m in Sources */,
 				84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */,
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
 				846E06431D8A618000321D94 /* LHLAdViewController.m in Sources */,
