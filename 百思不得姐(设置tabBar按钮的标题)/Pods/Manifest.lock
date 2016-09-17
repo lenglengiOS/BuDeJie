@@ -1,0 +1,55 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Charts (2.1.6)
+  - FLKAutoLayout (0.2.1)
+  - MJExtension (3.0.13)
+  - ORStackView (3.0.1):
+    - FLKAutoLayout (~> 0.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.0.3)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.6)
+  - Charts (~> 2.1.6)
+  - MJExtension (~> 3.0.13)
+  - ORStackView (~> 3.0)
+  - SDWebImage (~> 3.8.2)
+  - SVProgressHUD (~> 2.0.3)
+  - SwiftyJSON (~> 2.3)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
+  FLKAutoLayout: 9db6b30c2008d230da608e62c607b11c23b942e6
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  ORStackView: a1bb52748cd0ae29891c140baf22ff8972fb363c
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: 1dd52fe0a3ffbb55db78c9de915e0e6071e8cacc
+
+COCOAPODS: 1.0.1
