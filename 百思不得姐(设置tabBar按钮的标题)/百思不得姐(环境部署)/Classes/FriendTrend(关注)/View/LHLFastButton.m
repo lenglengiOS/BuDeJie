@@ -20,8 +20,6 @@
     [self.titleLabel sizeToFit];
     
     self.titleLabel.lhl_centerX = self.lhl_width * 0.5;
-    
-    
 }
 
 

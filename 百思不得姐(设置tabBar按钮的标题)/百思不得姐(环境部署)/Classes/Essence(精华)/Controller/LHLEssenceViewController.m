@@ -11,9 +11,13 @@
 
 @interface LHLEssenceViewController ()
 
+@property (nonatomic, weak) UIView *titlesView;
+
 @end
 
 @implementation LHLEssenceViewController
+
+#pragma mark - 初始化
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,35 +32,8 @@
     
 }
 /**
- *  ScrollView
+ *  设置导航栏按钮
  */
-- (void)setUpScrollView{
-    
-    UIScrollView *scrollView = [[UIScrollView alloc] init];
-    scrollView.frame = self.view.bounds;
-    
-    scrollView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:scrollView];
-    
-    
-    
-}
-/**
- *  设置标题
- */
-- (void)setUpTitlesView{
-    
-    UIView *titlesView = [[UIView alloc] init];
-    titlesView.frame = CGRectMake(0, 64, self.view.lhl_width, 35);
-    
-    titlesView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
-    [self.view addSubview:titlesView];
-    
-
-}
-
-
-#pragma mark 设置导航栏按钮
 - (void)setUpNavBar{
     
     // 左边按钮
@@ -72,6 +49,72 @@
     
 }
 
+/**
+ *  ScrollView
+ */
+- (void)setUpScrollView{
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.frame = self.view.bounds;
+    
+    scrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:scrollView];
+    
+}
+/**
+ *  标题栏
+ */
+- (void)setUpTitlesView{
+    
+    UIView *titlesView = [[UIView alloc] init];
+    titlesView.frame = CGRectMake(0, 64, self.view.lhl_width, 35);
+    _titlesView = titlesView;
+    
+    // 设置标题栏透明色
+    titlesView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    [self.view addSubview:titlesView];
+    
+    [self setUpTitleButtons];
+    
+//    [self setUpUnderLines];
+    
+}
+
+#pragma mark - 监听
+
+- (void)setUpTitleButtons{
+    
+    NSArray *buttonLabels = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
+    NSInteger count = buttonLabels.count;
+    
+    CGFloat buttonW = self.titlesView.lhl_width / count;
+    CGFloat buttonH = self.titlesView.lhl_height;
+    
+    for(int i = 0; i < count; i++){
+        
+        UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        titleButton.frame = CGRectMake(i * buttonW, 0, buttonW, buttonH);
+        [titleButton setTitle:buttonLabels[i] forState:UIControlStateNormal];
+        [titleButton setBackgroundColor:LHLRandomColor];
+        // 监听
+        [titleButton addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.titlesView addSubview:titleButton];
+        
+    }
+
+    
+    
+    
+}
+
+- (void)titleBtnClick:(UIButton *)button{
+    
+
+
+}
+
+
 
 - (void)game{
 
@@ -80,14 +123,6 @@
 
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
