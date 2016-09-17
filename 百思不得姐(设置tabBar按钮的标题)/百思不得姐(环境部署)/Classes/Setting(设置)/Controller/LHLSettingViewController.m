@@ -9,6 +9,7 @@
 #import "LHLSettingViewController.h"
 #import "SDImageCache.h"
 #import "UIImageView+WebCache.h"
+#define CachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
 @interface LHLSettingViewController ()
 
@@ -36,30 +37,68 @@ static NSString * const ID = @"cell";
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSLog(@"www");
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     
-   cell.textLabel.text = @"清除缓存";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     
 //    NSInteger fileSize = [SDImageCache sharedImageCache].getSize;
 //    NSLog(@"%ld", fileSize);
-    
-    // 获取Cachaes路径
-    NSString *cachaePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-    
-    // 拼接default路径
-    NSString *defaultPath = [cachaePath stringByAppendingPathComponent:@"default"];
-    
-    [self getFileSize:defaultPath];
+   
+    cell.textLabel.text = [self sizeStr];
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
 
-- (void)getFileSize:(NSString *)directoryPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // 删除系统缓存
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    // 获取caches文件夹下所有文件，不包括子路径的子路径
+    NSArray *subPaths = [mgr contentsOfDirectoryAtPath:CachePath error:nil];
+    for (NSString *subPath in subPaths) {
+        
+         NSString *path = [CachePath stringByAppendingPathComponent:subPath];
+        [mgr removeItemAtPath:path error:nil];
+        
+    }
+    [self.tableView reloadData];
+    
+}
+
+
+// 计算缓存尺寸
+- (NSString *)sizeStr{
+    
+    // 获取Cachaes路径,缓存文件在achaes路径
+    NSString *cachePath = CachePath;
+    
+    NSInteger fileSize = [self getFileSize:cachePath];
+    
+    NSString *sizeStr = @"清除缓存";
+    
+    if (fileSize > 1000.0 * 1000.0) {
+        // MB
+        CGFloat size = fileSize / 1000.0 / 1000.0;
+        sizeStr = [NSString stringWithFormat:@"%@(%.1fMB)", sizeStr, size];
+        
+    }else if (fileSize > 1000.0){
+        // KB
+        CGFloat size = fileSize / 1000.0;
+        sizeStr = [NSString stringWithFormat:@"%@(%.1fKB)", sizeStr, size];
+    }else if (fileSize > 0){
+        // B
+        sizeStr = [NSString stringWithFormat:@"%@(%ldKB)", sizeStr, fileSize];
+    }
+    
+    return sizeStr;
+}
+
+// 计算文件的大小
+- (NSInteger)getFileSize:(NSString *)directoryPath{
     
     // 获取文件管理者
     NSFileManager *mgr = [NSFileManager defaultManager];
@@ -88,12 +127,10 @@ static NSString * const ID = @"cell";
         NSInteger fileSize = [attr fileSize];
         
         totalSize += fileSize;
+        
     }
     
-    LHLLog(@"%ld", totalSize);
-    
-    
-    
+    return totalSize;
 }
 
 @end
