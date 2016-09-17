@@ -22,6 +22,37 @@
     
     [self setUpNavBar];
     
+    [self setUpScrollView];
+    
+    [self setUpTitlesView];
+    
+}
+/**
+ *  ScrollView
+ */
+- (void)setUpScrollView{
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.frame = self.view.bounds;
+    
+    scrollView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:scrollView];
+    
+    
+    
+}
+/**
+ *  设置标题
+ */
+- (void)setUpTitlesView{
+    
+    UIView *titlesView = [[UIView alloc] init];
+    titlesView.frame = CGRectMake(0, 64, self.view.lhl_width, 35);
+    
+    titlesView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    [self.view addSubview:titlesView];
+    
+
 }
 
 
