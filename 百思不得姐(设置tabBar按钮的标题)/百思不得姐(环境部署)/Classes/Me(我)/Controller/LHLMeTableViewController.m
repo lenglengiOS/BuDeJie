@@ -14,10 +14,13 @@
 #import <MJExtension/MJExtension.h>
 
 static NSString * const ID = @"cell";
+static NSInteger cols = 4;
+static CGFloat margin = 1;
+#define cellWH (LHLScreenW - (cols - 1) * margin) / cols
 
 @interface LHLMeTableViewController ()<UICollectionViewDataSource>
 
-@property (nonatomic, strong) NSArray *squareItems;
+@property (nonatomic, strong) NSMutableArray *squareItems;
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
@@ -49,6 +52,14 @@ static NSString * const ID = @"cell";
         NSArray *dataArr = responseObject[@"square_list"];
         self.squareItems = [LHLSquarItem mj_objectArrayWithKeyValuesArray:dataArr];
         
+        // 设置collectionView高度
+        NSInteger rows = (self.squareItems.count - 1) / cols + 1; // 行数
+        _collectionView.lhl_height = cellWH * rows + 10;
+        
+        self.tableView.tableFooterView = self.collectionView;
+        
+        [self resolveData];
+        
         // 刷新数据！！！！！！！！！！！！！！！！！！！！！！！！
         [self.collectionView reloadData];
   
@@ -58,14 +69,31 @@ static NSString * const ID = @"cell";
     
 }
 
+#pragma mark - 处理数据 ，补齐
+- (void)resolveData{
+    
+    NSInteger count =  cols - self.squareItems.count % cols; // 每行差几个补齐
+    
+    if (count) {
+        for(int i = 0; i < count; i++){
+            
+            LHLSquarItem *item = [[LHLSquarItem alloc] init];
+            [self.squareItems addObject:item];
+            
+        }
+        
+    }
+    
+    
+    
+}
+
 // 设置footerView
 - (void)setUpFootView{
     // 1.设置流水布局
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
-    NSInteger cols = 4; // 4列
-    CGFloat margin = 1; // 间距
-    CGFloat cellWH = (LHLScreenW - (cols - 1) * margin) / cols; // cell的宽高
+   
     layout.itemSize = CGSizeMake(cellWH, cellWH);
     layout.minimumInteritemSpacing = margin;
     layout.minimumLineSpacing = margin;
@@ -74,14 +102,16 @@ static NSString * const ID = @"cell";
     _collectionView = collectionView;
     
     collectionView.backgroundColor = self.tableView.backgroundColor;
-    
+    collectionView.scrollEnabled = NO;
     collectionView.dataSource = self;
+    
     // 2.注册cell
     [collectionView registerNib:[UINib nibWithNibName:@"LHLSquareCell" bundle:nil] forCellWithReuseIdentifier:ID];
-    
+  
     // 3.自定义cell
-    
     self.tableView.tableFooterView = collectionView;
+    
+    
     
     
 }
@@ -97,8 +127,7 @@ static NSString * const ID = @"cell";
     // 从缓存池取
     LHLSquareCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     LHLSquarItem *item = self.squareItems[indexPath.item];
-    
-    LHLLog(@"%p", cell);
+    cell.backgroundColor = [UIColor whiteColor];
     
     cell.item = item;
     
