@@ -19,6 +19,8 @@
 		846E06511D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */; };
 		846E06521D8A641300321D94 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064B1D8A641300321D94 /* LaunchImage.png */; };
 		846E06531D8A641300321D94 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846E064C1D8A641300321D94 /* LaunchImage@2x.png */; };
+		847A48DD1D8CF4C4002AE6BA /* LHLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847A48DB1D8CF4C4002AE6BA /* LHLWebViewController.m */; };
+		847A48DE1D8CF4C4002AE6BA /* LHLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847A48DC1D8CF4C4002AE6BA /* LHLWebViewController.xib */; };
 		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */; };
@@ -83,6 +85,9 @@
 		846E064A1D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		846E064B1D8A641300321D94 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		846E064C1D8A641300321D94 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		847A48DA1D8CF4C4002AE6BA /* LHLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLWebViewController.h; sourceTree = "<group>"; };
+		847A48DB1D8CF4C4002AE6BA /* LHLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLWebViewController.m; sourceTree = "<group>"; };
+		847A48DC1D8CF4C4002AE6BA /* LHLWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLWebViewController.xib; sourceTree = "<group>"; };
 		8492A8931D8AB19400C73DF3 /* LHLAdItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLAdItem.h; sourceTree = "<group>"; };
 		8492A8941D8AB19400C73DF3 /* LHLAdItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLAdItem.m; sourceTree = "<group>"; };
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
@@ -422,6 +427,9 @@
 				84D236521D87BD8C005BBCE9 /* LHLMeTableViewController.h */,
 				84D236531D87BD8C005BBCE9 /* LHLMeTableViewController.m */,
 				84C558A41D8C2778000E0F0B /* LHLMeTableViewController.storyboard */,
+				847A48DA1D8CF4C4002AE6BA /* LHLWebViewController.h */,
+				847A48DB1D8CF4C4002AE6BA /* LHLWebViewController.m */,
+				847A48DC1D8CF4C4002AE6BA /* LHLWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -686,6 +694,7 @@
 				84BE4EC71D8BD85900AB0DDF /* LHLFastLoginView.xib in Resources */,
 				846E064D1D8A641300321D94 /* LaunchImage-568h@2x.png in Resources */,
 				846E06521D8A641300321D94 /* LaunchImage.png in Resources */,
+				847A48DE1D8CF4C4002AE6BA /* LHLWebViewController.xib in Resources */,
 				84F803D01D8AD6FD0017CCC7 /* LHLSubTagCell.xib in Resources */,
 				84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */,
 				846E064F1D8A641300321D94 /* LaunchImage-700@2x.png in Resources */,
@@ -769,6 +778,7 @@
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
 				84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */,
+				847A48DD1D8CF4C4002AE6BA /* LHLWebViewController.m in Sources */,
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
 				84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */,
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,

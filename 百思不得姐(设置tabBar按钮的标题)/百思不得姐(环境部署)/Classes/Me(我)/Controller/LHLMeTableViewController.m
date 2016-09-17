@@ -13,6 +13,7 @@
 #import "LHLSquarItem.h"
 #import <MJExtension/MJExtension.h>
 #import <SafariServices/SafariServices.h>
+#import "LHLWebViewController.h"
 
 static NSString * const ID = @"cell";
 static NSInteger cols = 4;
@@ -48,21 +49,31 @@ static CGFloat margin = 1;
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    /*
     LHLSquarItem *item = self.squareItems[indexPath.row];
     if (![item.url containsString:@"http"]) return;
     
     SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url]];
     safariVC.delegate = self;
     [self presentViewController:safariVC animated:YES completion:nil];
+    */
+    LHLSquarItem *item = self.squareItems[indexPath.row];
+    LHLWebViewController *webView = [[LHLWebViewController alloc]init];
+    webView.url = item.url;
+    if (![webView.url containsString:@"http"])return;
+    
+    [self.navigationController pushViewController:webView animated:YES];
+    
     
 }
 
 #pragma mark - SFSafariViewController
+/*
 - (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+ */
 
 
 // 加载数据
