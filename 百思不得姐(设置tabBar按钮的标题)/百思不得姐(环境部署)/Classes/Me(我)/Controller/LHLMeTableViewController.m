@@ -12,13 +12,14 @@
 #import <AFNetworking/AFNetworking.h>
 #import "LHLSquarItem.h"
 #import <MJExtension/MJExtension.h>
+#import <SafariServices/SafariServices.h>
 
 static NSString * const ID = @"cell";
 static NSInteger cols = 4;
 static CGFloat margin = 1;
 #define cellWH (LHLScreenW - (cols - 1) * margin) / cols
 
-@interface LHLMeTableViewController ()<UICollectionViewDataSource>
+@interface LHLMeTableViewController ()<UICollectionViewDataSource,UICollectionViewDelegate, SFSafariViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *squareItems;
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -36,7 +37,33 @@ static CGFloat margin = 1;
     
     [self reloadData];
     
+    // 处理cell间距，默认tableView有顶部间距和底部间距
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 10;
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
+    
+    self.collectionView.delegate = self;
+    
 }
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    LHLSquarItem *item = self.squareItems[indexPath.row];
+    if (![item.url containsString:@"http"]) return;
+    
+    SFSafariViewController *safariVC = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:item.url]];
+    safariVC.delegate = self;
+    [self presentViewController:safariVC animated:YES completion:nil];
+    
+}
+
+#pragma mark - SFSafariViewController
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 // 加载数据
 - (void)reloadData{

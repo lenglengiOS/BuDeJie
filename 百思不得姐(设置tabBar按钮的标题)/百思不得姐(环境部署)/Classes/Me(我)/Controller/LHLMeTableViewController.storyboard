@@ -9,7 +9,7 @@
         <scene sceneID="znt-zw-hvI">
             <objects>
                 <tableViewController id="ph6-pF-6rx" customClass="LHLMeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="10" id="3hS-Eh-Kev">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="3hS-Eh-Kev">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -42,7 +42,7 @@
                             <tableViewSection id="iQy-lS-hvn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FA4-uD-Q96" style="IBUITableViewCellStyleDefault" id="rFN-bL-jsJ">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="81" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rFN-bL-jsJ" id="lKg-Ub-pAk">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>

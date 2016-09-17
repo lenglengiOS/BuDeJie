@@ -51,7 +51,6 @@
 - (void)tap{
     
     // 跳转到safari
-    
     NSURL *url = [NSURL URLWithString:_item.ori_curl];
     UIApplication *app = [UIApplication sharedApplication];
     if ([app canOpenURL:url]) {
