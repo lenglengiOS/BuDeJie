@@ -84,10 +84,9 @@ static NSString * const ID = @"cell";
 
 
 
-// 计算缓存尺寸
+// 计算缓存尺寸显示格式 / MB / KB / B
 - (NSString *)sizeStr{
-    
-    
+
     NSString *sizeStr = @"清除缓存";
     
     if (_totalSize > 1000.0 * 1000.0) {

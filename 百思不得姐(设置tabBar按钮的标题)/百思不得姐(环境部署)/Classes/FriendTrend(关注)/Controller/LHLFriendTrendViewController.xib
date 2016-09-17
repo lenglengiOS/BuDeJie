@@ -28,11 +28,15 @@
 好友动态让你过把瘾儿～
 欧耶～～～！</string>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeX-Hc-1sr">
-                    <rect key="frame" x="79" y="392" width="218" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeX-Hc-1sr">
+                    <rect key="frame" x="79" y="403" width="218" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="218" id="CPN-dr-T68"/>
+                        <constraint firstAttribute="height" constant="30" id="ISp-kn-fxa"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <state key="normal" title="立即登录注册" backgroundImage="friendsTrend_login">
                         <color key="titleColor" red="1" green="0.2177635604" blue="0.17968454280000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,10 +51,12 @@
             </subviews>
             <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="XeX-Hc-1sr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8rl-w4-KFX"/>
                 <constraint firstItem="7Fh-k4-HvM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GO7-yU-4zl"/>
                 <constraint firstItem="7Fh-k4-HvM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O8u-cV-lEp"/>
                 <constraint firstItem="dKp-G6-TDE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ffa-7x-jnY"/>
                 <constraint firstItem="7Fh-k4-HvM" firstAttribute="top" secondItem="dKp-G6-TDE" secondAttribute="bottom" constant="30" id="n8l-or-pou"/>
+                <constraint firstItem="XeX-Hc-1sr" firstAttribute="top" secondItem="7Fh-k4-HvM" secondAttribute="bottom" constant="40" id="pp0-5L-hAH"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
         </view>

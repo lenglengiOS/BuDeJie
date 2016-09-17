@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LHLAdViewController.h"
+#import "LHLTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -22,9 +23,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     // 设置窗口的根控制器
-    LHLAdViewController *adVc = [[LHLAdViewController alloc] init];
-    self.window.rootViewController = adVc;
-    
+//    LHLAdViewController *adVc = [[LHLAdViewController alloc] init];
+//    self.window.rootViewController = adVc;
+    self.window.rootViewController = [[LHLTabBarController alloc] init];
     
     // 设置主窗口并显示出来
     [self.window makeKeyAndVisible];
