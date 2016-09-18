@@ -12,7 +12,9 @@
 @interface LHLEssenceViewController ()
 
 @property (nonatomic, weak) UIView *titlesView;
-@property (nonatomic, strong) LHLTitleButton *previousClickTitleBtn;
+@property (nonatomic, weak) LHLTitleButton *previousClickTitleBtn;
+/** 下划线 */
+@property (nonatomic, weak) UIView *titleUnderLine;
 
 @end
 
@@ -23,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor blueColor];
     
     [self setUpNavBar];
     
@@ -59,7 +61,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
     
-    scrollView.backgroundColor = [UIColor redColor];
+    scrollView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:scrollView];
     
 }
@@ -78,8 +80,33 @@
     
     [self setUpTitleButtons];
     
-//    [self setUpUnderLines];
+    [self setUpUnderLines];
     
+}
+/**
+ *  下划线
+ */
+- (void)setUpUnderLines{
+    
+    // 取出titlesView中的button
+    LHLTitleButton *firstTitleBtn = self.titlesView.subviews.firstObject;
+    
+    UIView *titleUnderLine = [[UIView alloc]init];
+    titleUnderLine.lhl_height = 2;
+    titleUnderLine.lhl_centerY = self.titlesView.lhl_height - titleUnderLine.lhl_height;
+    titleUnderLine.backgroundColor = [firstTitleBtn titleColorForState:UIControlStateSelected];
+    [self.titlesView addSubview:titleUnderLine];
+    _titleUnderLine = titleUnderLine;
+    
+    // 默认点击第一个按钮
+    [firstTitleBtn.titleLabel sizeToFit];
+    
+    // 处理下划线
+    self.titleUnderLine.lhl_width = firstTitleBtn.titleLabel.lhl_width + 10;
+    self.titleUnderLine.lhl_centerX = firstTitleBtn.lhl_centerX;
+
+
+ 
 }
 
 
@@ -102,9 +129,7 @@
 
         // 监听
         [titleButton addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [titleButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-        [titleButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-//        [titleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        
         
         [self.titlesView addSubview:titleButton];
         
@@ -120,7 +145,14 @@
     button.selected = YES;
     self.previousClickTitleBtn = button;
 
-    LHLFunc
+    // 处理下划线
+    [UIView animateWithDuration:0.25 animations:^{
+        
+        self.titleUnderLine.lhl_width = button.titleLabel.lhl_width + 10;
+        self.titleUnderLine.lhl_centerX = button.lhl_centerX;
+        
+    }];
+    
 }
 
 
