@@ -24,6 +24,7 @@
 		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
 		84A8DEE21D8D3D4A005A5F6B /* LHLFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */; };
+		84BDE8B41D8E29B6000CFE9F /* LHLTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE8B31D8E29B6000CFE9F /* LHLTitleButton.m */; };
 		84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */; };
 		84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */; };
 		84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */; };
@@ -96,6 +97,8 @@
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
 		84A8DEE01D8D3D4A005A5F6B /* LHLFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLFileTool.h; sourceTree = "<group>"; };
 		84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLFileTool.m; sourceTree = "<group>"; };
+		84BDE8B21D8E29B6000CFE9F /* LHLTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTitleButton.h; sourceTree = "<group>"; };
+		84BDE8B31D8E29B6000CFE9F /* LHLTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTitleButton.m; sourceTree = "<group>"; };
 		84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLFriendTrendViewController.xib; sourceTree = "<group>"; };
 		84BE4EB91D8BABE200AB0DDF /* LHLLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterController.h; sourceTree = "<group>"; };
 		84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterController.m; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 		84D236351D87BBA9005BBCE9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84BDE8B21D8E29B6000CFE9F /* LHLTitleButton.h */,
+				84BDE8B31D8E29B6000CFE9F /* LHLTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -790,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */,
+				84BDE8B41D8E29B6000CFE9F /* LHLTitleButton.m in Sources */,
 				84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */,
 				849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */,
 				84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */,

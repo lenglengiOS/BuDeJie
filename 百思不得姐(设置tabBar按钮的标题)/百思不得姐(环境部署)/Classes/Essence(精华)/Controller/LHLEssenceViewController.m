@@ -7,11 +7,12 @@
 //
 
 #import "LHLEssenceViewController.h"
-
+#import "LHLTitleButton.h"
 
 @interface LHLEssenceViewController ()
 
 @property (nonatomic, weak) UIView *titlesView;
+@property (nonatomic, strong) LHLTitleButton *previousClickTitleBtn;
 
 @end
 
@@ -31,6 +32,7 @@
     [self setUpTitlesView];
     
 }
+
 /**
  *  设置导航栏按钮
  */
@@ -80,8 +82,10 @@
     
 }
 
-#pragma mark - 监听
 
+/**
+ *  标题栏按钮
+ */
 - (void)setUpTitleButtons{
     
     NSArray *buttonLabels = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
@@ -92,26 +96,31 @@
     
     for(int i = 0; i < count; i++){
         
-        UIButton *titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        LHLTitleButton *titleButton = [LHLTitleButton buttonWithType:UIButtonTypeCustom];
         titleButton.frame = CGRectMake(i * buttonW, 0, buttonW, buttonH);
         [titleButton setTitle:buttonLabels[i] forState:UIControlStateNormal];
-        [titleButton setBackgroundColor:LHLRandomColor];
+
         // 监听
         [titleButton addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [titleButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [titleButton setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+//        [titleButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
         
         [self.titlesView addSubview:titleButton];
         
     }
-
-    
-    
     
 }
 
-- (void)titleBtnClick:(UIButton *)button{
+#pragma mark - 监听
+
+- (void)titleBtnClick:(LHLTitleButton *)button{
     
+    self.previousClickTitleBtn.selected = NO;
+    button.selected = YES;
+    self.previousClickTitleBtn = button;
 
-
+    LHLFunc
 }
 
 
