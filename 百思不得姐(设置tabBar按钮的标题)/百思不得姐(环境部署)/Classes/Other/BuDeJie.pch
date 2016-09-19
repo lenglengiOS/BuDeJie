@@ -9,6 +9,7 @@
 
 #import "UIView+frame.h"
 #import "UIBarButtonItem+item.h"
+#import "LHLConst.h"
 #define LHLFunc NSLog(@"%s", __func__);
 #define LHLColor(r,g,b) [UIColor colorWithRed:(r)/256.0 green:(g)/256.0 blue:(b)/256.0 alpha:1]
 #define LHLRandomColor LHLColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))

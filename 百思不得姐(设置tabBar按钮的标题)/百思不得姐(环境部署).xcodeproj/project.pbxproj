@@ -30,6 +30,7 @@
 		84BDE8BD1D8FE742000CFE9F /* LHLVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE8BC1D8FE742000CFE9F /* LHLVoiceViewController.m */; };
 		84BDE8C01D8FE75A000CFE9F /* LHLPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE8BF1D8FE75A000CFE9F /* LHLPictureViewController.m */; };
 		84BDE8C31D8FE766000CFE9F /* LHLWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE8C21D8FE766000CFE9F /* LHLWordViewController.m */; };
+		84BDE8C61D900DF9000CFE9F /* LHLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE8C51D900DF9000CFE9F /* LHLConst.m */; };
 		84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */; };
 		84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */; };
 		84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4EBB1D8BABE200AB0DDF /* LHLLoginRegisterController.xib */; };
@@ -114,6 +115,8 @@
 		84BDE8BF1D8FE75A000CFE9F /* LHLPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLPictureViewController.m; sourceTree = "<group>"; };
 		84BDE8C11D8FE766000CFE9F /* LHLWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLWordViewController.h; sourceTree = "<group>"; };
 		84BDE8C21D8FE766000CFE9F /* LHLWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLWordViewController.m; sourceTree = "<group>"; };
+		84BDE8C41D900DF9000CFE9F /* LHLConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLConst.h; sourceTree = "<group>"; };
+		84BDE8C51D900DF9000CFE9F /* LHLConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLConst.m; sourceTree = "<group>"; };
 		84BE4EB71D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLFriendTrendViewController.xib; sourceTree = "<group>"; };
 		84BE4EB91D8BABE200AB0DDF /* LHLLoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLoginRegisterController.h; sourceTree = "<group>"; };
 		84BE4EBA1D8BABE200AB0DDF /* LHLLoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLoginRegisterController.m; sourceTree = "<group>"; };
@@ -552,6 +555,8 @@
 				84D236431D87BBA9005BBCE9 /* AppDelegate.h */,
 				84D236441D87BBA9005BBCE9 /* AppDelegate.m */,
 				84D236451D87BBA9005BBCE9 /* main.m */,
+				84BDE8C41D900DF9000CFE9F /* LHLConst.h */,
+				84BDE8C51D900DF9000CFE9F /* LHLConst.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -827,6 +832,7 @@
 				84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */,
 				84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */,
 				84BE4ECA1D8BDFA300AB0DDF /* LHLFastButton.m in Sources */,
+				84BDE8C61D900DF9000CFE9F /* LHLConst.m in Sources */,
 				84D236611D87CDE4005BBCE9 /* LHLTabBarController.m in Sources */,
 				84D2364B1D87BBA9005BBCE9 /* main.m in Sources */,
 				84BDE8BA1D8FE72C000CFE9F /* LHLVideoViewController.m in Sources */,
