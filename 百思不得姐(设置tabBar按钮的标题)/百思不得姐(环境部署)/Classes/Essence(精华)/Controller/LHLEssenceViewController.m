@@ -8,6 +8,11 @@
 
 #import "LHLEssenceViewController.h"
 #import "LHLTitleButton.h"
+#import "LHLAllViewController.h"
+#import "LHLVideoViewController.h"
+#import "LHLVoiceViewController.h"
+#import "LHLPictureViewController.h"
+#import "LHLWordViewController.h"
 
 @interface LHLEssenceViewController ()
 
@@ -15,6 +20,8 @@
 @property (nonatomic, weak) LHLTitleButton *previousClickTitleBtn;
 /** 下划线 */
 @property (nonatomic, weak) UIView *titleUnderLine;
+/** scrollView */
+@property (nonatomic, weak) UIScrollView *scrollView;
 
 @end
 
@@ -27,11 +34,33 @@
 
     self.view.backgroundColor = [UIColor blueColor];
     
+    [self setUpChildVcs];
+    
     [self setUpNavBar];
     
     [self setUpScrollView];
     
     [self setUpTitlesView];
+    
+}
+
+/**
+ *  设置子控制器
+ */
+- (void)setUpChildVcs{
+    
+    LHLAllViewController *allVC = [[LHLAllViewController alloc] init];
+    LHLVideoViewController *viedeoVC = [[LHLVideoViewController alloc] init];
+    LHLVoiceViewController *voiceVC = [[LHLVoiceViewController alloc] init];
+    LHLPictureViewController *pictureVC = [[LHLPictureViewController alloc] init];
+    LHLWordViewController *wordVC = [[LHLWordViewController alloc] init];
+    
+    [self addChildViewController:allVC];
+    [self addChildViewController:viedeoVC];
+    [self addChildViewController:voiceVC];
+    [self addChildViewController:pictureVC];
+    [self addChildViewController:wordVC];
+    
     
 }
 
@@ -58,11 +87,27 @@
  */
 - (void)setUpScrollView{
     
+    NSInteger count = self.childViewControllers.count;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
     
     scrollView.backgroundColor = [UIColor blueColor];
+    _scrollView = scrollView;
+    _scrollView.contentSize = CGSizeMake(count * LHLScreenW, LHLScreenH);
     [self.view addSubview:scrollView];
+    
+    CGFloat scrollViewW = _scrollView.lhl_width;
+    
+    for(int i = 0; i < count; i++){
+        UIView *childView = self.childViewControllers[i].view;
+        childView.lhl_x = i * scrollViewW;
+        [self.scrollView addSubview:childView];
+        
+    }
+
+    
+    
+    
     
 }
 /**
@@ -83,6 +128,36 @@
     [self setUpUnderLines];
     
 }
+
+
+/**
+ *  标题栏按钮
+ */
+- (void)setUpTitleButtons{
+    
+    NSArray *buttonLabels = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
+    NSInteger count = buttonLabels.count;
+    
+    CGFloat buttonW = self.titlesView.lhl_width / count;
+    CGFloat buttonH = self.titlesView.lhl_height;
+    
+    for(int i = 0; i < count; i++){
+        
+        LHLTitleButton *titleButton = [LHLTitleButton buttonWithType:UIButtonTypeCustom];
+        titleButton.frame = CGRectMake(i * buttonW, 0, buttonW, buttonH);
+        [titleButton setTitle:buttonLabels[i] forState:UIControlStateNormal];
+        
+        // 监听
+        [titleButton addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        [self.titlesView addSubview:titleButton];
+        
+    }
+    
+}
+
+
 /**
  *  下划线
  */
@@ -109,33 +184,6 @@
  
 }
 
-
-/**
- *  标题栏按钮
- */
-- (void)setUpTitleButtons{
-    
-    NSArray *buttonLabels = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
-    NSInteger count = buttonLabels.count;
-    
-    CGFloat buttonW = self.titlesView.lhl_width / count;
-    CGFloat buttonH = self.titlesView.lhl_height;
-    
-    for(int i = 0; i < count; i++){
-        
-        LHLTitleButton *titleButton = [LHLTitleButton buttonWithType:UIButtonTypeCustom];
-        titleButton.frame = CGRectMake(i * buttonW, 0, buttonW, buttonH);
-        [titleButton setTitle:buttonLabels[i] forState:UIControlStateNormal];
-
-        // 监听
-        [titleButton addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        [self.titlesView addSubview:titleButton];
-        
-    }
-    
-}
 
 #pragma mark - 监听
 
