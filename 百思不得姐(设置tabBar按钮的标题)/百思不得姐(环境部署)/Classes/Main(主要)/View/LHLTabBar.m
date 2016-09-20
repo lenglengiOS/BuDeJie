@@ -13,6 +13,8 @@
 @interface LHLTabBar ()
 
 @property (nonatomic, weak) UIButton *plusButton;
+/** 记录再次点击的按钮 */
+@property (nonatomic, weak) UIControl *previousClickedTabBarButton;
 
 @end
 
@@ -54,19 +56,49 @@
     CGFloat btnX = 0;
     
     NSInteger i = 0;
-    for (UIView *tabBarButton in self.subviews) {
+    for (UIControl *tabBarButton in self.subviews) {
         if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            
+            // 如果是第0个按钮并且，上次点击的按钮为空，则把previousClickedTabBarButton，默认值设置为最前面的按钮
+            if (i == 0 && self.previousClickedTabBarButton == nil) {
+                self.previousClickedTabBarButton = tabBarButton;
+            }
+       
             if (i == 2) {
                 i += 1;
             }
             btnX = i * btnW;
             tabBarButton.frame = CGRectMake(btnX, 0, btnW, btnH);
             i++;
+            
+            [tabBarButton addTarget:self action:@selector(tabBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         }
+        
     }
+    
+
     
     // 设置发布按钮的位置
     self.plusButton.center = CGPointMake(self.lhl_width * 0.5, self.lhl_height * 0.5);
+    
+}
+
+/**
+ *  监听tabBarButton按钮的重复点击
+ */
+- (void)tabBarButtonClick:(UIControl *)tabBarButton{
+    
+    
+    if (self.previousClickedTabBarButton == tabBarButton) {
+    // 如果本次点击的按钮和上次相同，则执行
+        
+        
+        LHLFunc
+    }
+    
+    // 记录本次点击的按钮
+    self.previousClickedTabBarButton = tabBarButton;
+    
     
 }
 
