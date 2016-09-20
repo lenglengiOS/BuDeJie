@@ -17,6 +17,10 @@
 @implementation AppDelegate
 
 
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    LHLFunc
+//}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // 初始化window
@@ -29,11 +33,7 @@
     
     // 设置主窗口并显示出来
     [self.window makeKeyAndVisible];
-    
-    
-
-    
-    
+   
     return YES;
 }
 

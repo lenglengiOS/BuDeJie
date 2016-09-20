@@ -104,6 +104,7 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
     scrollView.bounces = NO;
+    scrollView.scrollsToTop = NO;
     
     scrollView.contentSize = CGSizeMake(count * LHLScreenW, LHLScreenH);
     scrollView.lhl_x = 0;
@@ -213,6 +214,23 @@
         
         [self addChildViewIntoScrollView:index];
     }];
+    
+    // 设置index位置对应的tableView.scrollsToTOp = YES, 其他都设置为NO
+    for(int i = 0; i < self.childViewControllers.count; i++){
+        
+        UIViewController *childVc = self.childViewControllers[i];
+        if (!childVc.isViewLoaded) continue;
+        
+        UIScrollView *scrolView = (UIScrollView *)childVc.view;
+        if (![scrolView isKindOfClass:[UIScrollView class]]) continue;
+        
+        scrolView.scrollsToTop = (i == index);
+        
+    }
+
+    
+    
+    
 }
 
 
@@ -239,10 +257,14 @@
 }
 
 #pragma mark - 其他
-
+/**
+ *  添加第index个控制器的view到scrollView中
+ */
 - (void)addChildViewIntoScrollView:(NSUInteger)index{
+    
     UIView *childView = self.childViewControllers[index].view;
     childView.frame = CGRectMake(index * LHLScreenW, 0, LHLScreenW, LHLScreenH);
+    if(childView.superview) return;
     [self.scrollView addSubview:childView];
 }
 
