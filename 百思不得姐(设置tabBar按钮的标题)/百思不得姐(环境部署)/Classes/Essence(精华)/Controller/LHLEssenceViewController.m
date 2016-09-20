@@ -177,8 +177,12 @@
     [self.titlesView addSubview:titleUnderLine];
     _titleUnderLine = titleUnderLine;
     
-    // 默认点击第一个按钮
+    // 让label根据文字计算尺寸
     [firstTitleBtn.titleLabel sizeToFit];
+    
+    // 默认点击第一个按钮
+    firstTitleBtn.selected = YES;
+    self.previousClickTitleBtn = firstTitleBtn;
     
     // 处理下划线
     self.titleUnderLine.lhl_width = firstTitleBtn.titleLabel.lhl_width + 10;
@@ -194,6 +198,10 @@
  *  点击了titleView里面的按钮
  */
 - (void)titleBtnClick:(LHLTitleButton *)button{
+    
+    if (self.previousClickTitleBtn == button) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:LHLTabBarButtonRepeatClickedNotification object:nil];
+    }
     
     self.previousClickTitleBtn.selected = NO;
     button.selected = YES;

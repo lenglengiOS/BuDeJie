@@ -18,6 +18,8 @@
     [super viewDidLoad];
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
     self.view.backgroundColor = LHLRandomColor;
+    // 设置右边指示器的显示范围与tableView的内边距相同
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClicked) name:LHLTabBarButtonRepeatClickedNotification object:nil];
 }
