@@ -88,14 +88,17 @@
  */
 - (void)tabBarButtonClick:(UIControl *)tabBarButton{
     
+
+    
     
     if (self.previousClickedTabBarButton == tabBarButton) {
     // 如果本次点击的按钮和上次相同，则执行
+        // 发送通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:LHLTabBarButtonRepeatClickedNotification object:nil];
         
-        
-        LHLFunc
+
     }
-    
+
     // 记录本次点击的按钮
     self.previousClickedTabBarButton = tabBarButton;
     

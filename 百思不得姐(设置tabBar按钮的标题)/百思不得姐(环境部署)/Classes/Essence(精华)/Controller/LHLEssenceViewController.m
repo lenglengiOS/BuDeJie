@@ -227,9 +227,6 @@
         scrolView.scrollsToTop = (i == index);
         
     }
-
-    
-    
     
 }
 

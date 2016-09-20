@@ -18,7 +18,22 @@
     [super viewDidLoad];
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
     self.view.backgroundColor = LHLRandomColor;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClicked) name:LHLTabBarButtonRepeatClickedNotification object:nil];
+}
+
+#pragma mark - LHLTabBarButtonRepeatClickedNotification
+
+- (void)tabBarButtonDidRepeatClicked{
     
+    // // 如果展示的不是LHLWordViewController，则返回
+    if (self.tableView.scrollsToTop == NO) return;
+    
+    LHLLog(@"%@ -- 刷新数据", self.class);
+}
+
+- (void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - 数据源

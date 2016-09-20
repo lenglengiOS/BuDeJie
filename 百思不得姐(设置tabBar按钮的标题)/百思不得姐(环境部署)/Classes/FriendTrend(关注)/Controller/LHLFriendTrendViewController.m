@@ -27,6 +27,23 @@
     // Do any additional setup after loading the view.
 //    self.view.backgroundColor = [UIColor blueColor];
     [self setUpNavBar];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClicked) name:LHLTabBarButtonRepeatClickedNotification object:nil];
+    
+    
+}
+
+#pragma mark - LHLTabBarButtonRepeatClickedNotification
+- (void)tabBarButtonDidRepeatClicked{
+    
+    // 如果LHLAllViewController所在的窗口不在控制器上，则返回
+    if (self.view.window == nil) return;
+    
+    LHLLog(@"%@ -- 刷新数据", self.class);
+}
+
+- (void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark 设置导航栏按钮
