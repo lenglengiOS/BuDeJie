@@ -14,7 +14,7 @@
 #import "LHLPictureViewController.h"
 #import "LHLWordViewController.h"
 
-@interface LHLEssenceViewController ()
+@interface LHLEssenceViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, weak) UIView *titlesView;
 @property (nonatomic, weak) LHLTitleButton *previousClickTitleBtn;
@@ -34,13 +34,20 @@
 
     self.view.backgroundColor = [UIColor blueColor];
     
+    // 设置子控制器
     [self setUpChildVcs];
     
+    // 设置导航栏按钮
     [self setUpNavBar];
     
+    // ScrollView
     [self setUpScrollView];
     
+    // 标题栏
     [self setUpTitlesView];
+    
+    // 初始化第0个控制器
+    [self addChildViewIntoScrollView:0];
     
 }
 
@@ -100,20 +107,10 @@
     
     scrollView.contentSize = CGSizeMake(count * LHLScreenW, LHLScreenH);
     scrollView.lhl_x = 0;
-    _scrollView = scrollView;
+    scrollView.delegate = self;
+    self.scrollView = scrollView;
+    
     [self.view addSubview:scrollView];
-    
-    for(int i = 0; i < count; i++){
-        UIView *childView = self.childViewControllers[i].view;
-        childView.frame = CGRectMake(i * LHLScreenW, 0, LHLScreenW, LHLScreenH);
-        [self.scrollView addSubview:childView];
-        
-    }
-    
-
-    
-    
-    
     
 }
 /**
@@ -152,7 +149,7 @@
         LHLTitleButton *titleButton = [LHLTitleButton buttonWithType:UIButtonTypeCustom];
         titleButton.frame = CGRectMake(i * buttonW, 0, buttonW, buttonH);
         [titleButton setTitle:buttonLabels[i] forState:UIControlStateNormal];
-        
+        titleButton.tag = i;
         // 监听
         [titleButton addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -192,32 +189,61 @@
 
 
 #pragma mark - 监听
-
+/**
+ *  点击了titleView里面的按钮
+ */
 - (void)titleBtnClick:(LHLTitleButton *)button{
     
     self.previousClickTitleBtn.selected = NO;
     button.selected = YES;
     self.previousClickTitleBtn = button;
 
+    NSUInteger index = button.tag;
     // 处理下划线
     [UIView animateWithDuration:0.25 animations:^{
         
         self.titleUnderLine.lhl_width = button.titleLabel.lhl_width + 10;
         self.titleUnderLine.lhl_centerX = button.lhl_centerX;
         
+        CGPoint offset = self.scrollView.contentOffset;
+        offset.x = index * LHLScreenW;
+        self.scrollView.contentOffset = offset;
+        
+    }completion:^(BOOL finished) {
+        
+        [self addChildViewIntoScrollView:index];
     }];
-    
 }
 
 
-
+/**
+ *  点击了游戏按钮
+ */
 - (void)game{
 
     LHLFunc
 }
 
+#pragma mark - 代理方法
 
+/**
+ *  UIScrollView
+ */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    NSInteger index = scrollView.contentOffset.x / LHLScreenW;
+    
+    LHLTitleButton *titleBtn = self.titlesView.subviews[index];
+    [self titleBtnClick:titleBtn];
+    
+}
 
+#pragma mark - 其他
 
+- (void)addChildViewIntoScrollView:(NSUInteger)index{
+    UIView *childView = self.childViewControllers[index].view;
+    childView.frame = CGRectMake(index * LHLScreenW, 0, LHLScreenW, LHLScreenH);
+    [self.scrollView addSubview:childView];
+}
 
 @end
