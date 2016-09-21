@@ -10,6 +10,10 @@
 
 
 @interface LHLAllViewController ()
+/** headerView */
+@property (nonatomic, weak) UIView *headerView;
+/** headerLabel */
+@property (nonatomic, weak)  UILabel *headerLabel;
 
 /** footerView */
 @property (nonatomic, weak) UIView *footerView;
@@ -43,7 +47,38 @@
  *  tableFooterView拉刷新
  */
 - (void)setUpRefesh{
+    // header
+    UIView *headerView = [[UIView alloc] init];
+    headerView.frame = CGRectMake(0, -50, self.tableView.lhl_width, 50);
+    headerView.backgroundColor = [UIColor redColor];
+    self.headerView = headerView;
     
+    UILabel *headerLabel = [[UILabel alloc] init];
+    headerLabel.text =  @"下拉刷新";
+    headerLabel.textAlignment = NSTextAlignmentCenter;
+    headerLabel.textColor = [UIColor blackColor];
+    headerLabel.backgroundColor = [UIColor grayColor];
+    headerLabel.frame = headerView.bounds;
+    headerLabel.font = [UIFont systemFontOfSize:15];
+    self.headerLabel = headerLabel;
+    [headerView addSubview:headerLabel];
+    [self.tableView addSubview:headerView];
+    
+    // 广告
+    UIView *adView = [[UIView alloc] init];
+    adView.frame = CGRectMake(0, 0, 0, 30);
+    adView.backgroundColor = [UIColor blackColor];
+    self.tableView.tableHeaderView = adView;
+    
+    UILabel *adLabel = [[UILabel alloc] init];
+    adLabel.text =  @"广告";
+    adLabel.textAlignment = NSTextAlignmentCenter;
+    adLabel.textColor = [UIColor whiteColor];
+    adLabel.frame = self.tableView.tableHeaderView.bounds;
+    adLabel.font = [UIFont systemFontOfSize:15];
+    [adView addSubview:adLabel];
+    
+    // footer
     UIView *footerView = [[UIView alloc] init];
     footerView.frame = CGRectMake(0, 0, self.tableView.lhl_width, 35);
     footerView.backgroundColor = [UIColor redColor];
