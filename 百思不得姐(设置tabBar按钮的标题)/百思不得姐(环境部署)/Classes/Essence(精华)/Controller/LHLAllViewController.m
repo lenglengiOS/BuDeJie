@@ -14,6 +14,8 @@
 
 @interface LHLAllViewController ()
 
+/** 当前最后一条帖子数据的描述信息，专门用来加载下一页数据 */
+@property (nonatomic, copy) NSString *maxtime;
 /** 所有的帖子数据 */
 @property (nonatomic, strong) NSMutableArray *topics;
 /** headerView */
@@ -233,13 +235,15 @@
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @"1";
+    parameters[@"type"] = @"31";
     parameters[@"c"] = @"data";
 
     // 发送请求
     [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
 
-       self.topics = [LHLTopicsItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        // 把第一页的最后一条帖子数据的描述信息，专门用来加载下一页数据
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        self.topics = [LHLTopicsItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         [self.tableView reloadData];
         // 结束刷新
         [self headerEndRefreshing];
@@ -270,12 +274,15 @@
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @"1";
+    parameters[@"type"] = @"31";
     parameters[@"c"] = @"data";
+    parameters[@"maxtime"] = self.maxtime;
     
     // 发送请求
     [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
         
+        // 当前页的最后一条帖子数据的描述信息，专门用来加载下一页数据
+        self.maxtime = responseObject[@"info"][@"maxtime"];
         NSArray *topics = [LHLTopicsItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         [self.topics addObjectsFromArray:topics];
         
