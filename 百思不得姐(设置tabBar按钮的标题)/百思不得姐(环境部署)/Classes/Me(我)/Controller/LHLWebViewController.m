@@ -52,6 +52,7 @@
     
 }
 
+// KVO 监听 前进 后退 进度条 的值来确定状态
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
 
     self.backIem.enabled = self.webView.canGoBack;
@@ -62,6 +63,7 @@
     
 }
 
+// 移除监听
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"canGoBack"];
     [self.webView removeObserver:self forKeyPath:@"canGoForward"];

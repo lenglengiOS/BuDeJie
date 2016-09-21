@@ -14,12 +14,14 @@
 @property (nonatomic, weak) UIView *headerView;
 /** headerLabel */
 @property (nonatomic, weak)  UILabel *headerLabel;
+/** 记录是否正在刷新 */
+@property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
 
 /** footerView */
 @property (nonatomic, weak) UIView *footerView;
 /** footerLabel */
 @property (nonatomic, weak)  UILabel *footerLabel;
-/** 加载状态 */
+/** 记录是否正在加载 */
 @property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
 /** 数据量 */
 @property (nonatomic, assign) NSInteger dataCount;
@@ -98,14 +100,103 @@
 }
 
 #pragma mark - 代理
+/**
+ *  拖拽结束就会调用这个方法
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+
+    // 如果正在刷新，则返回
+    if (self.headerRefreshing == YES) return;
+    
+    CGFloat offsetY = - (self.tableView.contentInset.top + self.headerView.lhl_height);
+    
+    if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
+        self.headerLabel.text = @"正在刷新...";
+        // 记录刷新状态为YES
+        self.headerRefreshing = YES;
+        
+        // 增加tableView的top内边距，使刷新条显示在标题栏下
+        [UIView animateWithDuration:0.25 animations:^{
+            UIEdgeInsets inset = self.tableView.contentInset;
+            inset.top += self.headerView.lhl_height;
+            self.tableView.contentInset = inset;
+        }];
+        
+        LHLLog(@"发送请求给服务器－下拉刷新数据");
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            // 服务器的数据回来了 刷新数据
+            self.dataCount = 20;
+            [self.tableView reloadData];
+            // 改变刷新状态为NO
+            self.headerRefreshing = NO;
+            [UIView animateWithDuration:0.4 animations:^{
+                
+                // 减小tableView的top内边距，使刷新条显示在标题栏后面，并清空刷新条的文字
+                UIEdgeInsets inset = self.tableView.contentInset;
+                inset.top -= self.headerView.lhl_height;
+                self.tableView.contentInset = inset;
+           
+                // 显示数据
+                LHLLog(@"刷新数据完成－显示数据");
+            }];
+        });
+    }
+    
+    
+}
+
+/**
+ *  滚动scrollView就会调用这个方法
+ */
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
+    // 处理header
+    [self dealHeader];
+    
+    // 处理footer
+    [self dealFooter];
+ 
+}
+
+/**
+ *  处理header
+ */
+- (void)dealHeader{
+    
+    CGFloat offsetY = - (self.tableView.contentInset.top + self.headerView.lhl_height);
+    
+    // 如果正在刷新，则返回
+    if (self.headerRefreshing == YES) return;
+    
+    if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
+        
+        // 如果偏移量超过offsetY 则显示 @"松开立即刷新"
+        self.headerLabel.text = @"松开立即刷新";
+    }else{
+        
+        // 如果偏移量小于offsetY，并且没有松开点击而是滑huiqu 则显示 @"下拉刷新"
+        self.headerLabel.text =  @"下拉刷新";
+    }
+    
+    
+}
+
+/**
+ *  处理footer
+ */
+- (void)dealFooter{
     // 判断加载状态，如果正在加载，则返回
     if (self.refreshing == YES) return;
     
+    // 如果contentSize没有值，则返回
     if (self.tableView.contentSize.height == 0) return;
     CGFloat offstY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.lhl_height;
+    
+    // 当scrollView的偏移量的y值 >= contentSize的高度 ＋ 底部内边距地高度 － tableView的高度
     if (self.tableView.contentOffset.y >= offstY) {
+        // 开始加载
         self.refreshing = YES;
         
         // 发送请求给服务器
@@ -123,8 +214,7 @@
         });
         
     }
-    
- 
+
 }
 
 #pragma mark - 通知：LHLTabBarButtonRepeatClickedNotification
