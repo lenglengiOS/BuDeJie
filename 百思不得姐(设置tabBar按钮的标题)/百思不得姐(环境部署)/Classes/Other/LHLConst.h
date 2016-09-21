@@ -12,5 +12,7 @@ UIKIT_EXTERN CGFloat const LHLTitlesViewH;
 /** tabBarButton重复点击的通知 */
 UIKIT_EXTERN NSString *const LHLTabBarButtonRepeatClickedNotification;
 
+/** 统一的URL请求地址 */
+UIKIT_EXTERN NSString *const LHLCommonURL;
 
 

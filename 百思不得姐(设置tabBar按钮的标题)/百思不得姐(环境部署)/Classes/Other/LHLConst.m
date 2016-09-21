@@ -11,3 +11,6 @@ CGFloat const LHLTitlesViewH = 35;
 
 /** tabBarButton重复点击的通知 */
 NSString * const LHLTabBarButtonRepeatClickedNotification = @"LHLTabBarButtonRepeatClickedNotification";
+
+/** 统一的URL请求地址 */
+NSString *const LHLCommonURL = @"http://api.budejie.com/api/api_open.php";

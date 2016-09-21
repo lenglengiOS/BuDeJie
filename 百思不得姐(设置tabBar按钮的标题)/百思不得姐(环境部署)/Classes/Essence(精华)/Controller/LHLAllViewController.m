@@ -7,6 +7,8 @@
 //
 
 #import "LHLAllViewController.h"
+#import <AFNetworking/AFNetworking.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 
 @interface LHLAllViewController ()
@@ -32,7 +34,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataCount = 20;
     
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
     self.view.backgroundColor = LHLRandomColor;
@@ -80,6 +81,9 @@
     adLabel.font = [UIFont systemFontOfSize:15];
     [adView addSubview:adLabel];
     
+    // 让header自动刷新
+    [self headerBeginRefreshing];
+    
     // footer
     UIView *footerView = [[UIView alloc] init];
     footerView.frame = CGRectMake(0, 0, self.tableView.lhl_width, 35);
@@ -107,44 +111,11 @@
 
     // 如果正在刷新，则返回
     if (self.headerRefreshing == YES) return;
-    
     CGFloat offsetY = - (self.tableView.contentInset.top + self.headerView.lhl_height);
-    
     if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
-        self.headerLabel.text = @"正在刷新...";
-        // 记录刷新状态为YES
-        self.headerRefreshing = YES;
-        
-        // 增加tableView的top内边距，使刷新条显示在标题栏下
-        [UIView animateWithDuration:0.25 animations:^{
-            UIEdgeInsets inset = self.tableView.contentInset;
-            inset.top += self.headerView.lhl_height;
-            self.tableView.contentInset = inset;
-        }];
-        
-        LHLLog(@"发送请求给服务器－下拉刷新数据");
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            // 服务器的数据回来了 刷新数据
-            self.dataCount = 20;
-            [self.tableView reloadData];
-            // 改变刷新状态为NO
-            self.headerRefreshing = NO;
-            [UIView animateWithDuration:0.4 animations:^{
-                
-                // 减小tableView的top内边距，使刷新条显示在标题栏后面，并清空刷新条的文字
-                UIEdgeInsets inset = self.tableView.contentInset;
-                inset.top -= self.headerView.lhl_height;
-                self.tableView.contentInset = inset;
-           
-                // 显示数据
-                LHLLog(@"刷新数据完成－显示数据");
-            }];
-        });
+        // 开始刷新
+        [self headerBeginRefreshing];
     }
-    
-    
 }
 
 /**
@@ -187,7 +158,7 @@
  *  处理footer
  */
 - (void)dealFooter{
-    // 判断加载状态，如果正在加载，则返回
+    // 判断加载状态，如果正在上拉刷新，则返回
     if (self.refreshing == YES) return;
     
     // 如果contentSize没有值，则返回
@@ -195,23 +166,9 @@
     CGFloat offstY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.lhl_height;
     
     // 当scrollView的偏移量的y值 >= contentSize的高度 ＋ 底部内边距地高度 － tableView的高度
-    if (self.tableView.contentOffset.y >= offstY) {
-        // 开始加载
-        self.refreshing = YES;
-        
-        // 发送请求给服务器
-        self.footerLabel.text =  @"正在加载数据...";
-        
-        // 模拟请求数据成功
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            // 结束刷新
-            self.refreshing = NO;
-            self.dataCount += 5;
-            self.footerLabel.text =  @"上拉或点击可以加载更多...";
-            [self.tableView reloadData];
-            
-        });
+    if (self.tableView.contentOffset.y >= offstY && self.tableView.contentOffset.y > -(self.tableView.contentInset.top)) { // footer完全出现，并且使往上拖拽
+        // 开始刷新
+        [self footerBeginRefreshing];
         
     }
 
@@ -226,11 +183,12 @@
     // 如果展示的不是LHLAllViewController，则返回
     if (self.tableView.scrollsToTop == NO) return;
     
+    [self headerBeginRefreshing];
     LHLLog(@"%@ -- 刷新数据", self.class);
 }
 
+// 移除通知
 - (void)dealloc{
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -258,6 +216,109 @@
     return cell;
 }
 
+#pragma mark - 数据处理
+/**
+ *  发送请求给服务器－下拉刷新数据
+ */
+- (void)loadNewTopics{
+    LHLLog(@"发送请求给服务器－下拉刷新数据");
+    // 请求数据 ＝> 解析数据 ＝> 显示数据
+    
+    // 创建请求管理者
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    // 拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"type"] = @"1";
+    parameters[@"c"] = @"data";
 
+    // 发送请求
+    [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+        LHLAFNWriteToPlist(newToipics)
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求成失败 - %@", error);
+    }];
+
+    
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        // 服务器的数据回来了 刷新数据
+//        self.dataCount = 20;
+//        [self.tableView reloadData];
+//        // 结束刷新
+//        [self headerEndRefreshing];
+//    });
+
+}
+
+/**
+ *  发送请求给服务器－上拉刷新更多数据
+ */
+- (void)loadMoreTopics{
+    LHLLog(@"发送请求给服务器－上拉刷新数据");
+    self.footerLabel.text =  @"正在加载数据...";
+    // 模拟请求数据成功
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 结束刷新
+        [self footerEndRefreshing];
+    });
+}
+
+
+
+#pragma mark - headerRefresh
+- (void)headerBeginRefreshing{
+    // 如果正在下拉刷新，则返回
+    if (self.headerRefreshing == YES) return;
+    
+    self.headerLabel.text = @"正在刷新...";
+    // 记录刷新状态为YES
+    self.headerRefreshing = YES;
+    
+    // 增加tableView的top内边距，使刷新条显示在标题栏下
+    [UIView animateWithDuration:0.25 animations:^{
+        UIEdgeInsets inset = self.tableView.contentInset;
+        inset.top += self.headerView.lhl_height;
+        self.tableView.contentInset = inset;
+        // 修改偏移量
+        self.tableView.contentOffset = CGPointMake(self.tableView.contentOffset.x, -inset.top);
+    }];
+    
+    [self loadNewTopics];
+}
+
+- (void)headerEndRefreshing{
+    
+    self.headerRefreshing = NO;
+    [UIView animateWithDuration:0.4 animations:^{
+        // 减小tableView的top内边距，使刷新条显示在标题栏后面，并清空刷新条的文字
+        UIEdgeInsets inset = self.tableView.contentInset;
+        inset.top -= self.headerView.lhl_height;
+        self.tableView.contentInset = inset;
+        // 显示数据
+        LHLLog(@"刷新数据完成－显示数据");
+    }];
+}
+
+#pragma mark - footerRefresh
+- (void)footerBeginRefreshing{
+    // 如果正在下拉刷新，则返回
+    if (self.headerRefreshing == YES) return;
+    // 判断加载状态，如果正在上拉刷新，则返回
+    if (self.refreshing == YES) return;
+    self.refreshing = YES;
+    // 发送请求给服务器
+    [self loadMoreTopics];
+}
+
+- (void)footerEndRefreshing{
+    self.refreshing = NO;
+    self.dataCount += 5;
+    [self.tableView reloadData];
+    self.footerLabel.text =  @"上拉或点击可以加载更多...";
+    LHLLog(@"刷新数据完成－显示数据");
+}
 
 @end

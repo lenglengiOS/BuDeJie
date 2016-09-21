@@ -101,7 +101,7 @@ static CGFloat margin = 1;
     parameters[@"c"] = @"topic";
     
     
-    [mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nonnull responseObject) {
+    [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nonnull responseObject) {
         
         NSArray *dataArr = responseObject[@"square_list"];
         self.squareItems = [LHLSquarItem mj_objectArrayWithKeyValuesArray:dataArr];

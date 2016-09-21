@@ -54,7 +54,7 @@ static NSString * const ID = @"cell";
     [SVProgressHUD showWithStatus:@"正在努力加载中..."];
     
     // 发送请求
-    [_mgr GET:@"http://api.budejie.com/api/api_open.php" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nonnull responseObject) {
+    [_mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nonnull responseObject) {
         
         self.subTags = [LHLSubTagItem mj_objectArrayWithKeyValuesArray:responseObject];
         
