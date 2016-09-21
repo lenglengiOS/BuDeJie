@@ -9,9 +9,13 @@
 #import "LHLAllViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <SVProgressHUD/SVProgressHUD.h>
-
+#import "LHLTopicsItem.h"
+#import <MJExtension/MJExtension.h>
 
 @interface LHLAllViewController ()
+
+/** 所有的帖子数据 */
+@property (nonatomic, strong) NSMutableArray *topics;
 /** headerView */
 @property (nonatomic, weak) UIView *headerView;
 /** headerLabel */
@@ -25,8 +29,6 @@
 @property (nonatomic, weak)  UILabel *footerLabel;
 /** 记录是否正在加载 */
 @property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
-/** 数据量 */
-@property (nonatomic, assign) NSInteger dataCount;
 
 @end
 
@@ -195,8 +197,8 @@
 #pragma mark - 数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    self.footerView.hidden = (self.dataCount == 0);
-    return self.dataCount;
+    self.footerView.hidden = (self.topics.count == 0);
+    return self.topics.count;
 }
 
 
@@ -207,11 +209,13 @@
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %ld", self.class, indexPath.row];
+    LHLTopicsItem *item = self.topics[indexPath.row];
+    cell.textLabel.text = item.name;
+    cell.detailTextLabel.text = item.text;
     
     return cell;
 }
@@ -234,22 +238,21 @@
 
     // 发送请求
     [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
-        LHLAFNWriteToPlist(newToipics)
+
+       self.topics = [LHLTopicsItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.tableView reloadData];
+        // 结束刷新
+        [self headerEndRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"请求成失败 - %@", error);
+        // 结束刷新
+        [self headerEndRefreshing];
+        
+        [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
     }];
-
-    
-    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        
-//        // 服务器的数据回来了 刷新数据
-//        self.dataCount = 20;
-//        [self.tableView reloadData];
-//        // 结束刷新
-//        [self headerEndRefreshing];
-//    });
 
 }
 
@@ -257,13 +260,39 @@
  *  发送请求给服务器－上拉刷新更多数据
  */
 - (void)loadMoreTopics{
+    
     LHLLog(@"发送请求给服务器－上拉刷新数据");
     self.footerLabel.text =  @"正在加载数据...";
-    // 模拟请求数据成功
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    // 请求数据 ＝> 解析数据 ＝> 显示数据
+    
+    // 创建请求管理者
+    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    // 拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"a"] = @"list";
+    parameters[@"type"] = @"1";
+    parameters[@"c"] = @"data";
+    
+    // 发送请求
+    [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+        
+        NSArray *topics = [LHLTopicsItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.topics addObjectsFromArray:topics];
+        
+        [self.tableView reloadData];
         // 结束刷新
         [self footerEndRefreshing];
-    });
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        // 结束刷新
+        [self headerEndRefreshing];
+        
+        [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+    }];
+
 }
 
 
@@ -315,7 +344,6 @@
 
 - (void)footerEndRefreshing{
     self.refreshing = NO;
-    self.dataCount += 5;
     [self.tableView reloadData];
     self.footerLabel.text =  @"上拉或点击可以加载更多...";
     LHLLog(@"刷新数据完成－显示数据");
