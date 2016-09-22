@@ -231,13 +231,13 @@ static NSString * const LHLWordCellID = @"LHLWordCellID";
     LHLTopicsCell *cell = nil;
     LHLTopicsItem *topic = self.topics[indexPath.row];
     // 10为图片，29为段子，31为音频，41为视频，默认为1
-    if (topic.type == 10) { // 图片
+    if (topic.type == LHLTopicTypePicture) { // 图片
         cell = [tableView dequeueReusableCellWithIdentifier:LHLPictureCellID];
-    }else if (topic.type == 29) { // 段子
+    }else if (topic.type == LHLTopicTypeWord) { // 段子
         cell = [tableView dequeueReusableCellWithIdentifier:LHLWordCellID];
-    }else if (topic.type == 31) { // 音频
+    }else if (topic.type == LHLTopicTypeVoice) { // 音频
         cell = [tableView dequeueReusableCellWithIdentifier:LHLVoiceCellID];
-    }else if (topic.type == 41) { // 视频
+    }else if (topic.type == LHLTopicTypeVideo) { // 视频
         cell = [tableView dequeueReusableCellWithIdentifier:LHLVideosCellID];
     }
     

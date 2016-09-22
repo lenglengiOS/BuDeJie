@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, LHLTopicType) {
+    /** 全部 */
+    LHLTopicTypeAll = 1,
+    /** 音频 */
+    LHLTopicTypeVoice = 31,
+    /** 图片 */
+    LHLTopicTypePicture = 10,
+    /** 段子 */
+    LHLTopicTypeWord = 29,
+    /** 视频 */
+    LHLTopicTypeVideo = 41,
+};
+
 @interface LHLTopicsItem : NSObject
 /** 用户的名字 */
 @property (nonatomic, copy) NSString *name;
@@ -26,7 +39,7 @@
 @property (nonatomic, assign) NSInteger repost;
 /** 评论数量 */
 @property (nonatomic, assign) NSInteger comment;
-/** 帖子的类型 */
+/** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) NSInteger type;
 
 @end
