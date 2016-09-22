@@ -6,6 +6,9 @@ CGFloat const LHLTabBarH = 49;
 /** 导航栏的最大Y值 */
 CGFloat const LHLNavMaxY = 64;
 
+/** 全局统一的间距 */
+CGFloat const LHLMargin = 10;
+
 /** 标题栏的高度 */
 CGFloat const LHLTitlesViewH = 35;
 

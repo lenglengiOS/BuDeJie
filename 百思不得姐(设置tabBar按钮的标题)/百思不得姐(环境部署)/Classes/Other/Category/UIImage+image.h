@@ -11,5 +11,7 @@
 @interface UIImage (image)
 
 + (UIImage *)imageOriginalWithName:(NSString *)imageName;
+- (instancetype)lhl_circleImage;
++ (instancetype)lhl_circleImageNamed:(NSString *)name;
 
 @end

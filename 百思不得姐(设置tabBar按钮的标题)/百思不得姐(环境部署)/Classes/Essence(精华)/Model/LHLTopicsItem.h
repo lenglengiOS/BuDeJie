@@ -8,18 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, LHLTopicType) {
-    /** 全部 */
-    LHLTopicTypeAll = 1,
-    /** 音频 */
-    LHLTopicTypeVoice = 31,
-    /** 图片 */
-    LHLTopicTypePicture = 10,
-    /** 段子 */
-    LHLTopicTypeWord = 29,
-    /** 视频 */
-    LHLTopicTypeVideo = 41,
-};
+//typedef NS_ENUM(NSUInteger, LHLTopicType) {
+//    /** 全部 */
+//    LHLTopicTypeAll = 1,
+//    /** 音频 */
+//    LHLTopicTypeVoice = 31,
+//    /** 图片 */
+//    LHLTopicTypePicture = 10,
+//    /** 段子 */
+//    LHLTopicTypeWord = 29,
+//    /** 视频 */
+//    LHLTopicTypeVideo = 41,
+//};
 
 @interface LHLTopicsItem : NSObject
 /** 用户的名字 */

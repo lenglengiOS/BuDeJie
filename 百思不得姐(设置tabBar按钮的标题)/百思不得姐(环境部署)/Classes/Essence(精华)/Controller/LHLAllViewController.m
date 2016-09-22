@@ -12,10 +12,6 @@
 #import "LHLTopicsItem.h"
 #import <MJExtension/MJExtension.h>
 #import "LHLTopicsCell.h"
-#import "LHLVideosCell.h"
-#import "LHLVoiceCell.h"
-#import "LHLPictureCell.h"
-#import "LHLWordCell.h"
 
 @interface LHLAllViewController ()
 
@@ -43,10 +39,7 @@
 
 @implementation LHLAllViewController
 
-static NSString * const LHLVideosCellID = @"LHLVideosCellID";
-static NSString * const LHLVoiceCellID = @"LHLVoiceCellID";
-static NSString * const LHLPictureCellID = @"LHLPictureCellID";
-static NSString * const LHLWordCellID = @"LHLWordCellID";
+static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 
 - (AFHTTPSessionManager *)manager{
     if (_manager == nil) {
@@ -59,17 +52,18 @@ static NSString * const LHLWordCellID = @"LHLWordCellID";
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    self.tableView.rowHeight = 180;
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
-    self.view.backgroundColor = LHLRandomColor;
+    self.view.backgroundColor = LHLColor(206, 206, 206);
     
     // 设置右边指示器的显示范围与tableView的内边距相同
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     // 注册cell
-    [self .tableView registerClass:[LHLVideosCell class] forCellReuseIdentifier:LHLVideosCellID];
-    [self .tableView registerClass:[LHLVoiceCell class] forCellReuseIdentifier:LHLVoiceCellID];
-    [self .tableView registerClass:[LHLPictureCell class] forCellReuseIdentifier:LHLPictureCellID];
-    [self .tableView registerClass:[LHLWordCell class] forCellReuseIdentifier:LHLWordCellID];
-    
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([LHLTopicsCell class]) bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:LHLTopicsCellID];
+    //去掉分割线
+    self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    // 监听通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClicked) name:LHLTabBarButtonRepeatClickedNotification object:nil];
 
     [self setUpRefesh];
@@ -228,52 +222,14 @@ static NSString * const LHLWordCellID = @"LHLWordCellID";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LHLTopicsCell *cell = nil;
-    LHLTopicsItem *topic = self.topics[indexPath.row];
+
     // 10为图片，29为段子，31为音频，41为视频，默认为1
-    if (topic.type == LHLTopicTypePicture) { // 图片
-        cell = [tableView dequeueReusableCellWithIdentifier:LHLPictureCellID];
-    }else if (topic.type == LHLTopicTypeWord) { // 段子
-        cell = [tableView dequeueReusableCellWithIdentifier:LHLWordCellID];
-    }else if (topic.type == LHLTopicTypeVoice) { // 音频
-        cell = [tableView dequeueReusableCellWithIdentifier:LHLVoiceCellID];
-    }else if (topic.type == LHLTopicTypeVideo) { // 视频
-        cell = [tableView dequeueReusableCellWithIdentifier:LHLVideosCellID];
-    }
+    LHLTopicsCell *cell = [tableView dequeueReusableCellWithIdentifier:LHLTopicsCellID];
     
+    LHLTopicsItem *topic = self.topics[indexPath.row];
     cell.topic = topic;
     return cell;
 }
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    LHLTopicsCell *cell = nil;
-//    LHLTopicsItem *topic = self.topics[indexPath.row];
-//    // 10为图片，29为段子，31为音频，41为视频，默认为1
-//    if (topic.type == 10) { // 图片
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLPictureCell"];
-//        if (cell == nil) {
-//            cell = [[LHLPictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLPictureCell"];
-//        }
-//    }else if (topic.type == 29) { // 段子
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLWordCell"];
-//        if (cell == nil) {
-//            cell = [[LHLWordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLWordCell"];
-//        }
-//    }else if (topic.type == 31) { // 音频
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVoiceCell"];
-//        if (cell == nil) {
-//            cell = [[LHLVoiceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVoiceCell"];
-//        }
-//    }else if (topic.type == 41) { // 视频
-//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVideosCell"];
-//        if (cell == nil) {
-//            cell = [[LHLVideosCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVideosCell"];
-//        }
-//    }
-//    
-//    cell.topic = topic;
-//    
-//    return cell;
-//}
 
 #pragma mark - 数据处理
 /**

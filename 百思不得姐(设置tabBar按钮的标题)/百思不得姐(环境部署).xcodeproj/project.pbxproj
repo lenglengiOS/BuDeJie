@@ -47,10 +47,7 @@
 		84C558AA1D8C3292000E0F0B /* LHLSquareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C558A81D8C3292000E0F0B /* LHLSquareCell.xib */; };
 		84C558AD1D8C40DD000E0F0B /* LHLSquarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C558AC1D8C40DD000E0F0B /* LHLSquarItem.m */; };
 		84C6E6511D93A08F00104BB6 /* LHLTopicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E6501D93A08F00104BB6 /* LHLTopicsCell.m */; };
-		84C6E6541D93A0A000104BB6 /* LHLVideosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E6531D93A0A000104BB6 /* LHLVideosCell.m */; };
-		84C6E6571D93A0B400104BB6 /* LHLVoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E6561D93A0B400104BB6 /* LHLVoiceCell.m */; };
-		84C6E65A1D93A0C200104BB6 /* LHLPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E6591D93A0C200104BB6 /* LHLPictureCell.m */; };
-		84C6E65D1D93A0CF00104BB6 /* LHLWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E65C1D93A0CF00104BB6 /* LHLWordCell.m */; };
+		84C6E65F1D93C0B000104BB6 /* LHLTopicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C6E65E1D93C0B000104BB6 /* LHLTopicsCell.xib */; };
 		84D236171D879B72005BBCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D236151D879B72005BBCE9 /* Main.storyboard */; };
 		84D236191D879B72005BBCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D236181D879B72005BBCE9 /* Assets.xcassets */; };
 		84D2361C1D879B72005BBCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D2361A1D879B72005BBCE9 /* LaunchScreen.storyboard */; };
@@ -149,14 +146,7 @@
 		84C558AC1D8C40DD000E0F0B /* LHLSquarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSquarItem.m; sourceTree = "<group>"; };
 		84C6E64F1D93A08F00104BB6 /* LHLTopicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTopicsCell.h; sourceTree = "<group>"; };
 		84C6E6501D93A08F00104BB6 /* LHLTopicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTopicsCell.m; sourceTree = "<group>"; };
-		84C6E6521D93A0A000104BB6 /* LHLVideosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLVideosCell.h; sourceTree = "<group>"; };
-		84C6E6531D93A0A000104BB6 /* LHLVideosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLVideosCell.m; sourceTree = "<group>"; };
-		84C6E6551D93A0B400104BB6 /* LHLVoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLVoiceCell.h; sourceTree = "<group>"; };
-		84C6E6561D93A0B400104BB6 /* LHLVoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLVoiceCell.m; sourceTree = "<group>"; };
-		84C6E6581D93A0C200104BB6 /* LHLPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLPictureCell.h; sourceTree = "<group>"; };
-		84C6E6591D93A0C200104BB6 /* LHLPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLPictureCell.m; sourceTree = "<group>"; };
-		84C6E65B1D93A0CF00104BB6 /* LHLWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLWordCell.h; sourceTree = "<group>"; };
-		84C6E65C1D93A0CF00104BB6 /* LHLWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLWordCell.m; sourceTree = "<group>"; };
+		84C6E65E1D93C0B000104BB6 /* LHLTopicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLTopicsCell.xib; sourceTree = "<group>"; };
 		84D236091D879B71005BBCE9 /* 百思不得姐(环境部署).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐(环境部署).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D236161D879B72005BBCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D236181D879B72005BBCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -436,14 +426,7 @@
 				84BDE8B31D8E29B6000CFE9F /* LHLTitleButton.m */,
 				84C6E64F1D93A08F00104BB6 /* LHLTopicsCell.h */,
 				84C6E6501D93A08F00104BB6 /* LHLTopicsCell.m */,
-				84C6E6521D93A0A000104BB6 /* LHLVideosCell.h */,
-				84C6E6531D93A0A000104BB6 /* LHLVideosCell.m */,
-				84C6E6551D93A0B400104BB6 /* LHLVoiceCell.h */,
-				84C6E6561D93A0B400104BB6 /* LHLVoiceCell.m */,
-				84C6E6581D93A0C200104BB6 /* LHLPictureCell.h */,
-				84C6E6591D93A0C200104BB6 /* LHLPictureCell.m */,
-				84C6E65B1D93A0CF00104BB6 /* LHLWordCell.h */,
-				84C6E65C1D93A0CF00104BB6 /* LHLWordCell.m */,
+				84C6E65E1D93C0B000104BB6 /* LHLTopicsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -786,6 +769,7 @@
 				846E064F1D8A641300321D94 /* LaunchImage-700@2x.png in Resources */,
 				84C558AA1D8C3292000E0F0B /* LHLSquareCell.xib in Resources */,
 				84BE4EBD1D8BABE200AB0DDF /* LHLLoginRegisterController.xib in Resources */,
+				84C6E65F1D93C0B000104BB6 /* LHLTopicsCell.xib in Resources */,
 				84D236171D879B72005BBCE9 /* Main.storyboard in Resources */,
 				84C558A51D8C2778000E0F0B /* LHLMeTableViewController.storyboard in Resources */,
 				84BE4EB81D8BA59D00AB0DDF /* LHLFriendTrendViewController.xib in Resources */,
@@ -860,7 +844,6 @@
 				84BE4EBC1D8BABE200AB0DDF /* LHLLoginRegisterController.m in Sources */,
 				84C6E6511D93A08F00104BB6 /* LHLTopicsCell.m in Sources */,
 				84B62A451D927FBB009C7AA5 /* LHLTopicsItem.m in Sources */,
-				84C6E65D1D93A0CF00104BB6 /* LHLWordCell.m in Sources */,
 				849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */,
 				84F803C51D8ACC650017CCC7 /* LHLSubTagController.m in Sources */,
 				84F803C81D8ACF370017CCC7 /* LHLSubTagItem.m in Sources */,
@@ -879,12 +862,10 @@
 				84D2364E1D87BD2F005BBCE9 /* LHLEssenceViewController.m in Sources */,
 				846E06431D8A618000321D94 /* LHLAdViewController.m in Sources */,
 				846E063F1D8A614D00321D94 /* LHLSettingViewController.m in Sources */,
-				84C6E6541D93A0A000104BB6 /* LHLVideosCell.m in Sources */,
 				84C558AD1D8C40DD000E0F0B /* LHLSquarItem.m in Sources */,
 				84C558A91D8C3292000E0F0B /* LHLSquareCell.m in Sources */,
 				84BDE8B71D8FE71C000CFE9F /* LHLAllViewController.m in Sources */,
 				8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */,
-				84C6E65A1D93A0C200104BB6 /* LHLPictureCell.m in Sources */,
 				84D2365A1D87BDB3005BBCE9 /* LHLPublishViewController.m in Sources */,
 				84BDE8BD1D8FE742000CFE9F /* LHLVoiceViewController.m in Sources */,
 				84F803CF1D8AD6FD0017CCC7 /* LHLSubTagCell.m in Sources */,
@@ -895,7 +876,6 @@
 				84BE4EC51D8BD84C00AB0DDF /* LHLFastLoginView.m in Sources */,
 				84BE4ECD1D8BF8D600AB0DDF /* LHLLoginField.m in Sources */,
 				84C558A31D8C0C54000E0F0B /* UITextField+placeholder.m in Sources */,
-				84C6E6571D93A0B400104BB6 /* LHLVoiceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
