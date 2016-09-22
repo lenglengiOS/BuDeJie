@@ -11,6 +11,11 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "LHLTopicsItem.h"
 #import <MJExtension/MJExtension.h>
+#import "LHLTopicsCell.h"
+#import "LHLVideosCell.h"
+#import "LHLVoiceCell.h"
+#import "LHLPictureCell.h"
+#import "LHLWordCell.h"
 
 @interface LHLAllViewController ()
 
@@ -213,19 +218,42 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor clearColor];
+//    static NSString *ID = @"cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+//    
+//    if (cell == nil) {
+//        
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+//        cell.backgroundColor = [UIColor clearColor];
+//    }
+//    
+//    LHLTopicsItem *item = self.topics[indexPath.row];
+//    cell.textLabel.text = item.name;
+//    cell.detailTextLabel.text = item.text;
+    LHLTopicsCell *cell = nil;
+    LHLTopicsItem *topic = self.topics[indexPath.row];
+    // 10为图片，29为段子，31为音频，41为视频，默认为1
+    if (topic.type == 10) { // 图片
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLPictureCell"];
+        if (cell == nil) {
+            cell = [[LHLPictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLPictureCell"];
+        }
+    }else if (topic.type == 29) { // 段子
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLWordCell"];
+        if (cell == nil) {
+            cell = [[LHLWordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLWordCell"];
+        }
+    }else if (topic.type == 31) { // 音频
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVoiceCell"];
+        if (cell == nil) {
+            cell = [[LHLVoiceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVoiceCell"];
+        }
+    }else if (topic.type == 41) { // 视频
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVideosCell"];
+        if (cell == nil) {
+            cell = [[LHLVideosCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVideosCell"];
+        }
     }
-    
-    LHLTopicsItem *item = self.topics[indexPath.row];
-    cell.textLabel.text = item.name;
-    cell.detailTextLabel.text = item.text;
-    
     return cell;
 }
 
@@ -246,7 +274,7 @@
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @"31";
+    parameters[@"type"] = @"1";
     parameters[@"c"] = @"data";
 
     // 发送请求
@@ -289,7 +317,7 @@
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @"31";
+    parameters[@"type"] = @"1";
     parameters[@"c"] = @"data";
     parameters[@"maxtime"] = self.maxtime;
     
