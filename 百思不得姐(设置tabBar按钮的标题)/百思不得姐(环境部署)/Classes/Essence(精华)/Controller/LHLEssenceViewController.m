@@ -199,14 +199,22 @@
  */
 - (void)titleBtnClick:(LHLTitleButton *)button{
     
+    // 重复点击了标题按钮
     if (self.previousClickTitleBtn == button) {
         [[NSNotificationCenter defaultCenter] postNotificationName:LHLTabBarButtonRepeatClickedNotification object:nil];
     }
     
+    // 处理标题按钮的点击
+    [self dealTitleButtonClick:button];
+    
+}
+
+- (void)dealTitleButtonClick:(LHLTitleButton *)button
+{
     self.previousClickTitleBtn.selected = NO;
     button.selected = YES;
     self.previousClickTitleBtn = button;
-
+    
     NSUInteger index = button.tag;
     // 处理下划线
     [UIView animateWithDuration:0.25 animations:^{
@@ -235,9 +243,7 @@
         scrolView.scrollsToTop = (i == index);
         
     }
-    
 }
-
 
 /**
  *  点击了游戏按钮
@@ -257,7 +263,8 @@
     NSInteger index = scrollView.contentOffset.x / LHLScreenW;
     
     LHLTitleButton *titleBtn = self.titlesView.subviews[index];
-    [self titleBtnClick:titleBtn];
+//    [self titleBtnClick:titleBtn];
+    [self dealTitleButtonClick:titleBtn];
     
 }
 
