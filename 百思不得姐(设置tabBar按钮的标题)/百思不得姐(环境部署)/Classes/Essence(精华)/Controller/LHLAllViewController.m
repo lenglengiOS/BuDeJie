@@ -14,6 +14,8 @@
 
 @interface LHLAllViewController ()
 
+/** 请求管理者 */
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
 /** 当前最后一条帖子数据的描述信息，专门用来加载下一页数据 */
 @property (nonatomic, copy) NSString *maxtime;
 /** 所有的帖子数据 */
@@ -22,23 +24,30 @@
 @property (nonatomic, weak) UIView *headerView;
 /** headerLabel */
 @property (nonatomic, weak)  UILabel *headerLabel;
-/** 记录是否正在刷新 */
+/** 记录是否正在下拉刷新 */
 @property (nonatomic, assign, getter=isHeaderRefreshing) BOOL headerRefreshing;
 
 /** footerView */
 @property (nonatomic, weak) UIView *footerView;
 /** footerLabel */
 @property (nonatomic, weak)  UILabel *footerLabel;
-/** 记录是否正在加载 */
+/** 记录是否正在上拉加载 */
 @property (nonatomic, assign, getter=isRefreshing) BOOL refreshing;
 
 @end
 
 @implementation LHLAllViewController
 
+- (AFHTTPSessionManager *)manager{
+    if (_manager == nil) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+  
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
     self.view.backgroundColor = LHLRandomColor;
     
@@ -113,7 +122,7 @@
  */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 
-    // 如果正在刷新，则返回
+    // 如果正在下拉刷新，则返回
     if (self.headerRefreshing == YES) return;
     CGFloat offsetY = - (self.tableView.contentInset.top + self.headerView.lhl_height);
     if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
@@ -142,7 +151,7 @@
     
     CGFloat offsetY = - (self.tableView.contentInset.top + self.headerView.lhl_height);
     
-    // 如果正在刷新，则返回
+    // 如果正在下拉刷新，则返回
     if (self.headerRefreshing == YES) return;
     
     if (self.tableView.contentOffset.y <= offsetY) { // header已经完全出现
@@ -162,9 +171,7 @@
  *  处理footer
  */
 - (void)dealFooter{
-    // 判断加载状态，如果正在上拉刷新，则返回
-    if (self.refreshing == YES) return;
-    
+ 
     // 如果contentSize没有值，则返回
     if (self.tableView.contentSize.height == 0) return;
     CGFloat offstY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.lhl_height;
@@ -227,11 +234,15 @@
  *  发送请求给服务器－下拉刷新数据
  */
 - (void)loadNewTopics{
+
     LHLLog(@"发送请求给服务器－下拉刷新数据");
     // 请求数据 ＝> 解析数据 ＝> 显示数据
+    // 如果正在上拉加载，则取消下拉刷新的任务
+    if (self.isRefreshing) {
+        [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+        [self footerEndRefreshing];
+    }
     
-    // 创建请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
@@ -239,7 +250,7 @@
     parameters[@"c"] = @"data";
 
     // 发送请求
-    [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+    [self.manager GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
 
         // 把第一页的最后一条帖子数据的描述信息，专门用来加载下一页数据
         self.maxtime = responseObject[@"info"][@"maxtime"];
@@ -251,8 +262,10 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         // 结束刷新
         [self headerEndRefreshing];
-        
-        [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        // 如果错误原因不是取消，才显示SVProgressHUD
+        if (error.code != NSURLErrorCancelled) {
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
         });
@@ -264,13 +277,15 @@
  *  发送请求给服务器－上拉刷新更多数据
  */
 - (void)loadMoreTopics{
-    
+
     LHLLog(@"发送请求给服务器－上拉刷新数据");
     self.footerLabel.text =  @"正在加载数据...";
     // 请求数据 ＝> 解析数据 ＝> 显示数据
-    
-    // 创建请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    // 如果正在上拉加载，则取消下拉刷新的任务
+    if (self.isHeaderRefreshing) {
+        [self.manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+        [self headerEndRefreshing];
+    }
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
@@ -279,7 +294,7 @@
     parameters[@"maxtime"] = self.maxtime;
     
     // 发送请求
-    [mgr GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
+    [self.manager GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
         
         // 当前页的最后一条帖子数据的描述信息，专门用来加载下一页数据
         self.maxtime = responseObject[@"info"][@"maxtime"];
@@ -292,9 +307,11 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         // 结束刷新
-        [self headerEndRefreshing];
-        
-        [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        [self footerEndRefreshing];
+        // 如果错误原因不是取消，才显示SVProgressHUD
+        if (error.code != NSURLErrorCancelled) {
+            [SVProgressHUD showErrorWithStatus:@"网络繁忙，请稍后再试！"];
+        }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [SVProgressHUD dismiss];
         });
@@ -340,8 +357,7 @@
 
 #pragma mark - footerRefresh
 - (void)footerBeginRefreshing{
-    // 如果正在下拉刷新，则返回
-    if (self.headerRefreshing == YES) return;
+    
     // 判断加载状态，如果正在上拉刷新，则返回
     if (self.refreshing == YES) return;
     self.refreshing = YES;
