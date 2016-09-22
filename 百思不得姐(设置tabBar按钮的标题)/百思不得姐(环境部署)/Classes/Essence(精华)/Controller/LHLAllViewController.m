@@ -43,11 +43,17 @@
 
 @implementation LHLAllViewController
 
+static NSString * const LHLVideosCellID = @"LHLVideosCellID";
+static NSString * const LHLVoiceCellID = @"LHLVoiceCellID";
+static NSString * const LHLPictureCellID = @"LHLPictureCellID";
+static NSString * const LHLWordCellID = @"LHLWordCellID";
+
 - (AFHTTPSessionManager *)manager{
     if (_manager == nil) {
         _manager = [AFHTTPSessionManager manager];
     }
     return _manager;
+
 }
 
 - (void)viewDidLoad {
@@ -58,10 +64,16 @@
     
     // 设置右边指示器的显示范围与tableView的内边距相同
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    // 注册cell
+    [self .tableView registerClass:[LHLVideosCell class] forCellReuseIdentifier:LHLVideosCellID];
+    [self .tableView registerClass:[LHLVoiceCell class] forCellReuseIdentifier:LHLVoiceCellID];
+    [self .tableView registerClass:[LHLPictureCell class] forCellReuseIdentifier:LHLPictureCellID];
+    [self .tableView registerClass:[LHLWordCell class] forCellReuseIdentifier:LHLWordCellID];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClicked) name:LHLTabBarButtonRepeatClickedNotification object:nil];
 
     [self setUpRefesh];
+    
 }
 
 /**
@@ -215,47 +227,53 @@
     return self.topics.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    static NSString *ID = @"cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-//    
-//    if (cell == nil) {
-//        
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-//        cell.backgroundColor = [UIColor clearColor];
-//    }
-//    
-//    LHLTopicsItem *item = self.topics[indexPath.row];
-//    cell.textLabel.text = item.name;
-//    cell.detailTextLabel.text = item.text;
     LHLTopicsCell *cell = nil;
     LHLTopicsItem *topic = self.topics[indexPath.row];
     // 10为图片，29为段子，31为音频，41为视频，默认为1
     if (topic.type == 10) { // 图片
-        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLPictureCell"];
-        if (cell == nil) {
-            cell = [[LHLPictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLPictureCell"];
-        }
+        cell = [tableView dequeueReusableCellWithIdentifier:LHLPictureCellID];
     }else if (topic.type == 29) { // 段子
-        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLWordCell"];
-        if (cell == nil) {
-            cell = [[LHLWordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLWordCell"];
-        }
+        cell = [tableView dequeueReusableCellWithIdentifier:LHLWordCellID];
     }else if (topic.type == 31) { // 音频
-        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVoiceCell"];
-        if (cell == nil) {
-            cell = [[LHLVoiceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVoiceCell"];
-        }
+        cell = [tableView dequeueReusableCellWithIdentifier:LHLVoiceCellID];
     }else if (topic.type == 41) { // 视频
-        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVideosCell"];
-        if (cell == nil) {
-            cell = [[LHLVideosCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVideosCell"];
-        }
+        cell = [tableView dequeueReusableCellWithIdentifier:LHLVideosCellID];
     }
+    
+    cell.topic = topic;
     return cell;
 }
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    LHLTopicsCell *cell = nil;
+//    LHLTopicsItem *topic = self.topics[indexPath.row];
+//    // 10为图片，29为段子，31为音频，41为视频，默认为1
+//    if (topic.type == 10) { // 图片
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLPictureCell"];
+//        if (cell == nil) {
+//            cell = [[LHLPictureCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLPictureCell"];
+//        }
+//    }else if (topic.type == 29) { // 段子
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLWordCell"];
+//        if (cell == nil) {
+//            cell = [[LHLWordCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLWordCell"];
+//        }
+//    }else if (topic.type == 31) { // 音频
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVoiceCell"];
+//        if (cell == nil) {
+//            cell = [[LHLVoiceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVoiceCell"];
+//        }
+//    }else if (topic.type == 41) { // 视频
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"LHLVideosCell"];
+//        if (cell == nil) {
+//            cell = [[LHLVideosCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LHLVideosCell"];
+//        }
+//    }
+//    
+//    cell.topic = topic;
+//    
+//    return cell;
+//}
 
 #pragma mark - 数据处理
 /**
