@@ -33,17 +33,17 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv5-H0-gCx">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mv5-H0-gCx">
                         <rect key="frame" x="10" y="55" width="300" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-dJ-NoQ">
-                        <rect key="frame" x="0.0" y="166" width="320" height="40"/>
+                        <rect key="frame" x="0.0" y="171" width="320" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H32-Xn-gY1">
-                                <rect key="frame" x="0.0" y="0.0" width="79" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="79" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="顶" image="mainCellDing">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,7 +51,7 @@
                                 <state key="highlighted" image="mainCellDingClick"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plx-Af-uKk">
-                                <rect key="frame" x="80" y="0.0" width="80" height="40"/>
+                                <rect key="frame" x="80" y="0.0" width="80" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="踩" image="mainCellCai">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,7 +59,7 @@
                                 <state key="highlighted" image="mainCellCaiClick"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-Cd-f9D">
-                                <rect key="frame" x="161" y="0.0" width="79" height="40"/>
+                                <rect key="frame" x="161" y="0.0" width="79" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="转发" image="mainCellShare">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +67,7 @@
                                 <state key="highlighted" image="mainCellShareClick"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-8e-Cd7">
-                                <rect key="frame" x="241" y="0.0" width="79" height="40"/>
+                                <rect key="frame" x="241" y="0.0" width="79" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="评论" image="mainCellComment">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,13 +81,13 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-button-line" translatesAutoresizingMaskIntoConstraints="NO" id="aow-Os-jvB">
-                                <rect key="frame" x="79" y="0.0" width="1" height="40"/>
+                                <rect key="frame" x="79" y="0.0" width="1" height="35"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-button-line" translatesAutoresizingMaskIntoConstraints="NO" id="7Tx-K4-lgz">
-                                <rect key="frame" x="160" y="0.0" width="1" height="40"/>
+                                <rect key="frame" x="160" y="0.0" width="1" height="35"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell-button-line" translatesAutoresizingMaskIntoConstraints="NO" id="l6O-y6-Ymv">
-                                <rect key="frame" x="240" y="0.0" width="1" height="40"/>
+                                <rect key="frame" x="240" y="0.0" width="1" height="35"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -122,7 +122,7 @@
                             <constraint firstAttribute="bottom" secondItem="aow-Os-jvB" secondAttribute="bottom" id="pLm-hD-7NF"/>
                             <constraint firstAttribute="bottom" secondItem="plx-Af-uKk" secondAttribute="bottom" id="qFg-Oq-z4c"/>
                             <constraint firstAttribute="trailing" secondItem="bP3-mi-Fzx" secondAttribute="trailing" id="sGU-so-I1l"/>
-                            <constraint firstAttribute="height" constant="40" id="sS0-eG-0s6"/>
+                            <constraint firstAttribute="height" constant="35" id="sS0-eG-0s6"/>
                             <constraint firstItem="H32-Xn-gY1" firstAttribute="leading" secondItem="JiZ-dJ-NoQ" secondAttribute="leading" id="ze9-A1-WkJ"/>
                         </constraints>
                     </view>
