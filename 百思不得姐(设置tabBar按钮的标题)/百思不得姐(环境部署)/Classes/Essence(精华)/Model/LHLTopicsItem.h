@@ -42,4 +42,9 @@
 /** 帖子的类型 10为图片 29为段子 31为音频 41为视频 */
 @property (nonatomic, assign) NSInteger type;
 
+
+/********** 手动添加的属性（为了方便编程） *********/
+/** 缓存cell的高度 */
+@property (nonatomic, assign) CGFloat cellHeight;
+
 @end

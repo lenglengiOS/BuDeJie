@@ -234,16 +234,8 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     
     // 取出模型
     LHLTopicsItem *topic = self.topics[indexPath.row];
-    CGFloat cellHeight = 0;
-    // 正文的Y值
-    cellHeight += 55;
-    // 最大宽度
-    CGSize textMaxSize = CGSizeMake(LHLScreenW - 2 * LHLMargin, MAXFLOAT);
-    
-    cellHeight += ([topic.text sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:textMaxSize].height + 2 * LHLMargin + 35);
-    
-    
-    return cellHeight;
+    LHLFunc
+    return topic.cellHeight;
 }
 
 #pragma mark - 数据处理
