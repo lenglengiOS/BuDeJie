@@ -20,10 +20,22 @@
     CGSize textMaxSize = CGSizeMake(LHLScreenW - 2 * LHLMargin, MAXFLOAT);
     // 正文高度
     _cellHeight += ([self.text boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size.height + LHLMargin);
-
+    
+    // 图片
+    if (self.type != LHLTopicTypeWord) {
+        
+        CGFloat middleW = textMaxSize.width;
+        CGFloat middleH = middleW * self.height / self.width;
+        CGFloat middleY = _cellHeight;
+        CGFloat middleX = LHLMargin;
+        
+        _middleFrame = CGRectMake(middleX, middleY, middleW, middleH);
+        _cellHeight += middleH + LHLMargin;
+        
+    }
+    
     // 评论内容
     NSDictionary *topCmt = self.top_cmt.firstObject;
-    
     if (self.top_cmt.count) {
         
         // 最热评论
@@ -41,7 +53,6 @@
    
     // 工具条
     _cellHeight += 35 + LHLMargin;
-
     return _cellHeight;
 }
 

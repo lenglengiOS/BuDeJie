@@ -8,18 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-//typedef NS_ENUM(NSUInteger, LHLTopicType) {
-//    /** 全部 */
-//    LHLTopicTypeAll = 1,
-//    /** 音频 */
-//    LHLTopicTypeVoice = 31,
-//    /** 图片 */
-//    LHLTopicTypePicture = 10,
-//    /** 段子 */
-//    LHLTopicTypeWord = 29,
-//    /** 视频 */
-//    LHLTopicTypeVideo = 41,
-//};
+typedef NS_ENUM(NSUInteger, LHLTopicType) {
+    /** 全部 */
+    LHLTopicTypeAll = 1,
+    /** 音频 */
+    LHLTopicTypeVoice = 31,
+    /** 图片 */
+    LHLTopicTypePicture = 10,
+    /** 段子 */
+    LHLTopicTypeWord = 29,
+    /** 视频 */
+    LHLTopicTypeVideo = 41,
+};
 
 @interface LHLTopicsItem : NSObject
 /** 用户的名字 */
@@ -43,8 +43,13 @@
 @property (nonatomic, assign) NSInteger type;
 /** 最热评论 */
 @property (nonatomic, strong) NSArray *top_cmt;
+/** 宽度 */
+@property (nonatomic, assign) NSInteger width;
+/** 高度 */
+@property (nonatomic, assign) NSInteger height;
 
-
+/** 中间图片的frame */
+@property (nonatomic, assign) CGRect middleFrame;
 
 /********** 手动添加的属性（为了方便编程） *********/
 /** 缓存cell的高度 */

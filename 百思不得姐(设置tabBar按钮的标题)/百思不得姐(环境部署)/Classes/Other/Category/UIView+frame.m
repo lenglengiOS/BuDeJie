@@ -10,6 +10,11 @@
 
 @implementation UIView (frame)
 
++ (instancetype)lhl_viewFeomXib{
+    
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+}
+
 - (CGFloat)lhl_height{
     
     return self.frame.size.height;

@@ -10,6 +10,7 @@
 
 @interface UIView (frame)
 
++ (instancetype)lhl_viewFeomXib;
 
 @property CGFloat lhl_width;
 @property CGFloat lhl_height;
