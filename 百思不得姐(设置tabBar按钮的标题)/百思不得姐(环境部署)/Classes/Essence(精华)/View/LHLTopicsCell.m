@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 @property (weak, nonatomic) IBOutlet UIButton *repostButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+// 最热评论全部
+@property (weak, nonatomic) IBOutlet UIView *topCmtView;
+// 最热评论文字
+@property (weak, nonatomic) IBOutlet UILabel *topCmtLabel;
 
 
 @end
@@ -38,6 +42,24 @@
     [self setupButtonTitle:self.caiButton dingNumber:topic.ding placeholder:@" 踩"];
     [self setupButtonTitle:self.repostButton dingNumber:topic.ding placeholder:@" 转发"];
     [self setupButtonTitle:self.commentButton dingNumber:topic.ding placeholder:@" 评论"];
+    
+    // 最热评论
+    if (self.topic.top_cmt.count) {
+        self.topCmtView.hidden = NO;
+    }else{
+        self.topCmtView.hidden = YES;
+    }
+    // 评论内容
+    NSDictionary *topCmt = topic.top_cmt.firstObject;
+    NSString *content = topCmt[@"content"];
+    // 回复的内容是语音消息
+    if (content.length == 0) {
+        content = @"[语音评论]";
+    }
+    
+    NSString *username = topCmt[@"user"][@"username"];
+    NSString *topCmtText = [NSString stringWithFormat:@"%@: %@", username, content];
+    self.topCmtLabel.text = topCmtText;
     
     // 裁剪占位图片
     UIImage *placeholder = [UIImage lhl_circleImageNamed:@"defaultUserIcon"];

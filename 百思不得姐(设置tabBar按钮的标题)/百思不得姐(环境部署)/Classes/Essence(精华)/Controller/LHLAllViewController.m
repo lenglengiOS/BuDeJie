@@ -51,7 +51,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
     self.view.backgroundColor = LHLColor(206, 206, 206);
     
@@ -231,10 +231,10 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    LHLLog(@"%ld", indexPath.row);
     // 取出模型
     LHLTopicsItem *topic = self.topics[indexPath.row];
-    LHLFunc
+    // 返回cell的高度
     return topic.cellHeight;
 }
 
@@ -260,7 +260,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 
     // 发送请求
     [self.manager GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
-
+        LHLAFNWriteToPlist(newToipics);
         // 把第一页的最后一条帖子数据的描述信息，专门用来加载下一页数据
         self.maxtime = responseObject[@"info"][@"maxtime"];
         self.topics = [LHLTopicsItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
