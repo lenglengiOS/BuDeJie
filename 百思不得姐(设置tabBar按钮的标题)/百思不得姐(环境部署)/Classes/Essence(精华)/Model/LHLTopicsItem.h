@@ -48,11 +48,25 @@ typedef NS_ENUM(NSUInteger, LHLTopicType) {
 /** 高度 */
 @property (nonatomic, assign) NSInteger height;
 
-/** 中间图片的frame */
-@property (nonatomic, assign) CGRect middleFrame;
+/** 小图 */
+@property (nonatomic, copy) NSString *image0;
+/** 中图 */
+@property (nonatomic, copy) NSString *image2;
+/** 大图 */
+@property (nonatomic, copy) NSString *image1;
+
+/** 音频时长 */
+@property (nonatomic, assign) NSInteger voicetime;
+/** 视频时长 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 音频\视频的播放次数 */
+@property (nonatomic, assign) NSInteger playcount;
+
 
 /********** 手动添加的属性（为了方便编程） *********/
 /** 缓存cell的高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
+/** 中间图片的frame */
+@property (nonatomic, assign) CGRect middleFrame;
 
 @end

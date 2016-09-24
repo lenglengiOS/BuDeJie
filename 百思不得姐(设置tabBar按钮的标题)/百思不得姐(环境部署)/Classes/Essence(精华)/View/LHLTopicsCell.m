@@ -122,6 +122,7 @@
     }else if (topic.type == LHLTopicTypeVoice) { // 声音
         
         [self.contentView addSubview:self.voiceView];
+        self.voiceView.topic = topic;
         self.pictureView.hidden = YES;
         self.videoView.hidden = YES;
         self.voiceView.hidden = NO;

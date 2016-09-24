@@ -9,17 +9,13 @@
 #import "AppDelegate.h"
 #import "LHLAdViewController.h"
 #import "LHLTabBarController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    LHLFunc
-//}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -34,6 +30,9 @@
     // 设置主窗口并显示出来
     [self.window makeKeyAndVisible];
    
+    // 开始网络状态监控
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
     return YES;
 }
 
