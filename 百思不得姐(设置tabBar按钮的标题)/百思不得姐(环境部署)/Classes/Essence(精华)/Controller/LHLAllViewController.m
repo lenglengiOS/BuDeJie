@@ -255,7 +255,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @"31";
+    parameters[@"type"] = @(LHLTopicTypeVideo);
     parameters[@"c"] = @"data";
 
     // 发送请求
@@ -298,7 +298,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @"31";
+    parameters[@"type"] = @(LHLTopicTypeVideo);
     parameters[@"c"] = @"data";
     parameters[@"maxtime"] = self.maxtime;
     

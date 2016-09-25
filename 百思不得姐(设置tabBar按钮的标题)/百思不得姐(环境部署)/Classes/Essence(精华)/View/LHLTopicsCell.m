@@ -107,6 +107,7 @@
     }else if (topic.type == LHLTopicTypeVideo) { // 视频
         
         [self.contentView addSubview:self.videoView];
+        self.videoView.topic = topic;
         self.pictureView.hidden = YES;
         self.videoView.hidden = NO;
         self.voiceView.hidden = YES;

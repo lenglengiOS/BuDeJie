@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class LHLTopicsItem;
 @interface LHLTopicVideoView : UIView
-
+/** 数据模型 */
+@property (nonatomic, strong) LHLTopicsItem *topic;
 @end

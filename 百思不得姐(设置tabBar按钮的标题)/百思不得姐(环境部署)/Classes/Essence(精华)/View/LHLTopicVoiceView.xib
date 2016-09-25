@@ -47,14 +47,20 @@
                 <constraint firstAttribute="trailing" secondItem="5Ta-06-lRe" secondAttribute="trailing" id="ITM-RF-8Zk"/>
                 <constraint firstAttribute="centerY" secondItem="0rc-eI-l1n" secondAttribute="centerY" id="Ihh-sS-hZ1"/>
                 <constraint firstItem="5Ta-06-lRe" firstAttribute="top" secondItem="WOU-HE-Y1C" secondAttribute="top" constant="20" id="ROA-rt-GIZ"/>
+                <constraint firstItem="fhm-ld-MkE" firstAttribute="top" secondItem="WOU-HE-Y1C" secondAttribute="top" id="Rgc-hy-GhE"/>
+                <constraint firstItem="0rc-eI-l1n" firstAttribute="centerX" secondItem="sNK-RV-Qh0" secondAttribute="centerX" id="Tak-a8-dNH"/>
+                <constraint firstAttribute="bottom" secondItem="ibj-JX-qrU" secondAttribute="bottom" id="YVq-PQ-PLn"/>
                 <constraint firstAttribute="centerX" secondItem="0rc-eI-l1n" secondAttribute="centerX" id="ZvZ-Jv-9o3"/>
                 <constraint firstAttribute="trailing" secondItem="ibj-JX-qrU" secondAttribute="trailing" id="b41-6M-oao"/>
                 <constraint firstItem="5Ta-06-lRe" firstAttribute="leading" secondItem="WOU-HE-Y1C" secondAttribute="leading" id="c8u-P9-fny"/>
                 <constraint firstAttribute="bottom" secondItem="ibj-JX-qrU" secondAttribute="bottom" id="dNr-g8-Zz5"/>
                 <constraint firstItem="sNK-RV-Qh0" firstAttribute="leading" secondItem="WOU-HE-Y1C" secondAttribute="leading" id="hJq-Nc-lb1"/>
+                <constraint firstAttribute="trailing" secondItem="fhm-ld-MkE" secondAttribute="trailing" id="heJ-Tj-xSk"/>
                 <constraint firstAttribute="trailing" secondItem="fhm-ld-MkE" secondAttribute="trailing" id="j13-ES-07F"/>
+                <constraint firstItem="0rc-eI-l1n" firstAttribute="centerY" secondItem="sNK-RV-Qh0" secondAttribute="centerY" id="leu-Fu-vet"/>
                 <constraint firstAttribute="bottom" secondItem="sNK-RV-Qh0" secondAttribute="bottom" id="mQE-bL-Upv"/>
                 <constraint firstItem="sNK-RV-Qh0" firstAttribute="top" secondItem="WOU-HE-Y1C" secondAttribute="top" id="n9m-yR-fGF"/>
+                <constraint firstAttribute="trailing" secondItem="ibj-JX-qrU" secondAttribute="trailing" id="trg-50-NsJ"/>
                 <constraint firstItem="fhm-ld-MkE" firstAttribute="top" secondItem="WOU-HE-Y1C" secondAttribute="top" id="wxA-Iw-DLN"/>
                 <constraint firstAttribute="trailing" secondItem="sNK-RV-Qh0" secondAttribute="trailing" id="yvf-zJ-JfV"/>
             </constraints>
