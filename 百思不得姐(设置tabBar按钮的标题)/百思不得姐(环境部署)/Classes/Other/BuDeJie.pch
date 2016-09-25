@@ -10,6 +10,8 @@
 #import "UIView+frame.h"
 #import "UIBarButtonItem+item.h"
 #import "LHLConst.h"
+#import "UIImageView+download.h"
+#import "UIImage+image.h"
 
 #define LHLFunc NSLog(@"%s", __func__);
 

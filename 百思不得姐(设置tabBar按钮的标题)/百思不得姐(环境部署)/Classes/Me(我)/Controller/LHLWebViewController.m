@@ -65,6 +65,7 @@
 
 // 移除监听
 - (void)dealloc{
+    
     [self.webView removeObserver:self forKeyPath:@"canGoBack"];
     [self.webView removeObserver:self forKeyPath:@"canGoForward"];
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];

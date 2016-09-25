@@ -35,31 +35,9 @@
     
     // 数字显示
     [self resolveNum];
-   
-    [_iconImageView sd_setImageWithURL:[NSURL URLWithString:_item.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"] options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        /*
-        // 开启图形上下文
-        UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
-        
-        // 设置路径
-        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
-        
-        // 绘制路径
-        [path addClip];
-        
-        // 绘制图片
-        [image drawAtPoint:CGPointZero];
-        
-        // 生成图片
-        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-        
-        // 关闭上下文
-        UIGraphicsEndImageContext();
-        
-        _iconImageView.image = newImage;
-        */
-        
-    }];
+    
+    // 加载头像
+    [self.iconImageView lhl_setHeader:_item.image_list];
 }
 
 // 数字显示
@@ -75,9 +53,6 @@
         _numLabel.text = [NSString stringWithFormat:@"%ld人订阅", (long)num];
     }
     
-    
-    
-    
 }
 
 
@@ -85,9 +60,9 @@
 - (void)awakeFromNib {
 
     // 圆角头像
-    _iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width * 0.5;
-    _iconImageView.layer.masksToBounds = YES;
-     
+//    _iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width * 0.5;
+//    _iconImageView.layer.masksToBounds = YES;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

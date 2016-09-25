@@ -138,8 +138,6 @@ static CGFloat margin = 1;
         
     }
     
-    
-    
 }
 
 // 设置footerView
@@ -164,9 +162,6 @@ static CGFloat margin = 1;
   
     // 3.自定义cell
     self.tableView.tableFooterView = collectionView;
-    
-    
-    
     
 }
 
@@ -202,12 +197,9 @@ static CGFloat margin = 1;
     
     self.navigationItem.rightBarButtonItems = @[settingItem, nightItem];
     
-    
-    
     // 中间文字
     self.navigationItem.title = @"我的";
     
-        
 }
 
 - (void)setting{
@@ -215,14 +207,11 @@ static CGFloat margin = 1;
     LHLSettingViewController *settingVC = [[LHLSettingViewController alloc] init];
     [self.navigationController pushViewController:settingVC animated:YES];
     
-    
-    
 }
+
 - (void)night:(UIButton *)button{
     LHLFunc
     button.selected = !button.selected;
 }
-
-
 
 @end

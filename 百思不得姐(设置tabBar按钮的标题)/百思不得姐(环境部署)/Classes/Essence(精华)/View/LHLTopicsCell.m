@@ -45,19 +45,19 @@
 
 - (LHLTopicVoiceView *)voiceView{
     if (_voiceView == nil) {
-        _voiceView = [LHLTopicVoiceView lhl_viewFeomXib];
+        _voiceView = [LHLTopicVoiceView lhl_viewFromXib];
     }
     return _voiceView;
 }
 - (LHLTopicVideoView *)videoView{
     if (_videoView == nil) {
-        _videoView = [LHLTopicVideoView lhl_viewFeomXib];
+        _videoView = [LHLTopicVideoView lhl_viewFromXib];
     }
     return _videoView;
 }
 - (LHLTopicPictureView *)pictureView{
     if (_pictureView == nil) {
-        _pictureView = [LHLTopicPictureView lhl_viewFeomXib];
+        _pictureView = [LHLTopicPictureView lhl_viewFromXib];
     }
     return _pictureView;
 }
@@ -76,16 +76,7 @@
     [self setupButtonTitle:self.commentButton dingNumber:topic.ding placeholder:@" 评论"];
     
     // 裁剪占位图片
-    UIImage *placeholder = [UIImage lhl_circleImageNamed:@"defaultUserIcon"];
-    
-    [self.profileImageView sd_setImageWithURL:
-     [NSURL URLWithString:topic.profile_image]placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-         // 如果加载失败，直接返回
-         if (!image) return;
-         // 裁剪头像
-         self.profileImageView.image = [image lhl_circleImage];
-         
-     }];
+    [self.profileImageView lhl_setHeader:topic.profile_image];
     
     // 评论内容
     NSDictionary *topCmt = topic.top_cmt.firstObject;

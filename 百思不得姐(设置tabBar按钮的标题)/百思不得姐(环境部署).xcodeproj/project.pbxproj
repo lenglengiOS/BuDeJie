@@ -23,6 +23,7 @@
 		847A48DE1D8CF4C4002AE6BA /* LHLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847A48DC1D8CF4C4002AE6BA /* LHLWebViewController.xib */; };
 		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
+		84A698DE1D9773810080E580 /* UIImageView+download.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A698DD1D9773810080E580 /* UIImageView+download.m */; };
 		84A8DEE21D8D3D4A005A5F6B /* LHLFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */; };
 		84B62A451D927FBB009C7AA5 /* LHLTopicsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B62A441D927FBB009C7AA5 /* LHLTopicsItem.m */; };
 		84BDE8B41D8E29B6000CFE9F /* LHLTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDE8B31D8E29B6000CFE9F /* LHLTitleButton.m */; };
@@ -110,6 +111,8 @@
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		84A698DC1D9773810080E580 /* UIImageView+download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+download.h"; sourceTree = "<group>"; };
+		84A698DD1D9773810080E580 /* UIImageView+download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+download.m"; sourceTree = "<group>"; };
 		84A8DEE01D8D3D4A005A5F6B /* LHLFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLFileTool.h; sourceTree = "<group>"; };
 		84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLFileTool.m; sourceTree = "<group>"; };
 		84B62A431D927FBB009C7AA5 /* LHLTopicsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTopicsItem.h; sourceTree = "<group>"; };
@@ -679,6 +682,8 @@
 				849475001D899ED400937559 /* UIBarButtonItem+item.m */,
 				84C558A11D8C0C54000E0F0B /* UITextField+placeholder.h */,
 				84C558A21D8C0C54000E0F0B /* UITextField+placeholder.m */,
+				84A698DC1D9773810080E580 /* UIImageView+download.h */,
+				84A698DD1D9773810080E580 /* UIImageView+download.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				84D236571D87BDA2005BBCE9 /* LHLNewViewController.m in Sources */,
 				84D2364A1D87BBA9005BBCE9 /* AppDelegate.m in Sources */,
 				84D236651D87D352005BBCE9 /* UIImage+image.m in Sources */,
+				84A698DE1D9773810080E580 /* UIImageView+download.m in Sources */,
 				846E062D1D8A29AE00321D94 /* LHLNavigationViewController.m in Sources */,
 				84BE4EC51D8BD84C00AB0DDF /* LHLFastLoginView.m in Sources */,
 				84BE4ECD1D8BF8D600AB0DDF /* LHLLoginField.m in Sources */,
