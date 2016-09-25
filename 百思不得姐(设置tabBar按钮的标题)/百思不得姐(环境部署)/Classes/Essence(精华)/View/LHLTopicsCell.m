@@ -101,6 +101,7 @@
     if (topic.type == LHLTopicTypePicture) { // 图片
         
         [self.contentView addSubview:self.pictureView];
+        self.pictureView.topic = topic;
         self.pictureView.hidden = NO;
         self.videoView.hidden = YES;
         self.voiceView.hidden = YES;

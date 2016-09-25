@@ -37,7 +37,6 @@
     }
     
     self.voicetimeLabel.text = [NSString stringWithFormat:@"%02zd:%02zd", topic.voicetime / 60, topic.voicetime % 60];
-
 }
 
 

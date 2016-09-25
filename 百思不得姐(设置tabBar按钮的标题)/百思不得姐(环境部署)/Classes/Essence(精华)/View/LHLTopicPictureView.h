@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class LHLTopicsItem;
 @interface LHLTopicPictureView : UIView
-
+/** 数据模型 */
+@property (nonatomic, strong) LHLTopicsItem *topic;
 @end

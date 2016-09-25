@@ -26,6 +26,10 @@
         
         CGFloat middleW = textMaxSize.width;
         CGFloat middleH = middleW * self.height / self.width;
+        if (middleH >= LHLScreenH) { // 如果是超长图片，则高度设置为200
+            middleH = 200;
+            self.bigPicture = YES;
+        }
         CGFloat middleY = _cellHeight;
         CGFloat middleX = LHLMargin;
         
