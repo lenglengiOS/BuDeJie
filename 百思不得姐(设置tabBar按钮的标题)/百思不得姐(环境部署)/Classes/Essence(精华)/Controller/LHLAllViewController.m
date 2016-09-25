@@ -190,7 +190,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     if (self.tableView.contentOffset.y >= offstY && self.tableView.contentOffset.y > -(self.tableView.contentInset.top)) { // footer完全出现，并且使往上拖拽
         // 开始刷新
         [self footerBeginRefreshing];
-        
     }
 
 }
@@ -205,7 +204,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     if (self.tableView.scrollsToTop == NO) return;
     
     [self headerBeginRefreshing];
-    LHLLog(@"%@ -- 刷新数据", self.class);
 }
 
 // 移除通知
@@ -231,7 +229,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LHLLog(@"%ld", indexPath.row);
     // 取出模型
     LHLTopicsItem *topic = self.topics[indexPath.row];
     // 返回cell的高度
@@ -243,8 +240,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
  *  发送请求给服务器－下拉刷新数据
  */
 - (void)loadNewTopics{
-
-    LHLLog(@"发送请求给服务器－下拉刷新数据");
     // 请求数据 ＝> 解析数据 ＝> 显示数据
     // 如果正在上拉加载，则取消下拉刷新的任务
     if (self.isRefreshing) {
@@ -287,7 +282,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
  */
 - (void)loadMoreTopics{
 
-    LHLLog(@"发送请求给服务器－上拉刷新数据");
     self.footerLabel.text =  @"正在加载数据...";
     // 请求数据 ＝> 解析数据 ＝> 显示数据
     // 如果正在上拉加载，则取消下拉刷新的任务
@@ -360,7 +354,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
         inset.top -= self.headerView.lhl_height;
         self.tableView.contentInset = inset;
         // 显示数据
-        LHLLog(@"刷新数据完成－显示数据");
     }];
 }
 
@@ -378,7 +371,6 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     self.refreshing = NO;
     [self.tableView reloadData];
     self.footerLabel.text =  @"上拉或点击可以加载更多...";
-    LHLLog(@"刷新数据完成－显示数据");
 }
 
 @end

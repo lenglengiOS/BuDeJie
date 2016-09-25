@@ -26,19 +26,35 @@
 }
 - (void)setTopic:(LHLTopicsItem *)topic{
     _topic = topic;
+    
     // 设置图片
     UIImage *placeholder = nil;
     [self.imageView lhl_setOriginImage:topic.image1 thumbnailImage:topic.image0 placeholder:placeholder];
     
     // gif
-    self.gifView.hidden = !self.topic.is_gif;
+    self.gifView.hidden = !topic.is_gif;
     
     // 超长图片
-    if (self.topic.isBigPicture) {
+    if (topic.isBigPicture) { // 是超长图
         self.seeBigPictureButton.hidden = NO;
         self.imageView.contentMode = UIViewContentModeTop;
         self.imageView.clipsToBounds = YES;
-    }else{
+        
+        // 处理超长图片的大小
+        if (self.imageView.image) {
+            CGFloat imageW = topic.middleFrame.size.width;
+            CGFloat imageH =imageW * topic.height / topic.width;
+            CGSize size = CGSizeMake(topic.middleFrame.size.width, imageH);
+            UIGraphicsBeginImageContext(size);
+            // 绘制图片到上下文中
+            [self.imageView.image drawInRect:CGRectMake(0, 0, imageW, imageH)];
+            self.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            // 关闭上下文
+            UIGraphicsEndImageContext();
+        }
+        
+        
+    }else{ // 不是超长图
         self.seeBigPictureButton.hidden = YES;
         self.imageView.contentMode = UIViewContentModeScaleToFill;
         self.imageView.clipsToBounds = NO;
