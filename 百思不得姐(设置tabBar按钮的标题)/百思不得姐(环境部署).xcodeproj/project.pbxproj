@@ -74,6 +74,8 @@
 		84F803D01D8AD6FD0017CCC7 /* LHLSubTagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F803CE1D8AD6FD0017CCC7 /* LHLSubTagCell.xib */; };
 		84FAF54F1D893AD300A71005 /* LHLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF54E1D893AD300A71005 /* LHLTabBar.m */; };
 		84FAF5551D894BAC00A71005 /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FAF5541D894BAC00A71005 /* UIView+frame.m */; };
+		84FC2BB01D98F02A00083174 /* LHLSeeBigPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC2BAE1D98F02A00083174 /* LHLSeeBigPictureViewController.m */; };
+		84FC2BB11D98F02A00083174 /* LHLSeeBigPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FC2BAF1D98F02A00083174 /* LHLSeeBigPictureViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +203,9 @@
 		84FAF54E1D893AD300A71005 /* LHLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTabBar.m; sourceTree = "<group>"; };
 		84FAF5531D894BAC00A71005 /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
 		84FAF5541D894BAC00A71005 /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
+		84FC2BAD1D98F02A00083174 /* LHLSeeBigPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLSeeBigPictureViewController.h; sourceTree = "<group>"; };
+		84FC2BAE1D98F02A00083174 /* LHLSeeBigPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLSeeBigPictureViewController.m; sourceTree = "<group>"; };
+		84FC2BAF1D98F02A00083174 /* LHLSeeBigPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LHLSeeBigPictureViewController.xib; sourceTree = "<group>"; };
 		E459A3865E4B8A1010416C6C /* Pods-百思不得姐(环境部署).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐(环境部署).debug.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐(环境部署)/Pods-百思不得姐(环境部署).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -424,6 +429,9 @@
 				84BDE8BF1D8FE75A000CFE9F /* LHLPictureViewController.m */,
 				84BDE8C11D8FE766000CFE9F /* LHLWordViewController.h */,
 				84BDE8C21D8FE766000CFE9F /* LHLWordViewController.m */,
+				84FC2BAD1D98F02A00083174 /* LHLSeeBigPictureViewController.h */,
+				84FC2BAE1D98F02A00083174 /* LHLSeeBigPictureViewController.m */,
+				84FC2BAF1D98F02A00083174 /* LHLSeeBigPictureViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -783,6 +791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				846E06441D8A618000321D94 /* LHLAdViewController.xib in Resources */,
+				84FC2BB11D98F02A00083174 /* LHLSeeBigPictureViewController.xib in Resources */,
 				84D818931D968F7900B79483 /* LHLTopicVideoView.xib in Resources */,
 				84BE4EC21D8BB6DC00AB0DDF /* LHLLoginRegisterView.xib in Resources */,
 				846E06511D8A641300321D94 /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
@@ -887,6 +896,7 @@
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
 				84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */,
 				847A48DD1D8CF4C4002AE6BA /* LHLWebViewController.m in Sources */,
+				84FC2BB01D98F02A00083174 /* LHLSeeBigPictureViewController.m in Sources */,
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
 				84BDE8C01D8FE75A000CFE9F /* LHLPictureViewController.m in Sources */,
 				84A8DEE21D8D3D4A005A5F6B /* LHLFileTool.m in Sources */,

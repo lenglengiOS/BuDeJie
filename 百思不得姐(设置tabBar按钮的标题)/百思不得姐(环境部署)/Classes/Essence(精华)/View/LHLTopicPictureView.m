@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "UIImageView+WebCache.h"
 #import "LHLTopicsItem.h"
+#import "LHLSeeBigPictureViewController.h"
 
 @interface LHLTopicPictureView ()
 
@@ -23,7 +24,18 @@
 
 - (void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPicture)]];
 }
+
+- (void)seeBigPicture{
+    
+    LHLSeeBigPictureViewController *seeBigPictureVC = [[LHLSeeBigPictureViewController alloc] init];
+    seeBigPictureVC.topic = self.topic;
+    [self.window.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+}
+
+
 - (void)setTopic:(LHLTopicsItem *)topic{
     _topic = topic;
     

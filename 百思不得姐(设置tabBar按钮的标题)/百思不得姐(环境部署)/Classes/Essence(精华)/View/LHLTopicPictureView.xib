@@ -27,7 +27,7 @@
                         <constraint firstAttribute="height" constant="31" id="rvo-AS-npz"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Re-4q-LNq">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Re-4q-LNq">
                     <rect key="frame" x="0.0" y="179" width="343" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -57,7 +57,7 @@
                 <outlet property="imageView" destination="men-5n-ZTc" id="8by-r7-JxT"/>
                 <outlet property="seeBigPictureButton" destination="7Re-4q-LNq" id="Y2a-N3-Mhn"/>
             </connections>
-            <point key="canvasLocation" x="269.5" y="50"/>
+            <point key="canvasLocation" x="301.5" y="51"/>
         </view>
     </objects>
     <resources>

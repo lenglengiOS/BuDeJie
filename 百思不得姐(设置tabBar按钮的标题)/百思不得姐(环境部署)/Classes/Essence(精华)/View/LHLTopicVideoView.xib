@@ -70,7 +70,7 @@
                 <outlet property="playcountLabel" destination="Jz4-ga-cUC" id="b01-kk-5Iu"/>
                 <outlet property="videotimeLabel" destination="Y5i-MI-erg" id="q7K-PG-ze1"/>
             </connections>
-            <point key="canvasLocation" x="269.5" y="50"/>
+            <point key="canvasLocation" x="156.5" y="148"/>
         </view>
     </objects>
     <resources>

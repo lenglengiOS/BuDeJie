@@ -10,6 +10,7 @@
 #import "LHLAdViewController.h"
 #import "LHLTabBarController.h"
 #import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/SDImageCache.h>
 
 @interface AppDelegate ()
 
@@ -32,6 +33,9 @@
    
     // 开始网络状态监控
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    // 每次启动程序，都清除过期的图片（一周）
+    [[SDImageCache sharedImageCache] cleanDisk];
     
     return YES;
 }
