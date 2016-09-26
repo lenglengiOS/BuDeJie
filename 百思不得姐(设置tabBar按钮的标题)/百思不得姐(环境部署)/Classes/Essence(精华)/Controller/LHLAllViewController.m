@@ -12,6 +12,7 @@
 #import "LHLTopicsItem.h"
 #import <MJExtension/MJExtension.h>
 #import "LHLTopicsCell.h"
+#import <SDWebImage/SDImageCache.h>
 
 @interface LHLAllViewController ()
 
@@ -151,6 +152,9 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     
     // 处理footer
     [self dealFooter];
+    
+    // 清除内存
+    [[SDImageCache sharedImageCache] clearMemory];
  
 }
 
