@@ -8,7 +8,7 @@
 
 #import "LHLSeeBigPictureViewController.h"
 #import "LHLTopicsItem.h"
-//#import "UIImageView+WebCache.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface LHLSeeBigPictureViewController ()<UIScrollViewDelegate>
@@ -17,8 +17,27 @@
 @end
 
 @implementation LHLSeeBigPictureViewController
+
+/**
+ *  保存图片到相机胶卷
+ */
 - (IBAction)saveBtn:(id)sender {
+    
+    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    if (!error) { // 保存成功
+        
+        [SVProgressHUD showSuccessWithStatus:@"保存成功！"];
+    }else{ // 保存失败
+        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
+    }
+}
+/**
+ *  退出看图
+ */
 - (IBAction)backBtn:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];

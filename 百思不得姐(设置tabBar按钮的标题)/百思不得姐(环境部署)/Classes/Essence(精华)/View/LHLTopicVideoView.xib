@@ -25,6 +25,9 @@
                     <state key="normal" image="video-play">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="playVideo:" destination="U0e-Zh-LUh" eventType="touchUpInside" id="yeG-mU-2DI"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4343播放" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz4-ga-cUC">
                     <rect key="frame" x="275" y="0.0" width="68" height="18"/>

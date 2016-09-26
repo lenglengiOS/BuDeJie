@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "UIImageView+WebCache.h"
 #import "LHLTopicsItem.h"
+#import "LHLSeeBigPictureViewController.h"
 
 @interface LHLTopicVideoView ()
 
@@ -22,8 +23,28 @@
 
 - (void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;
+    self.imageView.userInteractionEnabled = YES;
+    [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seeBigPicture)]];
 }
 
+/**
+ *  播放视频
+ */
+- (IBAction)playVideo:(id)sender {
+    [self seeBigPicture];
+}
+/**
+ *  点击查看大图
+ */
+- (void)seeBigPicture{
+    
+    LHLSeeBigPictureViewController *seeBigPictureVC = [[LHLSeeBigPictureViewController alloc] init];
+    seeBigPictureVC.topic = self.topic;
+    [self.window.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+}
+/**
+ *  设置数据
+ */
 - (void)setTopic:(LHLTopicsItem *)topic{
     _topic = topic;
     // 设置图片
