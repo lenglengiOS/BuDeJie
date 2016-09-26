@@ -24,7 +24,7 @@
  */
 - (IBAction)saveBtn:(id)sender {
 //    NSError *error = nil;
-////    保存图片到 相机胶卷
+////    1.保存图片到 相机胶卷
 //    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
 //        [PHAssetChangeRequest creationRequestForAssetFromImage:self.imageView.image];
 //    } error:&error];
@@ -33,12 +33,35 @@
 //    }else{ // 保存失败
 //        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
 //    }
-    // 创建一个相册
-    NSError *error = nil;
+    
+    // 获得软件名字
     NSString *title = [NSBundle mainBundle].infoDictionary[(NSString *)kCFBundleNameKey];
-    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
-        [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title];
-    } error:&error];
+    
+    // 抓取所有自定义相册
+    PHFetchResult<PHAssetCollection *> *collections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    
+    // 查找当前app对应的自定义相册
+    PHAssetCollection *createdCollection = nil;
+    for (PHAssetCollection *collection in collections) {
+        if ([collection.localizedTitle isEqualToString:title]) {
+            createdCollection = collection;
+            break;
+        }
+    }
+    
+    // 当前app的自定义相册没有被创建过
+    if (createdCollection == nil) {
+        NSError *error = nil;
+        NSString *title = [NSBundle mainBundle].infoDictionary[(NSString *)kCFBundleNameKey];
+        __block NSString *createdCollectionID = nil;
+        [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+            // 2.创建自定义相册
+            createdCollectionID = [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title].placeholderForCreatedAssetCollection.localIdentifier;
+        } error:&error];
+        createdCollection = [PHAssetCollection fetchAssetCollectionsWithLocalIdentifiers:@[createdCollectionID] options:nil].firstObject;
+    }
+    
+    LHLLog(@"%@", createdCollection);
 }
 
 /**
