@@ -23,28 +23,24 @@
  *  保存图片到相机胶卷
  */
 - (IBAction)saveBtn:(id)sender {
-//    c语言函数保存图片到相册
-//    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
-    NSError *error = nil;
-//    保存图片到 相机胶卷
-    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
-        [PHAssetChangeRequest creationRequestForAssetFromImage:self.imageView.image];
-    } error:&error];
-    if (!error) { // 保存成功
-        [SVProgressHUD showSuccessWithStatus:@"保存成功！"];
-    }else{ // 保存失败
-        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
-    }
-}
-
-//- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
-//{
+//    NSError *error = nil;
+////    保存图片到 相机胶卷
+//    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+//        [PHAssetChangeRequest creationRequestForAssetFromImage:self.imageView.image];
+//    } error:&error];
 //    if (!error) { // 保存成功
 //        [SVProgressHUD showSuccessWithStatus:@"保存成功！"];
 //    }else{ // 保存失败
 //        [SVProgressHUD showErrorWithStatus:@"保存失败！"];
 //    }
-//}
+    // 创建一个相册
+    NSError *error = nil;
+    NSString *title = [NSBundle mainBundle].infoDictionary[(NSString *)kCFBundleNameKey];
+    [[PHPhotoLibrary sharedPhotoLibrary] performChangesAndWait:^{
+        [PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle:title];
+    } error:&error];
+}
+
 /**
  *  退出看图
  */
