@@ -23,6 +23,7 @@
 		847A48DE1D8CF4C4002AE6BA /* LHLWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847A48DC1D8CF4C4002AE6BA /* LHLWebViewController.xib */; };
 		8492A8951D8AB19400C73DF3 /* LHLAdItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8492A8941D8AB19400C73DF3 /* LHLAdItem.m */; };
 		849475011D899ED400937559 /* UIBarButtonItem+item.m in Sources */ = {isa = PBXBuildFile; fileRef = 849475001D899ED400937559 /* UIBarButtonItem+item.m */; };
+		8499197C1D9A6CFE00207B38 /* LHLTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8499197B1D9A6CFE00207B38 /* LHLTopicViewController.m */; };
 		84A698DE1D9773810080E580 /* UIImageView+download.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A698DD1D9773810080E580 /* UIImageView+download.m */; };
 		84A8DEE21D8D3D4A005A5F6B /* LHLFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8DEE11D8D3D4A005A5F6B /* LHLFileTool.m */; };
 		84B62A451D927FBB009C7AA5 /* LHLTopicsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B62A441D927FBB009C7AA5 /* LHLTopicsItem.m */; };
@@ -113,6 +114,8 @@
 		849474FE1D89914A00937559 /* BuDeJie.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuDeJie.pch; sourceTree = "<group>"; };
 		849474FF1D899ED400937559 /* UIBarButtonItem+item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+item.h"; sourceTree = "<group>"; };
 		849475001D899ED400937559 /* UIBarButtonItem+item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+item.m"; sourceTree = "<group>"; };
+		8499197A1D9A6CFE00207B38 /* LHLTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLTopicViewController.h; sourceTree = "<group>"; };
+		8499197B1D9A6CFE00207B38 /* LHLTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLTopicViewController.m; sourceTree = "<group>"; };
 		84A698DC1D9773810080E580 /* UIImageView+download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+download.h"; sourceTree = "<group>"; };
 		84A698DD1D9773810080E580 /* UIImageView+download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+download.m"; sourceTree = "<group>"; };
 		84A8DEE01D8D3D4A005A5F6B /* LHLFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLFileTool.h; sourceTree = "<group>"; };
@@ -320,6 +323,25 @@
 			path = "启动图片";
 			sourceTree = "<group>";
 		};
+		849919791D9A6CD700207B38 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				8499197A1D9A6CFE00207B38 /* LHLTopicViewController.h */,
+				8499197B1D9A6CFE00207B38 /* LHLTopicViewController.m */,
+				84BDE8B51D8FE71C000CFE9F /* LHLAllViewController.h */,
+				84BDE8B61D8FE71C000CFE9F /* LHLAllViewController.m */,
+				84BDE8B81D8FE72C000CFE9F /* LHLVideoViewController.h */,
+				84BDE8B91D8FE72C000CFE9F /* LHLVideoViewController.m */,
+				84BDE8BB1D8FE742000CFE9F /* LHLVoiceViewController.h */,
+				84BDE8BC1D8FE742000CFE9F /* LHLVoiceViewController.m */,
+				84BDE8BE1D8FE75A000CFE9F /* LHLPictureViewController.h */,
+				84BDE8BF1D8FE75A000CFE9F /* LHLPictureViewController.m */,
+				84BDE8C11D8FE766000CFE9F /* LHLWordViewController.h */,
+				84BDE8C21D8FE766000CFE9F /* LHLWordViewController.m */,
+			);
+			name = Topic;
+			sourceTree = "<group>";
+		};
 		84A8DEDE1D8D3D36005A5F6B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,19 +441,10 @@
 			children = (
 				84D2364C1D87BD2F005BBCE9 /* LHLEssenceViewController.h */,
 				84D2364D1D87BD2F005BBCE9 /* LHLEssenceViewController.m */,
-				84BDE8B51D8FE71C000CFE9F /* LHLAllViewController.h */,
-				84BDE8B61D8FE71C000CFE9F /* LHLAllViewController.m */,
-				84BDE8B81D8FE72C000CFE9F /* LHLVideoViewController.h */,
-				84BDE8B91D8FE72C000CFE9F /* LHLVideoViewController.m */,
-				84BDE8BB1D8FE742000CFE9F /* LHLVoiceViewController.h */,
-				84BDE8BC1D8FE742000CFE9F /* LHLVoiceViewController.m */,
-				84BDE8BE1D8FE75A000CFE9F /* LHLPictureViewController.h */,
-				84BDE8BF1D8FE75A000CFE9F /* LHLPictureViewController.m */,
-				84BDE8C11D8FE766000CFE9F /* LHLWordViewController.h */,
-				84BDE8C21D8FE766000CFE9F /* LHLWordViewController.m */,
 				84FC2BAD1D98F02A00083174 /* LHLSeeBigPictureViewController.h */,
 				84FC2BAE1D98F02A00083174 /* LHLSeeBigPictureViewController.m */,
 				84FC2BAF1D98F02A00083174 /* LHLSeeBigPictureViewController.xib */,
+				849919791D9A6CD700207B38 /* Topic */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -896,6 +909,7 @@
 				84D236541D87BD8C005BBCE9 /* LHLMeTableViewController.m in Sources */,
 				84BE4EC01D8BB6CD00AB0DDF /* LHLLoginRegisterView.m in Sources */,
 				847A48DD1D8CF4C4002AE6BA /* LHLWebViewController.m in Sources */,
+				8499197C1D9A6CFE00207B38 /* LHLTopicViewController.m in Sources */,
 				84FC2BB01D98F02A00083174 /* LHLSeeBigPictureViewController.m in Sources */,
 				84D236511D87BD7A005BBCE9 /* LHLFriendTrendViewController.m in Sources */,
 				84BDE8C01D8FE75A000CFE9F /* LHLPictureViewController.m in Sources */,
@@ -1054,7 +1068,7 @@
 				INFOPLIST_FILE = "百思不得姐(环境部署)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "leng.-----------";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.budejie---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1070,7 +1084,7 @@
 				INFOPLIST_FILE = "百思不得姐(环境部署)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "leng.-----------";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.budejie---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

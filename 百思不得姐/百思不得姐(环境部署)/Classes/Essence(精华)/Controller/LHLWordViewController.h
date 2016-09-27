@@ -6,8 +6,8 @@
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "LHLTopicViewController.h"
 
-@interface LHLWordViewController : UITableViewController
+@interface LHLWordViewController : LHLTopicViewController
 
 @end

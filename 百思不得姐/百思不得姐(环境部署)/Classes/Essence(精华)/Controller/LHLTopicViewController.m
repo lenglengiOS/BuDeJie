@@ -1,12 +1,12 @@
 //
-//  LHLAllViewController.m
+//  LHLTopicViewController.m
 //  百思不得姐(环境部署)
 //
 //  Created by admin on 16/9/19.
 //  Copyright © 2016年 admin. All rights reserved.
 //
 
-#import "LHLAllViewController.h"
+#import "LHLTopicViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "LHLTopicsItem.h"
@@ -14,7 +14,7 @@
 #import "LHLTopicsCell.h"
 #import <SDWebImage/SDImageCache.h>
 
-@interface LHLAllViewController ()
+@interface LHLTopicViewController ()
 
 /** 请求管理者 */
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation LHLAllViewController
+@implementation LHLTopicViewController
 
 static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 
@@ -47,12 +47,12 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
         _manager = [AFHTTPSessionManager manager];
     }
     return _manager;
-
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.tableView.contentInset = UIEdgeInsetsMake(LHLNavMaxY + LHLTitlesViewH, 0, LHLTabBarH, 0);
     self.view.backgroundColor = LHLColor(206, 206, 206);
     
@@ -65,7 +65,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     // 监听通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarButtonDidRepeatClicked) name:LHLTabBarButtonRepeatClickedNotification object:nil];
-
+    
     [self setUpRefesh];
     
 }
@@ -132,7 +132,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
  *  拖拽结束就会调用这个方法
  */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-
+    
     // 如果正在下拉刷新，则返回
     if (self.headerRefreshing == YES) return;
     CGFloat offsetY = - (self.tableView.contentInset.top + self.headerView.lhl_height);
@@ -155,7 +155,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     
     // 清除内存
     [[SDImageCache sharedImageCache] clearMemory];
- 
+    
 }
 
 /**
@@ -185,7 +185,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
  *  处理footer
  */
 - (void)dealFooter{
- 
+    
     // 如果contentSize没有值，则返回
     if (self.tableView.contentSize.height == 0) return;
     CGFloat offstY = self.tableView.contentSize.height + self.tableView.contentInset.bottom - self.tableView.lhl_height;
@@ -195,16 +195,16 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
         // 开始刷新
         [self footerBeginRefreshing];
     }
-
+    
 }
 
 #pragma mark - 通知：LHLTabBarButtonRepeatClickedNotification
 - (void)tabBarButtonDidRepeatClicked{
     
-    // 如果LHLAllViewController所在的窗口不在控制器上，则返回
+    // 如果LHLTopicViewController所在的窗口不在控制器上，则返回
     if (self.view.window == nil) return;
     
-    // 如果展示的不是LHLAllViewController，则返回
+    // 如果展示的不是LHLTopicViewController，则返回
     if (self.tableView.scrollsToTop == NO) return;
     
     [self headerBeginRefreshing];
@@ -217,13 +217,13 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
 
 #pragma mark - 数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     self.footerView.hidden = (self.topics.count == 0);
     return self.topics.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     // 10为图片，29为段子，31为音频，41为视频，默认为1
     LHLTopicsCell *cell = [tableView dequeueReusableCellWithIdentifier:LHLTopicsCellID];
     
@@ -256,7 +256,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     parameters[@"a"] = @"list";
     parameters[@"type"] = @(LHLTopicTypeAll);
     parameters[@"c"] = @"data";
-
+    
     // 发送请求
     [self.manager GET:LHLCommonURL parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id _Nonnull responseObject) {
         LHLAFNWriteToPlist(newToipics);
@@ -278,14 +278,14 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
             [SVProgressHUD dismiss];
         });
     }];
-
+    
 }
 
 /**
  *  发送请求给服务器－上拉刷新更多数据
  */
 - (void)loadMoreTopics{
-
+    
     self.footerLabel.text =  @"正在加载数据...";
     // 请求数据 ＝> 解析数据 ＝> 显示数据
     // 如果正在上拉加载，则取消下拉刷新的任务
@@ -323,7 +323,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
             [SVProgressHUD dismiss];
         });
     }];
-
+    
 }
 
 

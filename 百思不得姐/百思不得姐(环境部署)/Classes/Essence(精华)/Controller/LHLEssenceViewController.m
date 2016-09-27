@@ -57,13 +57,18 @@
 - (void)setUpChildVcs{
     
     LHLAllViewController *allVC = [[LHLAllViewController alloc] init];
-    LHLVideoViewController *viedeoVC = [[LHLVideoViewController alloc] init];
+    allVC.type = LHLTopicTypeAll;
+    LHLVideoViewController *videoVC = [[LHLVideoViewController alloc] init];
+    videoVC.type = LHLTopicTypeVideo;
     LHLVoiceViewController *voiceVC = [[LHLVoiceViewController alloc] init];
+    voiceVC.type = LHLTopicTypeVoice;
     LHLPictureViewController *pictureVC = [[LHLPictureViewController alloc] init];
+    pictureVC.type = LHLTopicTypePicture;
     LHLWordViewController *wordVC = [[LHLWordViewController alloc] init];
+    wordVC.type = LHLTopicTypeWord;
     
     [self addChildViewController:allVC];
-    [self addChildViewController:viedeoVC];
+    [self addChildViewController:videoVC];
     [self addChildViewController:voiceVC];
     [self addChildViewController:pictureVC];
     [self addChildViewController:wordVC];
