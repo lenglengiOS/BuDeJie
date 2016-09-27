@@ -41,6 +41,10 @@
 @implementation LHLTopicViewController
 
 static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
+// 实现这个方法只是为了消除警告
+- (LHLTopicType)type{
+    return 0;
+}
 
 - (AFHTTPSessionManager *)manager{
     if (_manager == nil) {
@@ -254,7 +258,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @(LHLTopicTypeAll);
+    parameters[@"type"] = @(self.type);
     parameters[@"c"] = @"data";
     
     // 发送请求
@@ -296,7 +300,7 @@ static NSString * const LHLTopicsCellID = @"LHLTopicsCell";
     // 拼接参数
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"a"] = @"list";
-    parameters[@"type"] = @(LHLTopicTypeAll);
+    parameters[@"type"] = @(self.type);
     parameters[@"c"] = @"data";
     parameters[@"maxtime"] = self.maxtime;
     

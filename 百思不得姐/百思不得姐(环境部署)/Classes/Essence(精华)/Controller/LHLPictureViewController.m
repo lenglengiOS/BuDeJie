@@ -15,5 +15,8 @@
     
 }
 
-
+- (LHLTopicType)type{
+    
+    return LHLTopicTypePicture;
+}
 @end

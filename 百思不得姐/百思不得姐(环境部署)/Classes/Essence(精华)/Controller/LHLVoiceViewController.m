@@ -12,7 +12,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+}
+
+- (LHLTopicType)type{
     
+    return LHLTopicTypeVoice;
 }
 
 

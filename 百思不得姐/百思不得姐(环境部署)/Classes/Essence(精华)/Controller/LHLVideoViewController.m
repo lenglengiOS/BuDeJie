@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
-
+- (LHLTopicType)type{
+    
+    return LHLTopicTypeVideo;
+}
 @end

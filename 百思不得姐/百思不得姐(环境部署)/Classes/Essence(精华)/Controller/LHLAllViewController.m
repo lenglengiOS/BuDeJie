@@ -7,18 +7,21 @@
 //
 
 #import "LHLAllViewController.h"
+#import "LHLTopicsItem.h"
 
 @interface LHLAllViewController ()
-
 @end
 
 @implementation LHLAllViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
     
 }
 
+- (LHLTopicType)type{
+    
+    return LHLTopicTypeAll;
+}
 
 @end

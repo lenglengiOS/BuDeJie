@@ -9,5 +9,4 @@
 #import "LHLTopicViewController.h"
 
 @interface LHLVideoViewController : LHLTopicViewController
-
 @end

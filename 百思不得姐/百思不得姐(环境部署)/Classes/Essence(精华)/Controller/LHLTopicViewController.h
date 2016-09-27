@@ -10,6 +10,5 @@
 #import "LHLTopicsItem.h"
 
 @interface LHLTopicViewController : UITableViewController
-/** 帖子的类型 */
-@property (nonatomic, assign) LHLTopicType type;
+- (LHLTopicType)type;
 @end

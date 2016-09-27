@@ -15,5 +15,8 @@
     
 }
 
-
+- (LHLTopicType)type{
+    
+    return LHLTopicTypeWord;
+}
 @end

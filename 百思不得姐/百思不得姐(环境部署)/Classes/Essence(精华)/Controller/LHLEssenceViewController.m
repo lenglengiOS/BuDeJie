@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor blueColor];
+//    self.view.backgroundColor = [UIColor blueColor];
     
     // 设置子控制器
     [self setUpChildVcs];
@@ -57,15 +57,15 @@
 - (void)setUpChildVcs{
     
     LHLAllViewController *allVC = [[LHLAllViewController alloc] init];
-    allVC.type = LHLTopicTypeAll;
+//    allVC.type = LHLTopicTypeAll;
     LHLVideoViewController *videoVC = [[LHLVideoViewController alloc] init];
-    videoVC.type = LHLTopicTypeVideo;
+//    videoVC.type = LHLTopicTypeVideo;
     LHLVoiceViewController *voiceVC = [[LHLVoiceViewController alloc] init];
-    voiceVC.type = LHLTopicTypeVoice;
+//    voiceVC.type = LHLTopicTypeVoice;
     LHLPictureViewController *pictureVC = [[LHLPictureViewController alloc] init];
-    pictureVC.type = LHLTopicTypePicture;
+//    pictureVC.type = LHLTopicTypePicture;
     LHLWordViewController *wordVC = [[LHLWordViewController alloc] init];
-    wordVC.type = LHLTopicTypeWord;
+//    wordVC.type = LHLTopicTypeWord;
     
     [self addChildViewController:allVC];
     [self addChildViewController:videoVC];
@@ -103,15 +103,14 @@
     NSInteger count = self.childViewControllers.count;
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.frame = self.view.bounds;
-    
-    scrollView.backgroundColor = [UIColor blueColor];
+    scrollView.backgroundColor = [UIColor lightGrayColor];
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.pagingEnabled = YES;
     scrollView.bounces = NO;
     scrollView.scrollsToTop = NO;
     
-    scrollView.contentSize = CGSizeMake(count * LHLScreenW, LHLScreenH);
+    scrollView.contentSize = CGSizeMake(count * LHLScreenW, LHLScreenH - 20);
     scrollView.lhl_x = 0;
     scrollView.delegate = self;
     self.scrollView = scrollView;

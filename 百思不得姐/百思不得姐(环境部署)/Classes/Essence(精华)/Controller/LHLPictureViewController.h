@@ -9,5 +9,4 @@
 #import "LHLTopicViewController.h"
 
 @interface LHLPictureViewController : LHLTopicViewController
-
 @end
