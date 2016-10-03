@@ -11,6 +11,8 @@
 #import "LHLFriendTrendViewController.h"
 #import "LHLMeTableViewController.h"
 #import "LHLNewViewController.h"
+#import "LHLNewTopicViewController.h"
+
 #import "LHLPublishViewController.h"
 #import "LHLTabBar.h"
 #import "LHLNavigationViewController.h"
@@ -73,7 +75,7 @@
     
     
     // 2.新帖
-    LHLNewViewController *newVC = [[LHLNewViewController alloc] init];
+    LHLNewTopicViewController *newVC = [[LHLNewTopicViewController alloc] init];
     LHLNavigationViewController *nav1 = [[LHLNavigationViewController alloc] initWithRootViewController:newVC];
     [self addChildViewController:nav1];
     

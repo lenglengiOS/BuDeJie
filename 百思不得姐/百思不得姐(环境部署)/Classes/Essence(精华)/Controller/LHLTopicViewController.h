@@ -11,4 +11,7 @@
 
 @interface LHLTopicViewController : UITableViewController
 - (LHLTopicType)type;
+
+// 提供刷新方法，供子类调用
+- (void)setUpRefesh;
 @end

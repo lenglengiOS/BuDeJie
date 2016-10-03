@@ -11,6 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "LHLTopicsItem.h"
 #import "LHLSeeBigPictureViewController.h"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface LHLTopicVideoView ()
 
@@ -38,9 +40,12 @@
  */
 - (void)seeBigPicture{
     
-    LHLSeeBigPictureViewController *seeBigPictureVC = [[LHLSeeBigPictureViewController alloc] init];
-    seeBigPictureVC.topic = self.topic;
-    [self.window.rootViewController presentViewController:seeBigPictureVC animated:YES completion:nil];
+    // 播放视频
+    NSURL *url = [NSURL URLWithString:self.topic.videouri];
+    AVPlayerViewController *play = [[AVPlayerViewController alloc] init];
+    play.player = [[AVPlayer alloc] initWithURL:url];
+    
+    [self.window.rootViewController presentViewController:play animated:YES completion:nil];
 }
 /**
  *  设置数据
