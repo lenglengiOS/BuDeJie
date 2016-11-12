@@ -23,6 +23,7 @@ static CGFloat margin = 1;
 @interface LHLMeTableViewController ()<UICollectionViewDataSource,UICollectionViewDelegate, SFSafariViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *squareItems;
+
 @property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
